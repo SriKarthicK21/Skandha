@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>POL-SEC-011-MODEL — Incident Management Policy</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 20mm 15mm 20mm 15mm;
+      @top-center {
+        content: "SKANDA / GOVERNANCE, RISK & COMPLIANCE — POL-SEC-011-MODEL";
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+      @bottom-center {
+        content: "CONTROLLED DOCUMENT | PAGE " counter(page) " OF " counter(pages);
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+    }
+    @page landscape-section {
+      size: A4 landscape;
+      margin: 15mm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #1e293b;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #ffffff;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .doc-type-badge {
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #0284c7;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 4px 0 6px 0;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 10pt;
+      color: #475569;
+      margin-bottom: 16px;
+      font-style: normal;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 14px;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #b45309;
+      margin-bottom: 16px;
+      border-radius: 2px;
+    }
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px 0;
+      font-size: 8.5pt;
+      page-break-inside: auto;
+    }
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #0f172a;
+    }
+    td {
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .landscape {
+      page: landscape-section;
+    }
+    ul, ol {
+      margin-top: 4px;
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .footer-stamp {
+      margin-top: 36px;
+      border-top: 1px solid #cbd5e1;
+      padding-top: 8px;
+      font-size: 7.5pt;
+      color: #64748b;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+    <span>SKANDA / GOVERNANCE, RISK & COMPLIANCE</span>
+    <span>POL-SEC-011-MODEL</span>
+  </div>
+
+  <div class="doc-type-badge">ENTERPRISE MANAGEMENT SYSTEM / POLICY</div>
+  <h1>Incident Management Policy</h1>
+  <div class="subtitle">Consulting Benchmark Sample — Establish mandatory incident reporting, severity classification (SEV-1 to SEV-4), response team structure (CSIRT), and statutory breach notification deadlines.</div>
+
+  <div class="warning-box">⚠️ ILLUSTRATIVE MODEL DOCUMENT — MUST BE TAILORED AND APPROVED BEFORE USE</div>
+
+  <h2>Document Control Field</h2>
+  <table>
+    <thead>
+      <tr><th style="width: 35%;">Document Control Field</th><th>Model Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Document ID</strong></td><td>POL-SEC-011-MODEL</td></tr>
+      <tr><td><strong>Version / Status</strong></td><td>1.0 — Model sample (illustrative benchmark) — Model sample — not approved; not effective</td></tr>
+      <tr><td><strong>Document Owner</strong></td><td>Head of Incident Response & SOC (Illustrative Benchmark)</td></tr>
+      <tr><td><strong>Approver</strong></td><td>CISO & General Counsel (Illustrative Benchmark)</td></tr>
+      <tr><td><strong>Effective Date</strong></td><td>Not effective until formally tailored and approved</td></tr>
+      <tr><td><strong>Classification</strong></td><td>INTERNAL_ILLUSTRATIVE</td></tr>
+      <tr><td><strong>Review Trigger</strong></td><td>Scheduled annual review and material business, technology, risk or regulatory change</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Revision History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%;">Version</th>
+        <th style="width: 15%;">Date</th>
+        <th>Summary of Change</th>
+        <th style="width: 20%;">Prepared By</th>
+        <th style="width: 20%;">Approval Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><strong>1.0</strong></td>
+          <td>2026-10-12</td>
+          <td>Baseline illustrative model sample generated for Incident Management Policy fulfilling Annex A.5.24, A.5.25, A.5.26, A.5.27.</td>
+          <td>Legal & Regulatory Counsel (SKANDA Benchmark Engine)</td>
+          <td>Model sample — not approved</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+  <h2>1. Purpose</h2>
+  <p>Establish an authoritative, structured, and auditable policy framework for Incident Response Governance. This document fulfills the requirements of ISO_27001_2022 (Annex A.5.24, A.5.25, A.5.26, A.5.27) while ensuring clear separation between management intent, operational execution, and verifiable evidence.</p>
+
+  <h2>2. Scope and Applicability</h2>
+  <p>This policy applies across all illustrative enterprise environments, production cloud clusters, data storage repositories, and personnel supporting Incident Response Governance.</p>
+  <ul>
+    <li><strong>In-Scope Locations:</strong> Global Headquarters (Singapore), Primary Cloud Region (AWS US-East-1), Disaster Recovery Region (AWS AP-Southeast-1)</li>
+    <li><strong>In-Scope Systems & Services:</strong> Production Transaction Switch, Enterprise Identity Provider (Okta), Continuous Deployment Pipelines, Authoritative Records Vault</li>
+    <li><strong>In-Scope Personnel:</strong> Full-time employees, Third-party managed service engineers, Privileged cloud administrators, Internal and external auditors</li>
+  </ul>
+
+  <h2>3. Terms and Definitions</h2>
+  <table>
+    <thead>
+      <tr><th style="width: 30%;">Term</th><th>Working Definition (Model)</th></tr>
+    </thead>
+    <tbody>
+      
+        <tr><td><strong>Documented Information</strong></td><td>Information required to be controlled and maintained by the organization (ISO/IEC 27001:2022 Clause 7.5).</td></tr>
+      
+        <tr><td><strong>Accountable Role</strong></td><td>The single operational role with ultimate decision-making authority and veto for the activity.</td></tr>
+      
+        <tr><td><strong>Verifiable Evidence</strong></td><td>Attributable, timestamped, immutable record confirming that a requirement was performed in practice.</td></tr>
+      
+        <tr><td><strong>Operating Effectiveness</strong></td><td>Confirmation through systematic testing and evidence sampling that a control operates reliably over a period of time.</td></tr>
+      
+    </tbody>
+  </table>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h2>Appendix C — Pre-Publication Tailoring Checklist</h2>
+  <ul>
+    
+      <li>◻️ <strong>CHK-INPUT-01:</strong> Validate organizational value for: organizationProfile.legalEntityName (currently set to illustrative benchmark). </li>
+    
+      <li>◻️ <strong>CHK-INPUT-02:</strong> Validate organizational value for: keyRolesAndDelegations.ismsOwnerOrCisoRole (currently set to illustrative benchmark). </li>
+    
+      <li>◻️ <strong>CHK-INPUT-03:</strong> Validate organizational value for: organizationProfile.jurisdictions (currently set to illustrative benchmark). </li>
+    
+      <li>◻️ <strong>CHK-BENCH-01:</strong> Verify model thresholds, SLAs, and technical roles against actual corporate delegations. </li>
+    
+      <li>◻️ <strong>CHK-BENCH-02:</strong> Obtain formal management sign-off to transition illustrative model to live draft. </li>
+    
+  </ul>
+
+  <div class="footer-stamp">
+    CONTROLLED DOCUMENT | SKANDA DOCUMENTATION ENGINE | POL-SEC-011-MODEL v1.0 — Model sample (illustrative benchmark) | SHA-256: PENDING...
+  </div>
+</body>
+</html>

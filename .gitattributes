@@ -1,0 +1,16 @@
+# Normalise line endings: the source tree is authored LF-first and is edited on
+# Windows, which otherwise rewrites every file to CRLF on checkout.
+* text=auto eol=lf
+
+# Binary assets — never normalise
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.woff binary
+*.woff2 binary
+*.ttf binary

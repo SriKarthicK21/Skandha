@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISMS-PROC-IAM-001 — User Access Provisioning and Modification Procedure</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 20mm 15mm 20mm 15mm;
+      @top-center {
+        content: "SKANDA / GOVERNANCE, RISK & COMPLIANCE — ISMS-PROC-IAM-001";
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+      @bottom-center {
+        content: "CONTROLLED DOCUMENT | PAGE " counter(page) " OF " counter(pages);
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+    }
+    @page landscape-section {
+      size: A4 landscape;
+      margin: 15mm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #1e293b;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #ffffff;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .doc-type-badge {
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #0284c7;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 4px 0 6px 0;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 10pt;
+      color: #475569;
+      margin-bottom: 16px;
+      font-style: normal;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 14px;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #b45309;
+      margin-bottom: 16px;
+      border-radius: 2px;
+    }
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px 0;
+      font-size: 8.5pt;
+      page-break-inside: auto;
+    }
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #0f172a;
+    }
+    td {
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .landscape {
+      page: landscape-section;
+    }
+    ul, ol {
+      margin-top: 4px;
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .footer-stamp {
+      margin-top: 36px;
+      border-top: 1px solid #cbd5e1;
+      padding-top: 8px;
+      font-size: 7.5pt;
+      color: #64748b;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+    <span>SKANDA / GOVERNANCE, RISK & COMPLIANCE</span>
+    <span>ISMS-PROC-IAM-001</span>
+  </div>
+
+  <div class="doc-type-badge">ENTERPRISE MANAGEMENT SYSTEM / PROCEDURE</div>
+  <h1>User Access Provisioning and Modification Procedure</h1>
+  <div class="subtitle">Operational control procedure with roles, gates, evidence, exceptions and verification</div>
+
+  <div class="warning-box">⚠️ ILLUSTRATIVE MODEL DOCUMENT — MUST BE TAILORED AND APPROVED BEFORE USE</div>
+
+  <h2>Document Control Field</h2>
+  <table>
+    <thead>
+      <tr><th style="width: 35%;">Document Control Field</th><th>Model Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Document ID</strong></td><td>ISMS-PROC-IAM-001</td></tr>
+      <tr><td><strong>Version / Status</strong></td><td>1.1 — 1.1 — Model sample (quality revision); not approved</td></tr>
+      <tr><td><strong>Document Owner</strong></td><td>Role to be formally assigned</td></tr>
+      <tr><td><strong>Approver</strong></td><td>Authorized management approver to be assigned</td></tr>
+      <tr><td><strong>Effective Date</strong></td><td>Not effective until formally approved</td></tr>
+      <tr><td><strong>Classification</strong></td><td>INTERNAL_ILLUSTRATIVE</td></tr>
+      <tr><td><strong>Review Trigger</strong></td><td>Scheduled review and material business, technology, risk or regulatory change</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Revision History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%;">Version</th>
+        <th style="width: 15%;">Date</th>
+        <th>Summary of Change</th>
+        <th style="width: 20%;">Prepared By</th>
+        <th style="width: 20%;">Approval Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><strong>1.0</strong></td>
+          <td>Not recorded</td>
+          <td>Initial illustrative model sample.</td>
+          <td>SKANDA Documentation</td>
+          <td>Not approved — model sample</td>
+        </tr>
+      
+        <tr>
+          <td><strong>1.1</strong></td>
+          <td>2026-10-11</td>
+          <td>Quality revision: replaced duplicated service-level section with service-level governance requirements; corrected RACI so each activity has one Accountable role; added approval record, revision history, contents and terms and definitions (new Section 3; later sections renumbered); moved procedure table to a landscape page; corrected metadata, header, "Page X of Y" numbering and table pagination.</td>
+          <td>SKANDA Documentation</td>
+          <td>Not approved — model sample</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+  <h2>1. Purpose</h2>
+  <p>Define a controlled, traceable process to request, authorize, provision, verify and record access to in-scope systems and information. This procedure is designed to prevent unauthorized access and to ensure granted entitlements correspond to approved business need.</p>
+
+  <h2>2. Scope and Applicability</h2>
+  <p>Applies to new user access and changes to existing access for systems within the organization’s defined scope. Privileged access, service accounts, emergency access, machine identities, external users and systems with specialized access workflows may require additional controls or procedures. Confirm the applicable systems and user populations before approval.</p>
+  <ul>
+    <li><strong>In-Scope Locations:</strong> [In-scope operational locations]</li>
+    <li><strong>In-Scope Systems & Services:</strong> [Approved target systems and identity providers]</li>
+    <li><strong>In-Scope Personnel:</strong> [Applicable workforce populations]</li>
+  </ul>
+
+  <h2>3. Terms and Definitions</h2>
+  <table>
+    <thead>
+      <tr><th style="width: 30%;">Term</th><th>Working Definition (Model)</th></tr>
+    </thead>
+    <tbody>
+      
+        <tr><td><strong>Entitlement</strong></td><td>A specific permission, role, group membership or access right granted to an identity on a system.</td></tr>
+      
+        <tr><td><strong>Provisioning</strong></td><td>Creating, changing or assigning an account or entitlement on a target system.</td></tr>
+      
+        <tr><td><strong>Privileged access</strong></td><td>Access permitting administrative actions, security configuration changes, control bypass or broad access to sensitive information, as defined in the organization’s privileged access standard.</td></tr>
+      
+        <tr><td><strong>Segregation of duties</strong></td><td>Separation of conflicting responsibilities so that no single individual can initiate, authorize and complete a sensitive action without independent involvement.</td></tr>
+      
+        <tr><td><strong>Independent verification</strong></td><td>A check of resulting access against the approved request by a person or control independent of whoever performed the change.</td></tr>
+      
+        <tr><td><strong>Emergency access</strong></td><td>Time-limited access granted under a separately approved emergency process when the standard workflow cannot be followed.</td></tr>
+      
+        <tr><td><strong>Request record</strong></td><td>The uniquely identified record linking request, approvals, execution, verification and closure evidence.</td></tr>
+      
+    </tbody>
+  </table>
+
+  
+    <div class="landscape">
+      <h2>7. Procedure Steps & Operational Gates</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Step / Gate</th>
+            <th style="width: 25%;">Required Action</th>
+            <th style="width: 15%;">Responsible Role</th>
+            <th style="width: 15%;">Evidence</th>
+            <th style="width: 15%;">Exit Criteria</th>
+            <th style="width: 15%;">Failure / Exception</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>1. Register request</strong></td>
+              <td>Requester submits through the approved workflow and identifies the intended user, target system, requested entitlement, business justification and required timing.</td>
+              <td>Requester / line manager</td>
+              <td>Request ID; identity reference; business justification; requested entitlement.</td>
+              <td>Request is uniquely recorded and traceable. Missing mandatory fields cause return for completion.</td>
+              <td>No access is granted.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>2. Validate identity and completeness</strong></td>
+              <td>Coordinator or workflow validates identity status, target system, entitlement validity, business rationale and required information.</td>
+              <td>IAM coordinator or approved workflow</td>
+              <td>Validation result; identity status; target system and entitlement reference.</td>
+              <td>Request meets documented entry criteria. Invalid or incomplete requests are returned or rejected.</td>
+              <td>No access is granted.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>3. Confirm business need</strong></td>
+              <td>Line manager and/or system owner confirms the entitlement is required for assigned duties and is proportionate to need.</td>
+              <td>Line manager / system owner</td>
+              <td>Business justification and approval decision.</td>
+              <td>Decision is recorded by an authorized identity and is within delegated authority.</td>
+              <td>Reject or return if need is not established.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>4. Obtain required approvals</strong></td>
+              <td>Route to all approvers required by the current approval matrix, including data owner, security reviewer or other approvers where applicable.</td>
+              <td>Workflow / designated coordinator</td>
+              <td>Approver identity, decision, timestamp, conditions and comments where appropriate.</td>
+              <td>All mandatory approvals are positive and precede provisioning. Rejection ends the normal workflow.</td>
+              <td>Do not provision while approvals are missing or rejected.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>5. Assess conflicts and elevated risk</strong></td>
+              <td>Check segregation of duties, privilege level, sensitive data access, external user status, and applicable restrictions. Obtain additional approval or documented exception where required.</td>
+              <td>IAM / security reviewer / system owner</td>
+              <td>Conflict check, risk assessment, exception ID and approval if applicable.</td>
+              <td>No unresolved prohibited conflict; any permitted exception has authorized approval, safeguards and review/expiry date.</td>
+              <td>Hold and escalate unresolved conflict.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>6. Provision approved entitlement</strong></td>
+              <td>Authorized operator or controlled automation applies only the entitlement, scope and duration approved. Use the approved administrative channel and preserve system audit records.</td>
+              <td>Provisioning operator / controlled automation</td>
+              <td>Execution event, actor, system, entitlement, timestamp, result and correlation to request ID.</td>
+              <td>Actual change matches authorization; failure is recorded and not represented as success.</td>
+              <td>Do not substitute broader access or use unauthorized workaround.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>7. Independently verify result</strong></td>
+              <td>Compare actual assigned permissions with the approved request using system logs, access reports or other reliable evidence. Use independent verification for high-risk access where required.</td>
+              <td>Verifier or independent control</td>
+              <td>Expected versus actual entitlement, verification method, verifier and timestamp.</td>
+              <td>Exact match is confirmed, or discrepancy is recorded and corrected.</td>
+              <td>Keep request open; remove or correct unauthorized excess access and escalate as required.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>8. Notify and close</strong></td>
+              <td>Notify relevant parties and close the request only after approvals, execution and required verification are complete.</td>
+              <td>Workflow owner / IAM coordinator</td>
+              <td>Closure status, notifications reference, linked execution and verification evidence.</td>
+              <td>Required fields and evidence are present; final state is accurate.</td>
+              <td>Do not close with unresolved discrepancy or missing mandatory evidence.</td>
+            </tr>
+          
+            <tr>
+              <td><strong>9. Retain and monitor</strong></td>
+              <td>Retain the request and associated records under the approved retention schedule. Include the event in monitoring or periodic access review where required.</td>
+              <td>Process owner / records owner</td>
+              <td>Record links, retention class, review flags and monitoring outcome.</td>
+              <td>Records remain retrievable and protected; relevant access reviews are scheduled.</td>
+              <td>Escalate missing records or suspected record alteration.</td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  
+
+  
+    <h2>8. Decision Rules and Exception Handling</h2>
+    <table>
+      <thead>
+        <tr><th style="width: 30%;">Scenario</th><th style="width: 40%;">Required Handling</th><th>Required Evidence</th></tr>
+      </thead>
+      <tbody>
+        
+          <tr><td><strong>Incomplete or invalid request</strong></td><td>Return for correction or reject under workflow rules. Do not provision.</td><td>Reason, status, requester notification and timestamps.</td></tr>
+        
+          <tr><td><strong>Approver rejects request</strong></td><td>End normal processing; do not provision. Re-submission requires a new or formally reopened request.</td><td>Decision, approver identity and reason where recorded.</td></tr>
+        
+          <tr><td><strong>Approval absent or unauthorized</strong></td><td>Hold request and route to the correct authority; never infer approval from silence.</td><td>Approval matrix version and workflow history.</td></tr>
+        
+          <tr><td><strong>Segregation-of-duties conflict</strong></td><td>Apply conflict-resolution process. If policy permits an exception, document risk, compensating controls, authorized approval, expiry/review and monitoring.</td><td>Conflict result and linked exception record.</td></tr>
+        
+          <tr><td><strong>Privileged or sensitive access</strong></td><td>Apply enhanced approval, authentication, logging, time limitation and verification according to approved standard.</td><td>Privilege classification, approvals, conditions and verification.</td></tr>
+        
+          <tr><td><strong>Provisioning fails</strong></td><td>Record failure, investigate, retry only through authorized controls, and ensure partial access is assessed.</td><td>Failure log, incident/change reference if applicable, final outcome.</td></tr>
+        
+          <tr><td><strong>Unexpected or excessive access appears</strong></td><td>Contain or remove unauthorized access promptly under approved process; preserve evidence and assess incident escalation.</td><td>Actual entitlement, corrective action, escalation and verification.</td></tr>
+        
+          <tr><td><strong>Emergency access needed</strong></td><td>Use separately approved emergency access process; retrospective review does not replace initial authorization requirements unless explicitly defined by that process.</td><td>Emergency justification, authorization, start/end time, monitoring and retrospective review.</td></tr>
+        
+      </tbody>
+    </table>
+  
+
+  
+    <h2>9. Service Levels and Operational Targets</h2>
+    <table>
+      <thead>
+        <tr><th style="width: 25%;">Request Category</th><th style="width: 25%;">Approved Target</th><th style="width: 25%;">Measured Interval</th><th>Escalation Route</th></tr>
+      </thead>
+      <tbody>
+        
+          <tr><td><strong>Standard user access</strong></td><td>To be defined</td><td>To be defined</td><td>To be defined</td></tr>
+        
+          <tr><td><strong>Access modification or role change</strong></td><td>To be defined</td><td>To be defined</td><td>To be defined</td></tr>
+        
+          <tr><td><strong>Privileged or sensitive access</strong></td><td>To be defined</td><td>To be defined</td><td>To be defined</td></tr>
+        
+          <tr><td><strong>External or third-party user access</strong></td><td>To be defined</td><td>To be defined</td><td>To be defined</td></tr>
+        
+      </tbody>
+    </table>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <h2>Appendix B — Operational RACI (Single Accountable Role Mandated)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Requester / Mgr</th>
+          <th>System Owner</th>
+          <th>IAM / Operator</th>
+          <th>Security Reviewer</th>
+          <th>Verifier</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><strong>Submit request</strong></td>
+            <td style="text-align: center;">A/R</td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">I</td>
+          </tr>
+        
+          <tr>
+            <td><strong>Confirm business need</strong></td>
+            <td style="text-align: center;">R</td>
+            <td style="text-align: center;">A/R</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">I</td>
+          </tr>
+        
+          <tr>
+            <td><strong>Approve entitlement</strong></td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">A/R</td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">I</td>
+          </tr>
+        
+          <tr>
+            <td><strong>Provision access</strong></td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">A/R</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">I</td>
+          </tr>
+        
+          <tr>
+            <td><strong>Verify result</strong></td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">A/R</td>
+          </tr>
+        
+          <tr>
+            <td><strong>Close and retain record</strong></td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">C</td>
+            <td style="text-align: center;">A/R</td>
+            <td style="text-align: center;">I</td>
+            <td style="text-align: center;">C</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  
+
+  <h2>Appendix C — Pre-Publication Tailoring Checklist</h2>
+  <ul>
+    
+      <li>◻️ <strong>CHK-IAM-01:</strong> Confirm in-scope systems, user populations and entitlement types. </li>
+    
+      <li>◻️ <strong>CHK-IAM-02:</strong> Map role titles to the actual organization chart and approval matrix. </li>
+    
+      <li>◻️ <strong>CHK-IAM-03:</strong> Define identity proofing, privileged access and segregation-of-duties rules. </li>
+    
+      <li>◻️ <strong>CHK-IAM-04:</strong> Identify actual request, identity, logging, and evidence systems. </li>
+    
+      <li>◻️ <strong>CHK-IAM-05:</strong> Approve service-level targets and retention requirements. </li>
+    
+      <li>◻️ <strong>CHK-IAM-06:</strong> Define emergency access and third-party access variations. </li>
+    
+      <li>◻️ <strong>CHK-IAM-07:</strong> Test end-to-end with representative scenarios and verify evidence. </li>
+    
+      <li>◻️ <strong>CHK-IAM-08:</strong> Obtain process owner, security review and authorized approval. </li>
+    
+  </ul>
+
+  <div class="footer-stamp">
+    CONTROLLED DOCUMENT | SKANDA DOCUMENTATION ENGINE | ISMS-PROC-IAM-001 v1.1 | SHA-256: PENDING...
+  </div>
+</body>
+</html>

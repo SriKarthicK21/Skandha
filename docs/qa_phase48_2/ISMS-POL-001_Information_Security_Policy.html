@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISMS-POL-001 — Information Security Policy</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 20mm 15mm 20mm 15mm;
+      @top-center {
+        content: "SKANDA / GOVERNANCE, RISK & COMPLIANCE — ISMS-POL-001";
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+      @bottom-center {
+        content: "CONTROLLED DOCUMENT | PAGE " counter(page) " OF " counter(pages);
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+    }
+    @page landscape-section {
+      size: A4 landscape;
+      margin: 15mm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #1e293b;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #ffffff;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .doc-type-badge {
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #0284c7;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 4px 0 6px 0;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 10pt;
+      color: #475569;
+      margin-bottom: 16px;
+      font-style: normal;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 14px;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #b45309;
+      margin-bottom: 16px;
+      border-radius: 2px;
+    }
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px 0;
+      font-size: 8.5pt;
+      page-break-inside: auto;
+    }
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #0f172a;
+    }
+    td {
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .landscape {
+      page: landscape-section;
+    }
+    ul, ol {
+      margin-top: 4px;
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .footer-stamp {
+      margin-top: 36px;
+      border-top: 1px solid #cbd5e1;
+      padding-top: 8px;
+      font-size: 7.5pt;
+      color: #64748b;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+    <span>SKANDA / GOVERNANCE, RISK & COMPLIANCE</span>
+    <span>ISMS-POL-001</span>
+  </div>
+
+  <div class="doc-type-badge">ENTERPRISE MANAGEMENT SYSTEM / POLICY</div>
+  <h1>Information Security Policy</h1>
+  <div class="subtitle">Management commitment, governance, risk ownership and mandatory security requirements</div>
+
+  <div class="warning-box">⚠️ ILLUSTRATIVE MODEL DOCUMENT — MUST BE TAILORED AND APPROVED BEFORE USE</div>
+
+  <h2>Document Control Field</h2>
+  <table>
+    <thead>
+      <tr><th style="width: 35%;">Document Control Field</th><th>Model Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Document ID</strong></td><td>ISMS-POL-001</td></tr>
+      <tr><td><strong>Version / Status</strong></td><td>1.1 — 1.1 — Model sample (quality revision); not approved</td></tr>
+      <tr><td><strong>Document Owner</strong></td><td>Role to be formally assigned</td></tr>
+      <tr><td><strong>Approver</strong></td><td>Authorized management approver to be assigned</td></tr>
+      <tr><td><strong>Effective Date</strong></td><td>Not effective until formally approved</td></tr>
+      <tr><td><strong>Classification</strong></td><td>INTERNAL_ILLUSTRATIVE</td></tr>
+      <tr><td><strong>Review Trigger</strong></td><td>Scheduled review and material business, technology, risk or regulatory change</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Revision History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%;">Version</th>
+        <th style="width: 15%;">Date</th>
+        <th>Summary of Change</th>
+        <th style="width: 20%;">Prepared By</th>
+        <th style="width: 20%;">Approval Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><strong>1.0</strong></td>
+          <td>Not recorded</td>
+          <td>Initial illustrative model sample.</td>
+          <td>SKANDA Documentation</td>
+          <td>Not approved — model sample</td>
+        </tr>
+      
+        <tr>
+          <td><strong>1.1</strong></td>
+          <td>2026-10-11</td>
+          <td>Quality revision: added contents, revision history and terms and definitions (new Section 3; later sections renumbered); corrected document metadata, header alignment, "Page X of Y" numbering and table pagination. No change to policy requirements.</td>
+          <td>SKANDA Documentation</td>
+          <td>Not approved — model sample</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+  <h2>1. Purpose</h2>
+  <p>This policy establishes management direction and mandatory principles for protecting the confidentiality, integrity and availability of information and supporting the organization’s information security management system (ISMS). It sets expectations for governance, risk-based decision-making, implementation, monitoring and continual improvement.</p>
+
+  <h2>2. Scope and Applicability</h2>
+  <p>The organization shall define the ISMS scope in its approved scope statement. This policy applies to personnel, processes, information, technology, facilities and third parties to the extent they fall within that scope or interact with in-scope information assets. The organization shall document relevant interfaces, dependencies and exclusions rather than assuming universal applicability.</p>
+  <ul>
+    <li><strong>In-Scope Locations:</strong> [Locations to be documented in approved scope statement]</li>
+    <li><strong>In-Scope Systems & Services:</strong> [In-scope services and interfaces to be defined]</li>
+    <li><strong>In-Scope Personnel:</strong> [Workforce categories covered by scope]</li>
+  </ul>
+
+  <h2>3. Terms and Definitions</h2>
+  <table>
+    <thead>
+      <tr><th style="width: 30%;">Term</th><th>Working Definition (Model)</th></tr>
+    </thead>
+    <tbody>
+      
+        <tr><td><strong>Information security</strong></td><td>Preservation of the confidentiality, integrity and availability of information.</td></tr>
+      
+        <tr><td><strong>ISMS</strong></td><td>The policies, processes, roles, resources and controls the organization uses to establish, operate, monitor and improve information security within its approved scope.</td></tr>
+      
+        <tr><td><strong>Risk owner</strong></td><td>The person or role with accountability and authority to manage an assigned risk, including treatment decisions and acceptance within delegated limits.</td></tr>
+      
+        <tr><td><strong>Control owner</strong></td><td>The person or role responsible for implementing, operating and evidencing an assigned control.</td></tr>
+      
+        <tr><td><strong>Exception</strong></td><td>A documented, risk-assessed and authorized deviation from a mandatory requirement that is time-bound or subject to periodic review.</td></tr>
+      
+        <tr><td><strong>Nonconformity</strong></td><td>Failure to fulfil a requirement of this policy, a supporting controlled document, or another applicable obligation.</td></tr>
+      
+        <tr><td><strong>Corrective action</strong></td><td>Action to eliminate the cause of a nonconformity and prevent recurrence, verified as effective before closure.</td></tr>
+      
+        <tr><td><strong>Evidence</strong></td><td>Attributable, retrievable and protected records demonstrating that a requirement or control was performed as defined.</td></tr>
+      
+    </tbody>
+  </table>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h2>Appendix C — Pre-Publication Tailoring Checklist</h2>
+  <ul>
+    
+      <li>◻️ <strong>CHK-01:</strong> Confirm legal entity and ISMS scope. </li>
+    
+      <li>◻️ <strong>CHK-02:</strong> Map role titles to approved organization chart and delegations. </li>
+    
+      <li>◻️ <strong>CHK-03:</strong> Validate the applicable requirements and framework mappings against authoritative sources. </li>
+    
+      <li>◻️ <strong>CHK-04:</strong> Link to actual procedures, registers, systems and evidence locations. </li>
+    
+      <li>◻️ <strong>CHK-05:</strong> Define measurable objectives, owners, review frequencies and escalation routes. </li>
+    
+      <li>◻️ <strong>CHK-06:</strong> Validate exception, risk acceptance and audit arrangements. </li>
+    
+      <li>◻️ <strong>CHK-07:</strong> Obtain required review and approval before publication. </li>
+    
+  </ul>
+
+  <div class="footer-stamp">
+    CONTROLLED DOCUMENT | SKANDA DOCUMENTATION ENGINE | ISMS-POL-001 v1.1 | SHA-256: PENDING...
+  </div>
+</body>
+</html>

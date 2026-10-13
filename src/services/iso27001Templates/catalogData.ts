@@ -1,0 +1,338 @@
+export interface StandardTemplateMetadata {
+  id: string;
+  code: string;
+  title: string;
+  level: 'Level 1: Governance & Scope' | 'Level 2: Topic-Specific Policies' | 'Level 3: Operational Procedures' | 'Level 4: Records & Evidence';
+  isoClauseOrAnnexA: string;
+  isMandatory: boolean;
+  category: string;
+  type: 'POLICY' | 'PROCEDURE' | 'REGISTER' | 'SCHEDULE';
+  summary: string;
+  auditorSamplingFocus: string;
+  commonAuditPitfall: string;
+  primaryDepartment: string;
+  defaultReviewCycle: string;
+}
+
+export const ISO27001_POLICY_CATALOG: StandardTemplateMetadata[] = [
+  // LEVEL 1: GOVERNANCE & SCOPE (MANDATORY CLAUSES 4-6)
+  {
+    id: 'tmpl_doc_man_00',
+    code: 'DOC-MAN-00',
+    title: 'ISMS Governance Architecture Blueprint & Process Interaction Model',
+    level: 'Level 1: Governance & Scope',
+    isoClauseOrAnnexA: 'Harmonized Clauses 4-10 (Modern Alternative to Obsolete 2013 Manual)',
+    isMandatory: true,
+    category: 'Governance & Leadership',
+    type: 'POLICY',
+    summary: 'The modern enterprise architecture blueprint replacing legacy 2013-style ISO manuals: articulates the Clauses 4-10 PDCA closed-loop governance architecture, cross-functional committee hierarchies, management review inputs, and auditor traceability trails.',
+    auditorSamplingFocus: 'Verification of management review cycle, governance meeting cadence, and closed-loop process interactions between risk, controls, audits, and CAPA.',
+    commonAuditPitfall: 'Relying on an outdated 2013-style "ISO Manual" that repeats the standard text without defining organizational process interactions.',
+    primaryDepartment: 'Executive Leadership & CISO',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_isms_01',
+    code: 'POL-ISMS-01',
+    title: 'Master Information Security Policy',
+    level: 'Level 1: Governance & Scope',
+    isoClauseOrAnnexA: 'Mandatory Clause 5.2 (Information Security Policy)',
+    isMandatory: true,
+    category: 'Governance & Leadership',
+    type: 'POLICY',
+    summary: 'Executive umbrella policy mandating ISMS governance, CIA triad objectives, top management commitment, RACI model, and organizational security principles.',
+    auditorSamplingFocus: 'Verification of CEO/CISO digital signatures, annual review record, and quantitative alignment with organizational business goals.',
+    commonAuditPitfall: 'Missing formal executive approval or generic aspirational language disconnected from company operations.',
+    primaryDepartment: 'Executive Leadership & ISMS Committee',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_doc_scp_01',
+    code: 'DOC-SCP-01',
+    title: 'ISMS Scope & Organizational Context Document',
+    level: 'Level 1: Governance & Scope',
+    isoClauseOrAnnexA: 'Mandatory Clause 4.3 (Scope of the ISMS) & Clause 4.1-4.2',
+    isMandatory: true,
+    category: 'Governance & Scope',
+    type: 'POLICY',
+    summary: 'Formal definition of Tri-Partite Scope Boundaries (Logical/Cloud, Physical, People/Contractors), interested parties, statutory requirements, and defensible exclusions.',
+    auditorSamplingFocus: 'Auditor checks that exclusions do not omit core customer data flows or production cloud accounts and that Clauses 4-10 are 100% applied.',
+    commonAuditPitfall: 'Arbitrary exclusions of critical business systems without acceptable technical justifications.',
+    primaryDepartment: 'Legal, Compliance & Executive Leadership',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_doc_rsk_02',
+    code: 'DOC-RSK-02',
+    title: 'Information Security Risk Assessment & Treatment Methodology',
+    level: 'Level 1: Governance & Scope',
+    isoClauseOrAnnexA: 'Mandatory Clause 6.1.2 & 6.1.3 (Risk Assessment & Treatment)',
+    isMandatory: true,
+    category: 'Risk Management',
+    type: 'PROCEDURE',
+    summary: 'Repeatable 5x5 methodology for identifying assets, threats, vulnerabilities, likelihood/impact scoring matrices, risk appetite, and formal Risk Treatment Plans (RTP).',
+    auditorSamplingFocus: 'Auditor tests whether risk evaluation criteria produce repeatable and objective results across different departments.',
+    commonAuditPitfall: 'Risk criteria that rely on subjective gut-feel without standardized scoring scales.',
+    primaryDepartment: 'Risk Management & CISO',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_doc_soa_03',
+    code: 'DOC-SOA-03',
+    title: 'Statement of Applicability (SoA) Framework',
+    level: 'Level 1: Governance & Scope',
+    isoClauseOrAnnexA: 'Mandatory Clause 6.1.3 d) (Statement of Applicability)',
+    isMandatory: true,
+    category: 'Risk Management',
+    type: 'REGISTER',
+    summary: 'Master register recording the applicability status, two-tier justifications (Risk ID + Statutory/Contractual obligation), and implementation references for all 93 Annex A controls in ISO/IEC 27001:2022.',
+    auditorSamplingFocus: 'Auditor examines two-tier justifications for excluded controls and verifies implementation references for all 11 new 2022 controls.',
+    commonAuditPitfall: 'Failing to provide clear, defensible justifications for excluded controls or omitting the 2022 4-theme structure.',
+    primaryDepartment: 'CISO & Compliance Office',
+    defaultReviewCycle: 'Annual / Triggered by Major Changes'
+  },
+
+  // LEVEL 2: TOPIC-SPECIFIC SECURITY POLICIES (ANNEX A CONTROLS)
+  {
+    id: 'tmpl_pol_acc_04',
+    code: 'POL-ACC-04',
+    title: 'Access Control & User Access Management Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.5.15 (Access Control), A.5.18 (Access Rights), A.5.17 (Authentication)',
+    isMandatory: true,
+    category: 'Identity & Access Management',
+    type: 'POLICY',
+    summary: 'Policy mandating Principle of Least Privilege (PoLP), strict Joiner/Mover/Leaver (JML) SLAs (15-min involuntary leaver cutoff), hardware-backed MFA, and Zero Standing Privileges.',
+    auditorSamplingFocus: 'Auditor samples 10 recent leaver records to verify access revocation timestamps match HR departure records within SLA.',
+    commonAuditPitfall: 'Leavers maintaining access to SaaS tools or production environments weeks after departure.',
+    primaryDepartment: 'Identity & Access Working Group / IT',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_cls_05',
+    code: 'POL-CLS-05',
+    title: 'Data Classification, Handling & Cryptographic Protection Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.5.12 (Classification), A.5.13 (Labelling), A.8.24 (Cryptography)',
+    isMandatory: true,
+    category: 'Data Governance & Privacy',
+    type: 'POLICY',
+    summary: 'Data taxonomy (Public, Internal, Confidential, Restricted/Secret), cryptographic requirements (AES-256 at rest, TLS 1.3 in transit), key rotation, and DLP guardrails.',
+    auditorSamplingFocus: 'Auditor verifies KMS key rotation settings, database encryption-at-rest configurations, and confidential document watermarking.',
+    commonAuditPitfall: 'Production customer PII stored in plaintext in staging databases or unencrypted S3 buckets.',
+    primaryDepartment: 'Data Governance & Information Security',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_aup_06',
+    code: 'POL-AUP-06',
+    title: 'Acceptable Use & Clean Desk / Screen Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.5.10 (Acceptable Use), A.7.7 (Clear Desk & Screen)',
+    isMandatory: true,
+    category: 'Human Resource Security',
+    type: 'POLICY',
+    summary: 'Workforce behavioral rules for corporate hardware, prohibited activities, remote work security, automated screen locks (<= 5 min), and clean desk guidelines.',
+    auditorSamplingFocus: 'Auditor inspects MDM configuration profiles for mandatory 5-minute screen lock timeouts across corporate laptops.',
+    commonAuditPitfall: 'Employees leaving unattended unlocked laptops or writing passwords on physical sticky notes.',
+    primaryDepartment: 'People Operations & IT Support',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_cry_07',
+    code: 'POL-CRY-07',
+    title: 'Cryptographic Controls & Key Management Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.8.24 (Use of Cryptography)',
+    isMandatory: true,
+    category: 'Technical Security Controls',
+    type: 'POLICY',
+    summary: 'Approved cryptographic ciphers (AES-GCM-256, RSA-4096, ECDSA P-384), automated annual key rotation in cloud KMS, hardware security modules (HSM), and key destruction.',
+    auditorSamplingFocus: 'Auditor inspects cloud KMS key policies to confirm automated rotation is enabled and manual root export is disabled.',
+    commonAuditPitfall: 'Hardcoding static cryptographic secret keys or API tokens in application source code repositories.',
+    primaryDepartment: 'Cloud Security & DevOps',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_dev_08',
+    code: 'POL-DEV-08',
+    title: 'Secure Software Development Lifecycle (SDLC) Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.8.25 (Secure Development) through A.8.31 (Separation of Environments)',
+    isMandatory: true,
+    category: 'Software Engineering & DevOps',
+    type: 'POLICY',
+    summary: 'Engineering security policy governing peer reviews, automated SAST/DAST CI/CD gates, dependency scanning, branch protection, and prod/staging isolation.',
+    auditorSamplingFocus: 'Auditor samples 15 recent git pull requests for mandatory peer approval and automated security pipeline passes prior to merge.',
+    commonAuditPitfall: 'Developers having direct write or admin access to production databases or bypassing branch protection rules.',
+    primaryDepartment: 'Software Engineering & DevOps',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_vul_09',
+    code: 'POL-VUL-09',
+    title: 'Vulnerability Management & Threat Intelligence Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.8.8 (Management of Technical Vulnerabilities) & A.5.7 (Threat Intelligence)',
+    isMandatory: true,
+    category: 'Security Operations & Infrastructure',
+    type: 'POLICY',
+    summary: 'Automated vulnerability scanning cadences, threat intelligence ingestion, CVSS remediation SLAs (Critical <= 72h, High <= 14d), and annual penetration testing.',
+    auditorSamplingFocus: 'Auditor samples scanner dashboards to verify that no Critical or High CVEs exceed the documented remediation SLA.',
+    commonAuditPitfall: 'Vulnerability reports showing unpatched critical vulnerabilities that have remained open for months without an approved exception.',
+    primaryDepartment: 'Security Operations & Cloud Infrastructure',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_phy_10',
+    code: 'POL-PHY-10',
+    title: 'Physical & Environmental Security Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.7.1 (Physical Security Perimeters) through A.7.14 (Equipment Disposal)',
+    isMandatory: true,
+    category: 'Physical Security & Facilities',
+    type: 'POLICY',
+    summary: 'Physical perimeter controls, badge access, visitor logging, CCTV surveillance, clear zones, clean desk audits, and certified hardware destruction (NIST 800-88).',
+    auditorSamplingFocus: 'Auditor inspects physical visitor logs, badge access revocation, and hardware asset sanitization certificates.',
+    commonAuditPitfall: 'Disposed laptops or decommissioned drives lacking certified cryptographic erasure certificates.',
+    primaryDepartment: 'Facilities & IT Operations',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_sup_11',
+    code: 'POL-SUP-11',
+    title: 'Supplier & Third-Party Security Governance Policy',
+    level: 'Level 2: Topic-Specific Policies',
+    isoClauseOrAnnexA: 'Annex A.5.19 (Supplier Relationships) through A.5.23 (Information Security in Cloud Services)',
+    isMandatory: true,
+    category: 'Procurement & Vendor Management',
+    type: 'POLICY',
+    summary: 'Vendor risk assessment tiering, mandatory security clauses in Master Service Agreements, annual SOC 2/ISO 27001 audit verification, and offboarding runbooks.',
+    auditorSamplingFocus: 'Auditor samples 5 critical cloud vendors (AWS, Okta, etc.) for up-to-date SOC 2 Type II or ISO 27001 certificates on file.',
+    commonAuditPitfall: 'Using unvetted SaaS applications without security review or missing Data Processing Agreements (DPAs).',
+    primaryDepartment: 'Procurement, Legal & Information Security',
+    defaultReviewCycle: 'Annual'
+  },
+
+  // LEVEL 3: OPERATIONAL PROCEDURES & SOPS (WORK INSTRUCTIONS)
+  {
+    id: 'tmpl_sop_inc_12',
+    code: 'SOP-INC-12',
+    title: 'Incident Management & Data Breach Escalation Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Annex A.5.24 (Incident Planning) through A.5.28 (Collection of Evidence)',
+    isMandatory: true,
+    category: 'Incident Response & Operations',
+    type: 'PROCEDURE',
+    summary: 'Operational runbook defining incident severity tiers (Sev-1 to Sev-4), 72-hour regulatory breach notification protocols, 5-Whys post-mortems, and chain of custody.',
+    auditorSamplingFocus: 'Auditor samples past incident logs or tabletop exercise records to confirm post-mortem root cause analysis and CAPA tracking.',
+    commonAuditPitfall: 'No records of tabletop incident exercises or incident post-mortems failing to identify preventive systemic fixes.',
+    primaryDepartment: 'Incident Response Team & CISO',
+    defaultReviewCycle: 'Annual / After Major Incident'
+  },
+  {
+    id: 'tmpl_sop_bcp_13',
+    code: 'SOP-BCP-13',
+    title: 'Business Continuity & Disaster Recovery Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Annex A.5.29 (Information Security During Disruption) & A.5.30 (ICT Readiness)',
+    isMandatory: true,
+    category: 'Business Continuity & Resilience',
+    type: 'PROCEDURE',
+    summary: 'Disaster recovery plan detailing multi-region cloud failover protocols, communication trees, RTO <= 4 Hours, RPO <= 15 Minutes, and annual simulation test schedules.',
+    auditorSamplingFocus: 'Auditor inspects documented results of the most recent annual DR failover test and evidence of RTO/RPO attainment.',
+    commonAuditPitfall: 'Untested DR plan or failover tests that were simulated on paper without executing real recovery drills.',
+    primaryDepartment: 'DevOps, SRE & Operations',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_sop_bkp_14',
+    code: 'SOP-BKP-14',
+    title: 'Backup, Snapshot & Recovery Verification Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Annex A.8.13 (Information Backup)',
+    isMandatory: true,
+    category: 'Technical Security Controls',
+    type: 'PROCEDURE',
+    summary: 'Automated backup schedules, immutability (WORM) configurations, cross-region replication, AES-256 encryption, and quarterly restore drill verification.',
+    auditorSamplingFocus: 'Auditor inspects timestamped logs of quarterly test restores proving backups can be successfully mounted and validated.',
+    commonAuditPitfall: 'Backups running daily but never being tested for restore integrity.',
+    primaryDepartment: 'DevOps & Database Administration',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_sop_chg_15',
+    code: 'SOP-CHG-15',
+    title: 'Change & Release Management Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Annex A.8.32 (Change Management)',
+    isMandatory: true,
+    category: 'DevOps & Infrastructure',
+    type: 'PROCEDURE',
+    summary: 'Standard, Emergency, and Normal change workflows, Change Advisory Board (CAB) review, automated rollback triggers, and production change freezes.',
+    auditorSamplingFocus: 'Auditor samples 10 production releases to verify ticket approvals, test evidence, and post-deployment validation.',
+    commonAuditPitfall: 'Emergency changes executed directly in production without retrospective CAB review and documentation.',
+    primaryDepartment: 'DevOps, QA & Architecture',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_sop_aud_16',
+    code: 'SOP-AUD-16',
+    title: 'Internal Audit & Compliance Assessment Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Mandatory Clause 9.2 (Internal Audit)',
+    isMandatory: true,
+    category: 'Compliance & Audit Governance',
+    type: 'PROCEDURE',
+    summary: 'Annual internal audit program scheduling, auditor independence requirements (ISO 19011:2018), sampling checklists, finding classifications, and reporting.',
+    auditorSamplingFocus: 'Auditor verifies that internal audits covered all ISO 27001 clauses (4-10) and Annex A controls within a 12-month period.',
+    commonAuditPitfall: 'Internal auditors auditing their own department or superficial audit reports with zero findings.',
+    primaryDepartment: 'Internal Audit & Compliance',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_sop_capa_17',
+    code: 'SOP-CAPA-17',
+    title: 'Corrective Action, Root Cause (5-Whys) & Continual Improvement Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Mandatory Clause 10.1 & 10.2 (Nonconformity and Corrective Action)',
+    isMandatory: true,
+    category: 'Compliance & Quality Assurance',
+    type: 'PROCEDURE',
+    summary: 'Standardized workflow for logging nonconformities, performing 5-Whys root cause analysis, implementing corrective actions, and verifying effectiveness.',
+    auditorSamplingFocus: 'Auditor samples closed CAPA tickets to verify evidence of effectiveness was collected before formal closure.',
+    commonAuditPitfall: 'Closing non-conformities immediately after fixing the symptom without root cause analysis or recurrence prevention.',
+    primaryDepartment: 'Quality Assurance & CISO',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_sop_rev_18',
+    code: 'SOP-REV-18',
+    title: 'Management Review & Executive Governance Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Mandatory Clause 9.3 (Management Review)',
+    isMandatory: true,
+    category: 'Executive Leadership & Strategy',
+    type: 'PROCEDURE',
+    summary: 'Bi-annual management review meeting agenda, mandatory input feeds (audit findings, telemetry, risk changes, incident trends), and documented outputs.',
+    auditorSamplingFocus: 'Auditor inspects signed minutes of the most recent Management Review meeting to confirm CEO and top leadership attendance.',
+    commonAuditPitfall: 'Conducting management reviews without covering all mandatory Clause 9.3 input topics or missing executive sign-off.',
+    primaryDepartment: 'Executive Leadership & CISO',
+    defaultReviewCycle: 'Annual'
+  },
+  {
+    id: 'tmpl_pol_doc_19',
+    code: 'POL-DOC-19',
+    title: 'Control of Documented Information Procedure',
+    level: 'Level 3: Operational Procedures',
+    isoClauseOrAnnexA: 'Mandatory Clause 7.5 (Documented Information)',
+    isMandatory: true,
+    category: 'Quality & Document Governance',
+    type: 'PROCEDURE',
+    summary: 'Standardized lifecycle for authoring, reviewing, approving, numbering, classifying, distributing, and archiving all ISMS documentation.',
+    auditorSamplingFocus: 'Auditor checks for uncontrolled copies, unapproved document drafts, or missing annual review timestamps.',
+    commonAuditPitfall: 'Staff referencing obsolete policy versions or uncontrolled local desktop copies.',
+    primaryDepartment: 'Compliance & Document Control',
+    defaultReviewCycle: 'Annual'
+  }
+];

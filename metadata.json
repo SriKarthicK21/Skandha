@@ -1,0 +1,10 @@
+{
+  "name": "Skanda 6 High-Level GRC Portal",
+  "description": "Multi-tenant Governance, Risk, and Compliance SaaS platform with guided onboarding, automated ISO document generation, digital MoU execution, RBAC, and audit management.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

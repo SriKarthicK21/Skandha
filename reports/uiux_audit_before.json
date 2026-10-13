@@ -1,0 +1,623 @@
+{
+  "generatedAt": "2026-10-12T18:56:53.003Z",
+  "sourceFiles": 808,
+  "filesUsingThemeConditionals": 170,
+  "deadUtilities": {
+    "builtStylesheet": "dist/assets/index-D2bs8IEC.css",
+    "status": "CHECKED",
+    "emittedClassCount": 5359,
+    "distinctTokens": 16,
+    "occurrences": 90,
+    "worst": [
+      {
+        "className": "hover:bg-slate-750",
+        "files": [
+          "src/components/common/AccessRestrictedView.tsx",
+          "src/components/dashboard/ComplianceHeatmapView.tsx",
+          "src/components/dashboard/ISOInherentRiskConfigModal.tsx",
+          "src/components/iso/CompanyComplianceProfileView.tsx",
+          "src/components/iso/DepartmentSurveysModule.tsx",
+          "src/components/iso/DiscoveryQuestionnaireModule.tsx",
+          "src/components/iso/ISOImplementationJourneyModule.tsx",
+          "src/components/iso/ISOVerticalJourneyTimeline.tsx",
+          "src/components/mas/ComplianceGapVisualization.tsx",
+          "src/components/mas/MASAutomatedPolicyGeneratorModule.tsx",
+          "src/components/mas/MASQuickFixPolicySidebar.tsx",
+          "src/components/mas/MASTRMComplianceHeatMap.tsx",
+          "src/components/meetings/RequestEvidenceDialog.tsx",
+          "src/components/meetings/RolePreparationSummaryModal.tsx",
+          "src/components/modules/SettingsUsersModule.tsx",
+          "src/components/modules/StandardsTrainingHubModule.tsx"
+        ],
+        "occurrences": 25
+      },
+      {
+        "className": "border-slate-850",
+        "files": [
+          "src/components/compliance/AuditorSpeedReviewDock.tsx",
+          "src/components/mas/MASCISDowntimeLedger.tsx",
+          "src/components/mas/trm/MASTRMContinuousAssuranceWorkspace.tsx",
+          "src/components/modules/ISO42001ScopingModule.tsx",
+          "src/components/modules/MASTRMAssessmentWorkbenchModule.tsx",
+          "src/components/modules/StandardsTrainingHubModule.tsx"
+        ],
+        "occurrences": 17
+      },
+      {
+        "className": "border-slate-750",
+        "files": [
+          "src/components/iso/CompanyComplianceProfileView.tsx",
+          "src/components/iso/DepartmentSurveysModule.tsx",
+          "src/components/iso/DiscoveryQuestionnaireModule.tsx",
+          "src/components/mas/MASIncidentResponseWorkbench.tsx",
+          "src/components/modules/MASTRMAssessmentWorkbenchModule.tsx",
+          "src/components/modules/StandardsTrainingHubModule.tsx"
+        ],
+        "occurrences": 9
+      },
+      {
+        "className": "bg-slate-850",
+        "files": [
+          "src/components/iso/CompanyComplianceProfileView.tsx",
+          "src/components/iso/DiscoveryQuestionnaireModule.tsx",
+          "src/components/iso/ISOImplementationJourneyModule.tsx",
+          "src/components/iso/ISOVerticalJourneyTimeline.tsx"
+        ],
+        "occurrences": 8
+      },
+      {
+        "className": "hover:bg-slate-850/50",
+        "files": [
+          "src/components/modules/StandardsTrainingHubModule.tsx"
+        ],
+        "occurrences": 6
+      },
+      {
+        "className": "dark:hover:bg-slate-750",
+        "files": [
+          "src/components/onboarding/Phase1Registration.tsx",
+          "src/components/ui/Button.tsx"
+        ],
+        "occurrences": 5
+      },
+      {
+        "className": "hover:bg-slate-850",
+        "files": [
+          "src/components/compliance/ISOClauseHeatmap.tsx",
+          "src/components/dashboard/FrameworkReadinessTable.tsx",
+          "src/components/meetings/DynamicAgendaPreview.tsx",
+          "src/components/modules/ReportsAnalyticsModule.tsx"
+        ],
+        "occurrences": 4
+      },
+      {
+        "className": "via-slate-850",
+        "files": [
+          "src/components/grc/ConfigurableRiskMatrix.tsx",
+          "src/components/grc/ControlTestingWorkspace.tsx",
+          "src/components/grc/MappingExplorer.tsx"
+        ],
+        "occurrences": 3
+      },
+      {
+        "className": "dark:bg-slate-850",
+        "files": [
+          "src/components/dashboard/FrameworkMappingWidget.tsx"
+        ],
+        "occurrences": 2
+      },
+      {
+        "className": "hover:bg-slate-850/60",
+        "files": [
+          "src/components/dashboard/FrameworkReadinessTable.tsx",
+          "src/components/dpdp/DPDPTrainingGapAnalyzer.tsx"
+        ],
+        "occurrences": 2
+      },
+      {
+        "className": "to-slate-850",
+        "files": [
+          "src/components/grc/Entity360Drawer.tsx",
+          "src/components/iso/ISOImplementationJourneyModule.tsx"
+        ],
+        "occurrences": 2
+      },
+      {
+        "className": "bg-slate-850/80",
+        "files": [
+          "src/components/iso/DepartmentSurveysModule.tsx",
+          "src/components/iso/DiscoveryQuestionnaireModule.tsx"
+        ],
+        "occurrences": 2
+      },
+      {
+        "className": "border-indigo-850",
+        "files": [
+          "src/components/soa/SoAControlRemediationDrawer.tsx"
+        ],
+        "occurrences": 2
+      },
+      {
+        "className": "bg-slate-850/60",
+        "files": [
+          "src/components/iso/ISOImplementationJourneyModule.tsx"
+        ],
+        "occurrences": 1
+      },
+      {
+        "className": "hover:bg-slate-850/40",
+        "files": [
+          "src/components/modules/ISO42001DashboardModule.tsx"
+        ],
+        "occurrences": 1
+      }
+    ]
+  },
+  "arbitraryHexColors": {
+    "occurrences": 2541,
+    "files": 69,
+    "worst": [
+      {
+        "file": "src/components/questionnaire/SecurityQuestionnaireWorkspace.tsx",
+        "occurrences": 522
+      },
+      {
+        "file": "src/components/mas/workflow/MASComplianceWorkflowModule.tsx",
+        "occurrences": 283
+      },
+      {
+        "file": "src/components/live-monitoring/LiveMonitoringWorkspace.tsx",
+        "occurrences": 184
+      },
+      {
+        "file": "src/components/dashboard/DashboardHeader.tsx",
+        "occurrences": 129
+      },
+      {
+        "file": "src/components/dashboard/ISO27001ControlsBreakdownModal.tsx",
+        "occurrences": 117
+      },
+      {
+        "file": "src/components/dashboard/ComplianceMaturityTrendWidget.tsx",
+        "occurrences": 113
+      },
+      {
+        "file": "src/components/compliance/ControlLineageExplorerPanel.tsx",
+        "occurrences": 110
+      },
+      {
+        "file": "src/components/dashboard/CommandCenterKeyMetrics.tsx",
+        "occurrences": 102
+      },
+      {
+        "file": "src/components/analytics/ComplianceMaturityScorecard.tsx",
+        "occurrences": 96
+      },
+      {
+        "file": "src/components/ui/Badge.tsx",
+        "occurrences": 80
+      },
+      {
+        "file": "src/components/dashboard/FrameworkSelector.tsx",
+        "occurrences": 56
+      },
+      {
+        "file": "src/components/dashboard/DashboardPriorityBar.tsx",
+        "occurrences": 55
+      },
+      {
+        "file": "src/components/compliance/ISO27001ControlDrillDownDetailView.tsx",
+        "occurrences": 52
+      },
+      {
+        "file": "src/components/common/PageHeader.tsx",
+        "occurrences": 51
+      },
+      {
+        "file": "src/components/layout/Sidebar.tsx",
+        "occurrences": 47
+      }
+    ]
+  },
+  "unthemedLiterals": {
+    "occurrences": 33884,
+    "files": 493,
+    "worst": [
+      {
+        "rel": "src/components/mas/ComplianceGapVisualization.tsx",
+        "strings": 679,
+        "samples": [
+          "inline-flex items-center gap-1.5 font-semibold rounded-full bg-emerald-500/15 text-emerald-300 border border-e",
+          "w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0",
+          "text-emerald-400 shrink-0"
+        ]
+      },
+      {
+        "rel": "src/components/grc/OrganizationalDiscoveryWorkspace.tsx",
+        "strings": 404,
+        "samples": [
+          "p-6 bg-gradient-to-r from-slate-900 via-indigo-950/80 to-slate-900 border border-slate-800 rounded-2xl shadow-",
+          "absolute right-0 top-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none",
+          "p-2.5 bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 rounded-xl shadow-inner"
+        ]
+      },
+      {
+        "rel": "src/components/modules/ContinuousComplianceModule.tsx",
+        "strings": 363,
+        "samples": [
+          "fixed top-5 right-5 z-50 p-4 rounded-xl bg-slate-900 border border-emerald-500/40 text-emerald-300 shadow-2xl ",
+          "w-5 h-5 text-emerald-400 shrink-0",
+          "p-6 rounded-2xl bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950/40 border border-slate-800 shadow-"
+        ]
+      },
+      {
+        "rel": "src/components/modules/EvidenceCentreModule.tsx",
+        "strings": 329,
+        "samples": [
+          "p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs flex items-center justi",
+          "w-4 h-4 text-emerald-400 shrink-0",
+          "text-emerald-400/70 hover:text-emerald-300 text-xs px-2 py-0.5 rounded"
+        ]
+      },
+      {
+        "rel": "src/components/modules/LiveTelemetryStreamModule.tsx",
+        "strings": 324,
+        "samples": [
+          "inline-flex items-center space-x-1.5 font-bold font-mono rounded-lg border transition-all bg-emerald-500/15 te",
+          "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75",
+          "relative inline-flex rounded-full h-2 w-2 bg-emerald-400"
+        ]
+      },
+      {
+        "rel": "src/components/modules/ReportsAnalyticsModule.tsx",
+        "strings": 315,
+        "samples": [
+          "bg-slate-900/98 backdrop-blur-md border border-slate-700/90 shadow-2xl rounded-2xl p-4 max-w-sm sm:max-w-md w-",
+          "flex items-start justify-between gap-2 border-b border-slate-800 pb-2.5",
+          "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-sky-950 text-sky-400 border border-sky-800"
+        ]
+      },
+      {
+        "rel": "src/components/policies/PolicyContextualizer.tsx",
+        "strings": 315,
+        "samples": [
+          "space-y-6 text-slate-800",
+          "p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3",
+          "w-11 h-11 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 sh"
+        ]
+      },
+      {
+        "rel": "src/components/grc/PolicyGovernanceWorkspace.tsx",
+        "strings": 305,
+        "samples": [
+          "min-h-screen bg-slate-900 text-slate-100 p-6",
+          "w-5 h-5 text-emerald-400",
+          "w-5 h-5 text-rose-400"
+        ]
+      },
+      {
+        "rel": "src/components/compliance/PolicyGenerator.tsx",
+        "strings": 282,
+        "samples": [
+          "bg-blue-500/10 text-blue-400 border-blue-500/20",
+          "bg-amber-500/10 text-amber-400 border-amber-500/20",
+          "bg-purple-500/10 text-purple-400 border-purple-500/20"
+        ]
+      },
+      {
+        "rel": "src/components/soa/ISO27001ReadinessScorecard.tsx",
+        "strings": 280,
+        "samples": [
+          "rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden space-y-0",
+          "p-6 bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 border-b border-slate-800",
+          "text-[11px] font-bold uppercase tracking-wider text-indigo-400 px-2.5 py-0.5 rounded bg-indigo-950 border bord"
+        ]
+      },
+      {
+        "rel": "src/components/brandguard/BrandGuardModule.tsx",
+        "strings": 274,
+        "samples": [
+          "absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none",
+          "absolute bottom-0 right-24 w-48 h-48 bg-rose-500/10 rounded-full blur-2xl pointer-events-none",
+          "inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-30"
+        ]
+      },
+      {
+        "rel": "src/components/policies/EnterpriseDocumentationStudio.tsx",
+        "strings": 264,
+        "samples": [
+          "bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-6 text-white border border-slate-800",
+          "absolute right-0 top-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none",
+          "flex items-center gap-2 text-indigo-400 font-semibold text-xs tracking-wider uppercase mb-1"
+        ]
+      }
+    ]
+  },
+  "contrast": [
+    {
+      "theme": "light",
+      "findings": [
+        {
+          "label": "Primary text on app canvas",
+          "fgToken": "--text-primary",
+          "bgToken": "--background",
+          "ratio": 17.06,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Primary text on surface",
+          "fgToken": "--text-primary",
+          "bgToken": "--surface",
+          "ratio": 17.85,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Primary text on card",
+          "fgToken": "--text-primary",
+          "bgToken": "--card-bg",
+          "ratio": 17.85,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Secondary text on surface",
+          "fgToken": "--text-secondary",
+          "bgToken": "--surface",
+          "ratio": 7.58,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Muted text on surface",
+          "fgToken": "--text-secondary",
+          "bgToken": "--card-bg",
+          "ratio": 7.58,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Tertiary text on card",
+          "fgToken": "--card-text-tertiary",
+          "bgToken": "--card-bg",
+          "ratio": 4.76,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Disabled text on card",
+          "fgToken": "--text-disabled",
+          "bgToken": "--card-bg",
+          "ratio": 2.56,
+          "passesAA": true,
+          "passesAALarge": true,
+          "exemption": "disabled-control"
+        },
+        {
+          "label": "Accent on surface",
+          "fgToken": "--accent-primary",
+          "bgToken": "--surface",
+          "ratio": 5.17,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Accent on app canvas",
+          "fgToken": "--accent-primary",
+          "bgToken": "--background",
+          "ratio": 4.94,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Success on card",
+          "fgToken": "--success",
+          "bgToken": "--card-bg",
+          "ratio": 3.77,
+          "passesAA": false,
+          "passesAALarge": true
+        },
+        {
+          "label": "Warning on card",
+          "fgToken": "--warning",
+          "bgToken": "--card-bg",
+          "ratio": 3.19,
+          "passesAA": false,
+          "passesAALarge": true
+        },
+        {
+          "label": "Danger on card",
+          "fgToken": "--danger",
+          "bgToken": "--card-bg",
+          "ratio": 4.83,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Critical on card",
+          "fgToken": "--critical",
+          "bgToken": "--card-bg",
+          "ratio": 6.47,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Info on card",
+          "fgToken": "--info",
+          "bgToken": "--card-bg",
+          "ratio": 4.1,
+          "passesAA": false,
+          "passesAALarge": true
+        },
+        {
+          "label": "Sidebar text on sidebar",
+          "fgToken": "--skanda-text-primary",
+          "bgToken": "--skanda-bg-sidebar",
+          "ratio": 17.85,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Sidebar muted on sidebar",
+          "fgToken": "--skanda-text-muted",
+          "bgToken": "--skanda-bg-sidebar",
+          "ratio": 4.76,
+          "passesAA": true,
+          "passesAALarge": true
+        }
+      ],
+      "failures": 0,
+      "largeTextOnly": 3,
+      "evaluated": 16
+    },
+    {
+      "theme": "dark",
+      "findings": [
+        {
+          "label": "Primary text on app canvas",
+          "fgToken": "--text-primary",
+          "bgToken": "--background",
+          "ratio": 17.89,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Primary text on surface",
+          "fgToken": "--text-primary",
+          "bgToken": "--surface",
+          "ratio": 15.58,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Primary text on card",
+          "fgToken": "--text-primary",
+          "bgToken": "--card-bg",
+          "ratio": 15.58,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Secondary text on surface",
+          "fgToken": "--text-secondary",
+          "bgToken": "--surface",
+          "ratio": 10.98,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Muted text on surface",
+          "fgToken": "--text-secondary",
+          "bgToken": "--card-bg",
+          "ratio": 10.98,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Tertiary text on card",
+          "fgToken": "--card-text-tertiary",
+          "bgToken": "--card-bg",
+          "ratio": 6.36,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Disabled text on card",
+          "fgToken": "--text-disabled",
+          "bgToken": "--card-bg",
+          "ratio": 3.42,
+          "passesAA": true,
+          "passesAALarge": true,
+          "exemption": "disabled-control"
+        },
+        {
+          "label": "Accent on surface",
+          "fgToken": "--accent-primary",
+          "bgToken": "--surface",
+          "ratio": 6.41,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Accent on app canvas",
+          "fgToken": "--accent-primary",
+          "bgToken": "--background",
+          "ratio": 7.36,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Success on card",
+          "fgToken": "--success",
+          "bgToken": "--card-bg",
+          "ratio": 8.48,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Warning on card",
+          "fgToken": "--warning",
+          "bgToken": "--card-bg",
+          "ratio": 7.59,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Danger on card",
+          "fgToken": "--danger",
+          "bgToken": "--card-bg",
+          "ratio": 5.89,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Critical on card",
+          "fgToken": "--critical",
+          "bgToken": "--card-bg",
+          "ratio": 6.06,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Info on card",
+          "fgToken": "--info",
+          "bgToken": "--card-bg",
+          "ratio": 7.61,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Sidebar text on sidebar",
+          "fgToken": "--skanda-text-primary",
+          "bgToken": "--skanda-bg-sidebar",
+          "ratio": 17.06,
+          "passesAA": true,
+          "passesAALarge": true
+        },
+        {
+          "label": "Sidebar muted on sidebar",
+          "fgToken": "--skanda-text-muted",
+          "bgToken": "--skanda-bg-sidebar",
+          "ratio": 6.96,
+          "passesAA": true,
+          "passesAALarge": true
+        }
+      ],
+      "failures": 0,
+      "largeTextOnly": 0,
+      "evaluated": 16
+    }
+  ],
+  "themeInfrastructure": {
+    "foucGuardInlineScript": true,
+    "persistedKey": true,
+    "systemModeSupported": true,
+    "osChangeListener": true,
+    "crossTabSync": true,
+    "transitionSuppression": true,
+    "switcherHasRadiogroup": true,
+    "switcherHasVisibleLabels": true,
+    "prefersReducedMotion": true
+  }
+}

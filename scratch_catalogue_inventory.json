@@ -1,0 +1,1368 @@
+[
+  {
+    "index": 1,
+    "id": "TMPL-POL-SEC-001",
+    "title": "Information Security Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "organizationProfile.headquartersLocation",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole",
+      "approvalThresholdsAndRules.policyApprovalAuthority"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 5.1, 5.2, 5.3, Annex A.5.1 [VERIFIED_SOURCE_MAPPING]",
+      "SOC_2_TYPE_2:CC1.1, CC1.2, CC2.1 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.1 -> Policy Approval Record & Distribution Log"
+    ],
+    "qualityRules": [
+      "Mandatory single document owner",
+      "Zero unresolved placeholders in published state",
+      "Explicit assurance limitations declared"
+    ],
+    "defaultOwner": "Chief Information Security Officer (CISO)",
+    "approver": "Board of Directors / Chief Executive Officer"
+  },
+  {
+    "index": 2,
+    "id": "TMPL-POL-SEC-002",
+    "title": "Access Control Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.identityProvider",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.15, A.5.18, A.8.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.15 -> Approved Access Control Policy"
+    ],
+    "qualityRules": [
+      "Must prohibit shared accounts except break-glass",
+      "Must define MFA as non-negotiable for external/privileged access"
+    ],
+    "defaultOwner": "Head of Identity & Access Management",
+    "approver": "Chief Information Security Officer (CISO)"
+  },
+  {
+    "index": 3,
+    "id": "TMPL-POL-SEC-003",
+    "title": "Identity and Access Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.identityProvider",
+      "operatingModel.hrisPlatform"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.16, A.5.17 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.16 -> IdP Master Configuration Record"
+    ],
+    "qualityRules": [
+      "Must bind authoritative HRIS as single source of truth for workforce identity"
+    ],
+    "defaultOwner": "Head of Infrastructure & IAM",
+    "approver": "CISO"
+  },
+  {
+    "index": 4,
+    "id": "TMPL-POL-SEC-004",
+    "title": "Asset Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.9, A.5.10, A.5.14 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.9 -> Approved CMDB Register & Asset Policy"
+    ],
+    "qualityRules": [
+      "Every asset must have a designated human or role owner"
+    ],
+    "defaultOwner": "Head of IT Assets & Operations",
+    "approver": "CISO"
+  },
+  {
+    "index": 5,
+    "id": "TMPL-POL-SEC-005",
+    "title": "Information Classification and Handling Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.12, A.5.13 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.12 -> Approved Classification Standard"
+    ],
+    "qualityRules": [
+      "Schema must clearly define Restricted data including customer PII and cryptographic keys"
+    ],
+    "defaultOwner": "Chief Data Officer / CISO",
+    "approver": "Executive Risk Committee"
+  },
+  {
+    "index": 6,
+    "id": "TMPL-POL-SEC-006",
+    "title": "Acceptable Use Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.10, A.6.2, A.6.4 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.10 -> Acceptable Use Acknowledgement Register"
+    ],
+    "qualityRules": [
+      "Must explicitly outline employer monitoring rights under applicable jurisdictional laws"
+    ],
+    "defaultOwner": "Chief Human Resources Officer & CISO",
+    "approver": "CEO"
+  },
+  {
+    "index": 7,
+    "id": "TMPL-POL-SEC-007",
+    "title": "Cryptography and Key Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.24 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.24 -> Cloud KMS Key Rotation Ledger"
+    ],
+    "qualityRules": [
+      "Prohibit legacy algorithms (DES, 3DES, MD5, SHA-1, RC4)",
+      "Mandate annual automated key rotation"
+    ],
+    "defaultOwner": "Head of Security Engineering",
+    "approver": "CISO"
+  },
+  {
+    "index": 8,
+    "id": "TMPL-POL-SEC-008",
+    "title": "Secure Configuration Policy",
+    "documentType": "STANDARD",
+    "hierarchyLevel": "LEVEL_3_TECHNICAL_STANDARD",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.9 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.9 -> CSPM Hardening Benchmark Report"
+    ],
+    "qualityRules": [
+      "Prohibit default vendor passwords and unencrypted protocols"
+    ],
+    "defaultOwner": "Principal Cloud Architect",
+    "approver": "CISO"
+  },
+  {
+    "index": 9,
+    "id": "TMPL-POL-SEC-009",
+    "title": "Vulnerability Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "serviceLevelCommitments.standardAccessDays"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.8 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.8 -> Vulnerability Management SLA Report"
+    ],
+    "qualityRules": [
+      "Critical vulnerabilities (CVSS 9.0+) must have <= 48h SLA",
+      "High (7.0 - 8.9) must have <= 14d SLA"
+    ],
+    "defaultOwner": "Vulnerability Management Lead",
+    "approver": "CISO"
+  },
+  {
+    "index": 10,
+    "id": "TMPL-POL-SEC-010",
+    "title": "Logging and Monitoring Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.siemAndLoggingPlatform",
+      "evidenceAndRecordsRetention.accessLogRetentionDays"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.15, A.8.16, A.8.17 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.15 -> SIEM Log Ingestion Pipeline Audit"
+    ],
+    "qualityRules": [
+      "Logs must be retained for minimum 365 days",
+      "Log tampering protection must be enabled"
+    ],
+    "defaultOwner": "SOC Lead",
+    "approver": "CISO"
+  },
+  {
+    "index": 11,
+    "id": "TMPL-POL-SEC-011",
+    "title": "Incident Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.24, A.5.25, A.5.26, A.5.27 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.24 -> Incident Response Policy & CSIRT Charter"
+    ],
+    "qualityRules": [
+      "Must include CERT-In 6-hour, GDPR 72-hour, and MAS 1-hour notification matrices where applicable"
+    ],
+    "defaultOwner": "Head of Incident Response & SOC",
+    "approver": "CISO & General Counsel"
+  },
+  {
+    "index": 12,
+    "id": "TMPL-POL-SEC-012",
+    "title": "Backup and Recovery Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.13 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.13 -> Cloud Backup Schedule Configuration"
+    ],
+    "qualityRules": [
+      "Must specify RPO and RTO for critical workloads",
+      "Must require immutable backup vault"
+    ],
+    "defaultOwner": "Head of Site Reliability Engineering",
+    "approver": "CISO"
+  },
+  {
+    "index": 13,
+    "id": "TMPL-POL-SEC-013",
+    "title": "Business Continuity Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.executiveSponsorRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.29, A.5.30 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.29 -> Approved Business Continuity Policy"
+    ],
+    "qualityRules": [
+      "Annual live DR drill is non-negotiable for Tier-1 services"
+    ],
+    "defaultOwner": "Head of Enterprise Resilience",
+    "approver": "CEO & Board of Directors"
+  },
+  {
+    "index": 14,
+    "id": "TMPL-POL-SEC-014",
+    "title": "Supplier Security Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.19, A.5.20, A.5.21, A.5.22 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.19 -> Supplier Risk Management Policy"
+    ],
+    "qualityRules": [
+      "Mandate SOC 2 Type II or ISO 27001 certificate for Tier-1 SaaS vendors"
+    ],
+    "defaultOwner": "Head of Third-Party Risk Management",
+    "approver": "CISO"
+  },
+  {
+    "index": 15,
+    "id": "TMPL-POL-SEC-015",
+    "title": "Secure Development Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.codeRepositories"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.25, A.8.26, A.8.27, A.8.28, A.8.31 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.25 -> Secure Development Policy & Pipeline Baseline"
+    ],
+    "qualityRules": [
+      "Mandatory peer code review and branch protection on all release branches"
+    ],
+    "defaultOwner": "Head of Application Security",
+    "approver": "CISO"
+  },
+  {
+    "index": 16,
+    "id": "TMPL-POL-SEC-016",
+    "title": "Change Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.ticketingAndItsmSystem"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.32 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.32 -> Change Management CAB Charter"
+    ],
+    "qualityRules": [
+      "Every production change must have an automated or documented rollback plan"
+    ],
+    "defaultOwner": "Head of IT Operations & Service Management",
+    "approver": "CISO & VP Engineering"
+  },
+  {
+    "index": 17,
+    "id": "TMPL-POL-SEC-017",
+    "title": "Remote Working Policy",
+    "documentType": "GUIDELINE",
+    "hierarchyLevel": "LEVEL_5_GUIDELINE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.6.7 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.6.7 -> Remote Working Security Directive"
+    ],
+    "qualityRules": [
+      "BYOD prohibited for accessing Tier-1 confidential data unless using managed VDI"
+    ],
+    "defaultOwner": "Head of IT Endpoints & Infrastructure",
+    "approver": "CISO"
+  },
+  {
+    "index": 18,
+    "id": "TMPL-POL-SEC-018",
+    "title": "Data Retention and Disposal Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "evidenceAndRecordsRetention.defaultRecordRetentionYears",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.33, A.8.10 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.33 -> Data Retention Schedule Master Matrix"
+    ],
+    "qualityRules": [
+      "Must include explicit legal hold mechanism that suspends automated deletion during investigations"
+    ],
+    "defaultOwner": "General Counsel & Data Protection Officer",
+    "approver": "Board Audit Committee"
+  },
+  {
+    "index": 19,
+    "id": "TMPL-PROC-IAM-001",
+    "title": "User Access Provisioning and Modification Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.identityProvider",
+      "operatingModel.ticketingAndItsmSystem",
+      "approvalThresholdsAndRules.standardUserAccessApprover",
+      "serviceLevelCommitments.standardAccessDays"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.15, A.5.16, A.5.18 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.18 -> Access Provisioning Ticket & Verification Record"
+    ],
+    "qualityRules": [
+      "Every step must have Exit Criteria and Failure Mode",
+      "RACI must have single accountability per row",
+      "Landscape orientation for procedure table"
+    ],
+    "defaultOwner": "Lead IAM Operations Engineer",
+    "approver": "CISO / Head of Security Operations"
+  },
+  {
+    "index": 20,
+    "id": "TMPL-PROC-IAM-002",
+    "title": "User Access Revocation Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.identityProvider",
+      "operatingModel.hrisPlatform"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.16, A.6.5 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.6.5 -> Deprovisioning Audit Ledger"
+    ],
+    "qualityRules": [
+      "Involuntary termination SLA must be <= 15 minutes",
+      "Must mandate session token invalidation"
+    ],
+    "defaultOwner": "IAM Operations Lead",
+    "approver": "CISO"
+  },
+  {
+    "index": 21,
+    "id": "TMPL-PROC-IAM-003",
+    "title": "Periodic Access Review Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.identityProvider"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.18 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.18 -> Quarterly Access Recertification Pack"
+    ],
+    "qualityRules": [
+      "Review campaigns must achieve 100% completion before closeout"
+    ],
+    "defaultOwner": "GRC Lead",
+    "approver": "CISO"
+  },
+  {
+    "index": 22,
+    "id": "TMPL-PROC-IAM-004",
+    "title": "Privileged Access Management Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "approvalThresholdsAndRules.privilegedAccessApprover",
+      "serviceLevelCommitments.privilegedAccessHours"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.2 -> PAM Elevation & Session Audit Log"
+    ],
+    "qualityRules": [
+      "Standing root or admin privileges prohibited; maximum elevation window 4 hours"
+    ],
+    "defaultOwner": "Principal Cloud Infrastructure Engineer",
+    "approver": "CISO"
+  },
+  {
+    "index": 23,
+    "id": "TMPL-PROC-INC-001",
+    "title": "Information Security Incident Management Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.ticketingAndItsmSystem",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.24, A.5.25, A.5.26, A.5.28 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.24 -> Incident Response Timeline & Post-Mortem Pack"
+    ],
+    "qualityRules": [
+      "Every gate defines Exit Criteria and Evidence Produced",
+      "Must include chain-of-custody logging"
+    ],
+    "defaultOwner": "Lead Incident Commander",
+    "approver": "CISO"
+  },
+  {
+    "index": 24,
+    "id": "TMPL-PROC-VULN-001",
+    "title": "Vulnerability Assessment and Remediation Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.ticketingAndItsmSystem"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.8 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.8 -> Vulnerability Scan & Retest Ticket Report"
+    ],
+    "qualityRules": [
+      "Retest must be performed using same tool and parameters as original detection"
+    ],
+    "defaultOwner": "Vulnerability Remediation Engineer",
+    "approver": "CISO"
+  },
+  {
+    "index": 25,
+    "id": "TMPL-PROC-PATCH-001",
+    "title": "Patch Management Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "OPERATIONS",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.19 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.19 -> Fleet Patch Compliance Report"
+    ],
+    "qualityRules": [
+      "Mandate staging deployment for minimum 24 hours prior to broad production release"
+    ],
+    "defaultOwner": "Systems Engineering Lead",
+    "approver": "Head of Infrastructure"
+  },
+  {
+    "index": 26,
+    "id": "TMPL-PROC-CHG-001",
+    "title": "Change Management Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "OPERATIONS",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.ticketingAndItsmSystem"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.32 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.32 -> Closed Production Change Record"
+    ],
+    "qualityRules": [
+      "Change tickets must be approved prior to implementation start time"
+    ],
+    "defaultOwner": "Change Manager",
+    "approver": "VP of Engineering"
+  },
+  {
+    "index": 27,
+    "id": "TMPL-PROC-BKP-001",
+    "title": "Backup Restoration Testing Procedure",
+    "documentType": "SOP",
+    "hierarchyLevel": "LEVEL_4_SOP",
+    "domain": "OPERATIONS",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.13 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.13 -> Quarterly Backup Restore Test Evidence Pack"
+    ],
+    "qualityRules": [
+      "Must measure and record actual RTO achieved against approved target"
+    ],
+    "defaultOwner": "Database Reliability Engineer",
+    "approver": "Head of Infrastructure"
+  },
+  {
+    "index": 28,
+    "id": "TMPL-PROC-BCP-001",
+    "title": "Business Continuity Activation Procedure",
+    "documentType": "SOP",
+    "hierarchyLevel": "LEVEL_4_SOP",
+    "domain": "OPERATIONS",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.executiveSponsorRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.29, A.5.30 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.29 -> BCP Activation Drill Report"
+    ],
+    "qualityRules": [
+      "All communication templates must be pre-drafted and legally reviewed"
+    ],
+    "defaultOwner": "Crisis Coordinator",
+    "approver": "Executive Crisis Lead"
+  },
+  {
+    "index": 29,
+    "id": "TMPL-PROC-DR-001",
+    "title": "Disaster Recovery Invocation Procedure",
+    "documentType": "SOP",
+    "hierarchyLevel": "LEVEL_4_SOP",
+    "domain": "TECHNOLOGY_AND_ENGINEERING",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.cloudInfrastructure"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.14 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.14 -> Cloud DR Invocation Test Record"
+    ],
+    "qualityRules": [
+      "Must include explicit fall-back / fail-back steps once primary region recovers"
+    ],
+    "defaultOwner": "Principal Cloud Architect",
+    "approver": "VP of Engineering"
+  },
+  {
+    "index": 30,
+    "id": "TMPL-PROC-TPRM-001",
+    "title": "Supplier Due Diligence Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "THIRD_PARTY_RISK",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.19, A.5.20 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.19 -> Vendor Due Diligence Review Dossier"
+    ],
+    "qualityRules": [
+      "Tier-1 vendors must not be approved without review of active SOC 2 Type II or ISO 27001 certificate"
+    ],
+    "defaultOwner": "Third-Party Risk Analyst",
+    "approver": "CISO"
+  },
+  {
+    "index": 31,
+    "id": "TMPL-PROC-TPRM-002",
+    "title": "Supplier Risk Assessment Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "THIRD_PARTY_RISK",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.5.21, A.5.22 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.21 -> Annual Supplier Posture Evaluation Pack"
+    ],
+    "qualityRules": [
+      "Failed vendor re-assessment must trigger formal 30-day corrective action plan or phase-out"
+    ],
+    "defaultOwner": "TPRM Lead",
+    "approver": "CISO"
+  },
+  {
+    "index": 32,
+    "id": "TMPL-PROC-EXC-001",
+    "title": "Security Exception and Risk Acceptance Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "ENTERPRISE_RISK",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "approvalThresholdsAndRules.emergencyWaiverApprover"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 6.1.3, Annex A.5.1 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.5.1 -> Formally Approved Exception Dossier"
+    ],
+    "qualityRules": [
+      "Indefinite or permanent exceptions strictly prohibited; maximum validity 365 days",
+      "Compensating controls mandatory"
+    ],
+    "defaultOwner": "GRC Risk Officer",
+    "approver": "CISO (High Risk) / CEO (Critical Risk)"
+  },
+  {
+    "index": 33,
+    "id": "TMPL-PROC-CAPA-001",
+    "title": "Corrective Action and Retesting Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.internalAuditorRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 10.1, 10.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "10.1 -> Auditor-Signed CAPA Retest Record"
+    ],
+    "qualityRules": [
+      "Closure requires independent verification by auditor who did not write the remediation code"
+    ],
+    "defaultOwner": "Internal Audit Lead",
+    "approver": "CISO & Audit Committee"
+  },
+  {
+    "index": 34,
+    "id": "TMPL-PROC-EVID-001",
+    "title": "Evidence Collection and Validation Procedure",
+    "documentType": "WORK_INSTRUCTION",
+    "hierarchyLevel": "LEVEL_4_WORK_INSTRUCTION",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "evidenceAndRecordsRetention.evidenceStorageVault"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 7.5.3, 9.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "7.5.3 -> Evidence Custody Ledger & Hash Manifest"
+    ],
+    "qualityRules": [
+      "Every evidence file must have SHA-256 digest recorded in custody ledger"
+    ],
+    "defaultOwner": "Audit Readiness Specialist",
+    "approver": "GRC Director"
+  },
+  {
+    "index": 35,
+    "id": "TMPL-PROC-INV-001",
+    "title": "Security Event Investigation Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "INFORMATION_SECURITY",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "operatingModel.siemAndLoggingPlatform"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.8.16, A.5.25 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.8.16 -> SOC Alert Triage & Investigation Ticket"
+    ],
+    "qualityRules": [
+      "Must specify maximum triage SLA by alert priority (P1 <= 15m, P2 <= 1h)"
+    ],
+    "defaultOwner": "Senior SOC Analyst",
+    "approver": "CISO"
+  },
+  {
+    "index": 36,
+    "id": "TMPL-PROC-DSR-001",
+    "title": "Data Subject Request Handling Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "DPDP_ACT_2023:Section 11, 12, 13 [VERIFIED_SOURCE_MAPPING]",
+      "GDPR:Article 15, 16, 17, 18, 20 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "DPDP-SEC-12 -> Data Principal Rights Fulfillment Dossier"
+    ],
+    "qualityRules": [
+      "Statutory turnaround must not exceed 30 days",
+      "Strict identity verification before releasing data"
+    ],
+    "defaultOwner": "Privacy Operations Manager",
+    "approver": "General Counsel & DPO"
+  },
+  {
+    "index": 37,
+    "id": "TMPL-PROC-BREACH-001",
+    "title": "Personal Data Breach Assessment Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "DPDP_ACT_2023:Section 8(6) [VERIFIED_SOURCE_MAPPING]",
+      "GDPR:Article 33, 34 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "GDPR-ART-33 -> Personal Data Breach Assessment & Notice Pack"
+    ],
+    "qualityRules": [
+      "Must evaluate risk within 24 hours of breach confirmation to meet statutory notification clocks"
+    ],
+    "defaultOwner": "Data Protection Officer (DPO)",
+    "approver": "Executive Committee & General Counsel"
+  },
+  {
+    "index": 38,
+    "id": "TMPL-PROC-DISP-001",
+    "title": "Secure Asset Disposal Procedure",
+    "documentType": "WORK_INSTRUCTION",
+    "hierarchyLevel": "LEVEL_4_WORK_INSTRUCTION",
+    "domain": "OPERATIONS",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Annex A.7.14, A.8.10 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "A.7.14 -> Serialized Certificate of Destruction"
+    ],
+    "qualityRules": [
+      "Every wiped drive must be tracked by manufacturer serial number on certificate"
+    ],
+    "defaultOwner": "IT Asset Manager",
+    "approver": "CISO"
+  },
+  {
+    "index": 39,
+    "id": "TMPL-POL-PRV-001",
+    "title": "Privacy Governance Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "DPDP_ACT_2023:Section 4, 6, 7, 8, 9, 10 [VERIFIED_SOURCE_MAPPING]",
+      "GDPR:Article 5, 24, 37, 38, 39 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "PRIV-GOV-01 -> Approved Privacy Governance Policy"
+    ],
+    "qualityRules": [
+      "Must clearly distinguish Data Fiduciary / Controller vs Data Processor roles"
+    ],
+    "defaultOwner": "Data Protection Officer (DPO)",
+    "approver": "Board of Directors / CEO"
+  },
+  {
+    "index": 40,
+    "id": "TMPL-PROC-PRV-002",
+    "title": "Personal Data Retention and Disposal Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "evidenceAndRecordsRetention.defaultRecordRetentionYears"
+    ],
+    "frameworks": [
+      "GDPR:Article 5(1)(e), 17 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "GDPR-ART-5 -> Automated Purge Execution Log"
+    ],
+    "qualityRules": [
+      "Must verify legal hold database before triggering deletion queries"
+    ],
+    "defaultOwner": "Data Engineering Lead",
+    "approver": "General Counsel"
+  },
+  {
+    "index": 41,
+    "id": "TMPL-PROC-PRV-003",
+    "title": "Data Subject Request Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "DPDP_ACT_2023:Section 11, 12 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "DPDP-SEC-11 -> DSR Ticket History Record"
+    ],
+    "qualityRules": [
+      "Turnaround must adhere to 30-day statutory limit"
+    ],
+    "defaultOwner": "Privacy Operations Lead",
+    "approver": "Legal Counsel"
+  },
+  {
+    "index": 42,
+    "id": "TMPL-PROC-PRV-004",
+    "title": "Personal Data Breach Response Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "organizationProfile.jurisdictions"
+    ],
+    "frameworks": [
+      "DPDP_ACT_2023:Section 8(6) [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "DPDP-SEC-8-6 -> Regulatory Breach Notification Record"
+    ],
+    "qualityRules": [
+      "Must specify immediate notification to DPO within 2 hours of breach confirmation"
+    ],
+    "defaultOwner": "DPO",
+    "approver": "CEO & General Counsel"
+  },
+  {
+    "index": 43,
+    "id": "TMPL-PROC-PRV-005",
+    "title": "Privacy Impact Assessment Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SCAFFOLD_TEMPLATE_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "GDPR:Article 35 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "GDPR-ART-35 -> Signed DPIA Document"
+    ],
+    "qualityRules": [
+      "Mandatory for all AI models trained on personal data"
+    ],
+    "defaultOwner": "Privacy Architect",
+    "approver": "DPO"
+  },
+  {
+    "index": 44,
+    "id": "TMPL-REG-ROPA-001",
+    "title": "Processing Activity Register",
+    "documentType": "REGISTER_LOG",
+    "hierarchyLevel": "LEVEL_5_REGISTER_LOG",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "scopeDefinition.inScopeServicesAndProducts"
+    ],
+    "frameworks": [
+      "GDPR:Article 30 [VERIFIED_SOURCE_MAPPING]",
+      "DPDP_ACT_2023:Section 8 [SOURCE_DERIVED_MAPPING]"
+    ],
+    "evidence": [
+      "GDPR-ART-30 -> Official Article 30 RoPA Register"
+    ],
+    "qualityRules": [
+      "Must enumerate specific lawful basis for every business process",
+      "Must record cross-border destinations"
+    ],
+    "defaultOwner": "DPO & Privacy Lead",
+    "approver": "General Counsel"
+  },
+  {
+    "index": 45,
+    "id": "TMPL-REG-BREACH-001",
+    "title": "Personal Data Breach Register",
+    "documentType": "REGISTER_LOG",
+    "hierarchyLevel": "LEVEL_5_REGISTER_LOG",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "GDPR:Article 33(5) [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "GDPR-ART-33-5 -> Internal Data Breach Ledger"
+    ],
+    "qualityRules": [
+      "Every entry must document reasoning if supervisory authority was NOT notified"
+    ],
+    "defaultOwner": "DPO",
+    "approver": "CISO & DPO"
+  },
+  {
+    "index": 46,
+    "id": "TMPL-FORM-DPIA-001",
+    "title": "Data Protection Impact Assessment Template",
+    "documentType": "FORM_CHECKLIST",
+    "hierarchyLevel": "LEVEL_5_FORM_CHECKLIST",
+    "domain": "PRIVACY_AND_DATA_PROTECTION",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "GDPR:Article 35 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "GDPR-ART-35 -> Executed DPIA Assessment Document"
+    ],
+    "qualityRules": [
+      "Must assess necessity and proportionality separately from technical security"
+    ],
+    "defaultOwner": "Privacy Architect",
+    "approver": "DPO"
+  },
+  {
+    "index": 47,
+    "id": "TMPL-POL-RSK-001",
+    "title": "Enterprise Risk Management Policy",
+    "documentType": "POLICY",
+    "hierarchyLevel": "LEVEL_1_GOVERNANCE_POLICY",
+    "domain": "ENTERPRISE_RISK",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.executiveSponsorRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 6.1.1, 6.1.2, 6.1.3 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "6.1.2 -> Approved Risk Management Framework"
+    ],
+    "qualityRules": [
+      "Must define quantitative/qualitative boundaries for Critical, High, Medium, Low risk"
+    ],
+    "defaultOwner": "Chief Risk Officer (CRO) / CISO",
+    "approver": "Board Audit & Risk Committee"
+  },
+  {
+    "index": 48,
+    "id": "TMPL-PROC-RSK-001",
+    "title": "Risk Assessment Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "ENTERPRISE_RISK",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 6.1.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "6.1.2 -> Completed Risk Assessment Working Papers"
+    ],
+    "qualityRules": [
+      "Every risk must identify a named human Risk Owner in management"
+    ],
+    "defaultOwner": "Senior Risk Analyst",
+    "approver": "CRO / CISO"
+  },
+  {
+    "index": 49,
+    "id": "TMPL-PLAN-RTP-001",
+    "title": "Risk Treatment Plan Template",
+    "documentType": "IMPLEMENTATION_PLAN",
+    "hierarchyLevel": "LEVEL_5_IMPLEMENTATION_PLAN",
+    "domain": "ENTERPRISE_RISK",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 6.1.3, 6.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "6.1.3 -> Formally Approved Risk Treatment Plan"
+    ],
+    "qualityRules": [
+      "Every treatment action must specify target completion date and measurable verification test"
+    ],
+    "defaultOwner": "Risk Treatment Coordinator",
+    "approver": "CISO & Risk Committee"
+  },
+  {
+    "index": 50,
+    "id": "TMPL-FORM-RSKACC-001",
+    "title": "Risk Acceptance Record",
+    "documentType": "FORM_CHECKLIST",
+    "hierarchyLevel": "LEVEL_5_FORM_CHECKLIST",
+    "domain": "ENTERPRISE_RISK",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 6.1.3 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "6.1.3 -> Executive Risk Acceptance Dossier"
+    ],
+    "qualityRules": [
+      "Acceptance must expire within 12 months",
+      "Compensating controls must be verified by CISO"
+    ],
+    "defaultOwner": "Risk Owner (VP Level)",
+    "approver": "Chief Executive Officer / Board"
+  },
+  {
+    "index": 51,
+    "id": "TMPL-PROC-AUD-001",
+    "title": "Control Testing Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.internalAuditorRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 9.1, 9.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "9.2 -> Control Testing Workpaper Package"
+    ],
+    "qualityRules": [
+      "Sampling size must follow formal statistical criteria based on frequency of control execution"
+    ],
+    "defaultOwner": "Lead Internal IT Auditor",
+    "approver": "Head of Internal Audit"
+  },
+  {
+    "index": 52,
+    "id": "TMPL-PROC-AUD-002",
+    "title": "Internal Audit Procedure",
+    "documentType": "PROCEDURE",
+    "hierarchyLevel": "LEVEL_2_OPERATIONAL_PROCEDURE",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.internalAuditorRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 9.2 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "9.2 -> Final Internal Audit Report Pack"
+    ],
+    "qualityRules": [
+      "Auditors must be independent of the operational processes being audited (Segregation of Duties)"
+    ],
+    "defaultOwner": "Director of Internal Audit",
+    "approver": "Audit Committee & CEO"
+  },
+  {
+    "index": 53,
+    "id": "TMPL-REG-FIND-001",
+    "title": "Audit Findings Register",
+    "documentType": "REGISTER_LOG",
+    "hierarchyLevel": "LEVEL_5_REGISTER_LOG",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 9.2, 10.1 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "10.1 -> Central Audit Findings Register"
+    ],
+    "qualityRules": [
+      "Major nonconformities must be escalated to CEO within 48 hours"
+    ],
+    "defaultOwner": "Audit Operations Coordinator",
+    "approver": "Head of Internal Audit"
+  },
+  {
+    "index": 54,
+    "id": "TMPL-PLAN-CAPA-001",
+    "title": "Corrective Action Plan",
+    "documentType": "IMPLEMENTATION_PLAN",
+    "hierarchyLevel": "LEVEL_5_IMPLEMENTATION_PLAN",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 10.1 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "10.1 -> Approved CAPA Milestone Document"
+    ],
+    "qualityRules": [
+      "Milestone deadlines must not be extended without formal change request to audit committee"
+    ],
+    "defaultOwner": "Remediation Action Owner",
+    "approver": "CISO"
+  },
+  {
+    "index": 55,
+    "id": "TMPL-REV-MGMT-001",
+    "title": "Management Review Pack",
+    "documentType": "MANAGEMENT_REVIEW_PACK",
+    "hierarchyLevel": "LEVEL_5_MANAGEMENT_REVIEW_PACK",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "keyRolesAndDelegations.executiveSponsorRole",
+      "keyRolesAndDelegations.ismsOwnerOrCisoRole"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 9.3 [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "9.3 -> Signed Management Review Meeting Minutes"
+    ],
+    "qualityRules": [
+      "Must cover all 7 mandatory Clause 9.3 input topics and produce explicit decisions on improvement"
+    ],
+    "defaultOwner": "CISO / Head of Information Security",
+    "approver": "Chief Executive Officer (CEO)"
+  },
+  {
+    "index": 56,
+    "id": "TMPL-REV-SOA-001",
+    "title": "Statement of Applicability Support Template",
+    "documentType": "MANAGEMENT_REVIEW_PACK",
+    "hierarchyLevel": "LEVEL_5_MANAGEMENT_REVIEW_PACK",
+    "domain": "COMPLIANCE_AND_AUDIT",
+    "contentDepth": "SUBSTANTIVE_MODEL_AVAILABLE",
+    "requiredInputs": [
+      "organizationProfile.legalEntityName",
+      "scopeDefinition.inScopeServicesAndProducts"
+    ],
+    "frameworks": [
+      "ISO_27001_2022:Clause 6.1.3(d) [VERIFIED_SOURCE_MAPPING]"
+    ],
+    "evidence": [
+      "6.1.3(d) -> Official ISO/IEC 27001:2022 Statement of Applicability"
+    ],
+    "qualityRules": [
+      "Every single one of the 93 controls must have explicit inclusion or exclusion justification"
+    ],
+    "defaultOwner": "CISO / ISO Implementer Lead",
+    "approver": "Executive Committee & Board"
+  }
+]

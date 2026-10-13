@@ -1,0 +1,4543 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 0. CORE TYPOGRAPHY (Josefin Sans Elegant Geometric Display/Sans-Serif + IBM Plex Mono) */
+@import "@fontsource/josefin-sans/300.css";
+@import "@fontsource/josefin-sans/400.css";
+@import "@fontsource/josefin-sans/500.css";
+@import "@fontsource/josefin-sans/600.css";
+@import "@fontsource/josefin-sans/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+:root {
+  --font-family-sans: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --sidebar-width: 240px;
+
+  /* =========================================================================
+     SKANDA CENTRALIZED DESIGN SYSTEM TOKENS
+     Single Source of Truth aligned with src/styles/designTokens.ts
+     High-Density Enterprise SaaS Scale for 100% Browser Zoom Ratio
+     ========================================================================= */
+
+  /* 1. Brand & Master Color Palette */
+  --skanda-brand-primary: #0F2747;          /* Deep Executive Navy */
+  --skanda-brand-primary-hover: #173A63;
+  --skanda-brand-secondary: #1E293B;        /* Dark Slate */
+  --skanda-brand-accent: #2563EB;           /* Precision Royal Blue */
+  --skanda-brand-accent-hover: #1D4ED8;
+  --skanda-brand-subtle: #F1F5F9;
+
+  /* 2. Neutral Scale */
+  --skanda-neutral-50: #F8FAFC;
+  --skanda-neutral-100: #F1F5F9;
+  --skanda-neutral-200: #E2E8F0;
+  --skanda-neutral-300: #CBD5E1;
+  --skanda-neutral-400: #94A3B8;
+  --skanda-neutral-500: #64748B;
+  --skanda-neutral-600: #475569;
+  --skanda-neutral-700: #334155;
+  --skanda-neutral-800: #1E293B;
+  --skanda-neutral-900: #0F172A;
+  --skanda-neutral-950: #0B0F19;
+
+  /* 3. Spacing Scale (Strict 4px Grid - High Density) */
+  --skanda-space-0: 0px;
+  --skanda-space-1: 3px;                    /* micro gaps, icons */
+  --skanda-space-2: 6px;                    /* badge padding, compact gaps */
+  --skanda-space-3: 10px;                   /* card inner header margins */
+  --skanda-space-4: 12px;                   /* standard card padding, component gaps */
+  --skanda-space-5: 16px;                   /* comfortable card padding */
+  --skanda-space-6: 20px;                   /* section headers, standard grid gap */
+  --skanda-space-8: 24px;                   /* major section gaps, page padding */
+  --skanda-space-10: 32px;                  /* large layout dividers */
+  --skanda-space-12: 40px;                  /* empty state vertical padding */
+  --skanda-space-16: 48px;                  /* top level page clearance */
+
+  /* 4. Component Heights & Standard Dimensions (High-Density 100% Zoom Fit) */
+  --skanda-height-header: 54px;
+  --skanda-height-top-banner: 38px;
+  --skanda-height-button-sm: 28px;
+  --skanda-height-button-md: 32px;
+  --skanda-height-button-lg: 36px;
+  --skanda-height-button-xl: 40px;
+  --skanda-height-input-sm: 28px;
+  --skanda-height-input-md: 32px;
+  --skanda-height-input-lg: 36px;
+  --skanda-height-input-enterprise: 42px;
+
+  /* Enterprise SaaS Input Design Tokens */
+  --input-height: 42px;
+  --input-radius: 10px;
+  --input-padding-x: 14px;
+  --input-icon-size: 17px;
+  --input-icon-gap: 10px;
+  --input-border: #E2E8F0;
+  --input-border-hover: #CBD5E1;
+  --input-border-focus: #2563EB;
+  --input-focus-ring: rgba(37, 99, 235, 0.15);
+  --input-bg: #FFFFFF;
+  --input-text: #0F172A;
+  --input-placeholder: #94A3B8;
+  --input-label: #1E293B;
+  --skanda-height-kpi-min: 104px;
+  --skanda-height-action-min: 160px;
+  --skanda-height-table-row: 38px;
+  --skanda-height-table-header: 32px;
+  --skanda-width-sidebar: 240px;
+  --skanda-width-sidebar-collapsed: 64px;
+  --skanda-width-drawer: 520px;
+  --skanda-page-max-width: 1600px;
+
+  /* 5. Standard Border Radii (Calm, Precision Enterprise) */
+  --skanda-radius-xs: 4px;
+  --skanda-radius-sm: 6px;
+  --skanda-radius-md: 8px;
+  --skanda-radius-lg: 10px;
+  --skanda-radius-xl: 14px;
+  --skanda-radius-pill: 9999px;
+
+  /* 6. Standard Shadows (Subtle, Anti-AI Glow) */
+  --skanda-shadow-none: none;
+  --skanda-shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --skanda-shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --skanda-shadow-elevated: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --skanda-shadow-modal: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+
+  /* 7. Typography Scale Tokens (Compact Precision Sizing) */
+  --skanda-font-display-size: 1.5rem;       /* 21px - 24px */
+  --skanda-font-display-lh: 1.875rem;       /* 26px - 30px */
+  --skanda-font-display-weight: 700;
+  --skanda-font-display-tracking: -0.025em;
+
+  --skanda-font-page-title-size: 1.25rem;   /* 17.5px - 20px */
+  --skanda-font-page-title-lh: 1.625rem;    /* 22px - 26px */
+  --skanda-font-page-title-weight: 700;
+  --skanda-font-page-title-tracking: -0.02em;
+
+  --skanda-font-section-title-size: 1rem;   /* 14px - 16px */
+  --skanda-font-section-title-lh: 1.375rem; /* 19px - 22px */
+  --skanda-font-section-title-weight: 600;
+  --skanda-font-section-title-tracking: -0.015em;
+
+  --skanda-font-card-title-size: 0.8125rem; /* 11.5px - 13px */
+  --skanda-font-card-title-lh: 1.125rem;    /* 16px - 18px */
+  --skanda-font-card-title-weight: 600;
+  --skanda-font-card-title-tracking: -0.01em;
+
+  --skanda-font-body-size: 0.8125rem;       /* 11.5px - 13px */
+  --skanda-font-body-lh: 1.25rem;           /* 17px - 20px */
+  --skanda-font-body-weight: 400;
+
+  --skanda-font-body-medium-weight: 500;
+
+  --skanda-font-small-size: 0.75rem;        /* 10.5px - 12px */
+  --skanda-font-small-lh: 1rem;             /* 14px - 16px */
+  --skanda-font-small-weight: 400;
+  --skanda-font-small-medium-weight: 500;
+
+  --skanda-font-caption-size: 0.6875rem;    /* 9.5px - 11px */
+  --skanda-font-caption-lh: 0.875rem;       /* 12px - 14px */
+  --skanda-font-caption-weight: 500;
+  --skanda-font-caption-tracking: 0.025em;
+
+  /* 8. Z-Index Token Architecture */
+  --skanda-z-base: 0;
+  --skanda-z-card: 1;
+  --skanda-z-sticky: 10;
+  --skanda-z-guidance-bar: 20;
+  --skanda-z-header: 30;
+  --skanda-z-dropdown: 40;
+  --skanda-z-popover: 50;
+  --skanda-z-drawer-backdrop: 60;
+  --skanda-z-drawer: 65;
+  --skanda-z-modal-backdrop: 70;
+  --skanda-z-modal: 75;
+  --skanda-z-toast: 90;
+  --skanda-z-tooltip: 100;
+
+  /* Master Color System Design Tokens (Backwards Compatibility) */
+  --brand-primary: var(--skanda-brand-primary);
+  --brand-primary-hover: var(--skanda-brand-primary-hover);
+  --brand-accent: var(--skanda-brand-accent);
+  --brand-accent-hover: var(--skanda-brand-accent-hover);
+  --brand-secondary: var(--skanda-brand-secondary);
+
+  --bg-app: var(--skanda-neutral-50);
+  --bg-surface: #FFFFFF;
+  --bg-surface-secondary: var(--skanda-neutral-100);
+  --bg-surface-hover: var(--skanda-neutral-50);
+
+  --border-default: var(--skanda-neutral-200);
+  --border-strong: var(--skanda-neutral-300);
+
+  --text-primary: var(--skanda-neutral-900);
+  --text-secondary: var(--skanda-neutral-600);
+  --text-muted: var(--skanda-neutral-500);
+  --text-disabled: var(--skanda-neutral-400);
+
+  --color-success: #047857;
+  --color-success-bg: #ECFDF5;
+  --color-warning: #B45309;
+  --color-warning-bg: #FFFBEB;
+  --color-danger: #DC2626;
+  --color-danger-bg: #FEF2F2;
+  --color-info: #0369A1;
+  --color-info-bg: #F0F9FF;
+  --color-critical: #B91C1C;
+  --color-high-risk: #DC2626;
+  --color-medium-risk: #D97706;
+  --color-low-risk: #CA8A04;
+  --color-compliant: #059669;
+  --color-in-progress: #2563EB;
+
+  /* Default to Light Mode System Tokens */
+  --skanda-bg-primary: #F8FAFC;
+  --skanda-bg-secondary: #F1F5F9;
+  --skanda-bg-card: #FFFFFF;
+  --skanda-bg-elevated: #FFFFFF;
+  --skanda-bg-sidebar: #FFFFFF;
+  --skanda-bg-sidebar-header: #FFFFFF;
+  --skanda-border: #E2E8F0;
+  --skanda-border-subtle: #F1F5F9;
+  --skanda-border-strong: #CBD5E1;
+  --skanda-border-hover: #CBD5E1;
+  --skanda-text-primary: #0F172A;
+  --skanda-text-heading: #0F172A;
+  --skanda-text-secondary: #475569;
+  --skanda-text-muted: #64748B;
+  --skanda-text-disabled: #94A3B8;
+  --skanda-brand: var(--skanda-brand-primary);
+  --skanda-brand-secondary: var(--skanda-brand-accent);
+  --skanda-success: #047857;
+  --skanda-warning: #B45309;
+  --skanda-critical: #DC2626;
+  --skanda-info: #0284C7;
+  --skanda-chart-overall: #0F2747;
+  --skanda-chart-iso27001: #2563EB;
+  --skanda-chart-iso42001: #475569;
+  --skanda-chart-mastrm: #DC2626;
+  --skanda-chart-soc2: #059669;
+  --skanda-chart-privacy: #D97706;
+  --skanda-chart-benchmark: #0284C7;
+  --skanda-chart-grid: #E2E8F0;
+  --skanda-sparkline-emerald: var(--skanda-success);
+  --skanda-sparkline-rose: var(--skanda-critical);
+  --skanda-sparkline-indigo: #2563EB;
+  --skanda-sparkline-purple: #0F2747;
+  --skanda-sparkline-amber: var(--skanda-warning);
+  --skanda-sparkline-sky: var(--skanda-info);
+  --skanda-sparkline-slate: var(--skanda-text-disabled);
+  --skanda-sparkline-grid: var(--skanda-chart-grid);
+
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --surface-muted: #F1F5F9;
+  --surface-subtle: #F8FAFC;
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #566176;
+  --text-disabled: #94A3B8;
+  --text-inverse: #FFFFFF;
+  --icon-primary: #0F172A;
+  --icon-secondary: #475569;
+  --accent-primary: #2563EB;
+  --accent-secondary: #1D4ED8;
+  --success: #047857;
+  --warning: #B45309;
+  --danger: #DC2626;
+  --info: #0369A1;
+  --focus-ring: #2563EB;
+
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
+  --card-text-primary: #0F172A;
+  --card-text-secondary: #475569;
+  --card-text-tertiary: #64748B;
+
+  color-scheme: light;
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+:root.dark,
+:root.theme-midnight,
+:root[data-theme="midnight"],
+.dark,
+.theme-midnight,
+[data-theme="midnight"] {
+  color-scheme: dark;
+  background-color: #0B0F19;
+  color: #F8FAFC;
+
+  /* Dark Mode System Tokens */
+  --skanda-bg-primary: #0B0F19;
+  --skanda-bg-secondary: #0F172A;
+  --skanda-bg-card: #0F172A;
+  --skanda-bg-elevated: #1E293B;
+  --skanda-bg-sidebar: #0B0F19;
+  --skanda-bg-sidebar-header: #0B0F19;
+  --skanda-border: #1E293B;
+  --skanda-border-subtle: #172033;
+  --skanda-border-strong: #334155;
+  --skanda-border-hover: #475569;
+  --skanda-text-primary: #F8FAFC;
+  --skanda-text-heading: #FFFFFF;
+  --skanda-text-secondary: #94A3B8;
+  --skanda-text-muted: #64748B;
+  --skanda-text-disabled: #475569;
+
+  --bg-app: #0B0F19;
+  --bg-surface: #0F172A;
+  --bg-surface-secondary: #1E293B;
+  --bg-surface-hover: #1E293B;
+
+  --border-default: #1E293B;
+  --border-strong: #334155;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-disabled: #475569;
+
+  --background: #0B0F19;
+  --surface: #0F172A;
+  --surface-elevated: #1E293B;
+  --surface-muted: #1E293B;
+  --surface-subtle: #0F172A;
+  --border: #1E293B;
+  --border-subtle: #172033;
+
+  --card-bg: #0F172A;
+  --card-border: #1E293B;
+  --card-text-primary: #F8FAFC;
+  --card-text-secondary: #94A3B8;
+  --card-text-tertiary: #64748B;
+}
+
+/* =========================================================================
+   COMPREHENSIVE GLOBAL DARK MODE SEMANTIC AUTOMATION
+   Heals any page, card, modal, or input that uses literal light utility classes
+   ========================================================================= */
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-white:not([data-keep-white]):not(.keep-white) {
+  background-color: #0F172A !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-slate-50:not([data-keep-color]):not(.keep-color) {
+  background-color: #1E293B !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .hover\:bg-slate-50:hover:not([data-keep-color]):not(.keep-color) {
+  background-color: #1E293B !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .border-slate-200:not([data-keep-border]):not(.keep-border) {
+  border-color: #1E293B !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .border-slate-300:not([data-keep-border]):not(.keep-border) {
+  border-color: #334155 !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .text-\[\#0F172A\]:not([data-keep-text]):not(.keep-text) {
+  color: #F8FAFC !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .text-slate-900:not([data-keep-text]):not(.keep-text) {
+  color: #F8FAFC !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .text-slate-800:not([data-keep-text]):not(.keep-text) {
+  color: #E2E8F0 !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .text-slate-700:not([data-keep-text]):not(.keep-text) {
+  color: #CBD5E1 !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .text-slate-600:not([data-keep-text]):not(.keep-text) {
+  color: #94A3B8 !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not(.keep-light):not([data-keep-light]),
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) select:not(.keep-light):not([data-keep-light]),
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) textarea:not(.keep-light):not([data-keep-light]) {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) input::placeholder,
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) textarea::placeholder {
+  color: #64748B;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-blue-50:not([data-keep-color]):not(.keep-color) {
+  background-color: rgba(30, 58, 138, 0.35) !important;
+  color: #93C5FD !important;
+  border-color: rgba(37, 99, 235, 0.4) !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-purple-50:not([data-keep-color]):not(.keep-color) {
+  background-color: rgba(88, 28, 135, 0.35) !important;
+  color: #D8B4FE !important;
+  border-color: rgba(147, 51, 234, 0.4) !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-emerald-50:not([data-keep-color]):not(.keep-color),
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-emerald-50\/50:not([data-keep-color]):not(.keep-color) {
+  background-color: rgba(6, 78, 59, 0.35) !important;
+  color: #6EE7B7 !important;
+  border-color: rgba(5, 150, 105, 0.4) !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-amber-50:not([data-keep-color]):not(.keep-color) {
+  background-color: rgba(120, 53, 15, 0.35) !important;
+  color: #FCD34D !important;
+  border-color: rgba(217, 119, 6, 0.4) !important;
+}
+
+:where(.dark, .dark *, [data-theme="midnight"], [data-theme="midnight"] *) .bg-rose-50:not([data-keep-color]):not(.keep-color) {
+  background-color: rgba(136, 19, 55, 0.35) !important;
+  color: #FDA4AF !important;
+  border-color: rgba(225, 29, 72, 0.4) !important;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+}
+
+@theme {
+  --font-sans: var(--font-family-sans);
+  --font-serif: var(--font-family-sans);
+  --font-display: var(--font-family-sans);
+  --font-heading: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  --color-skanda-primary: var(--skanda-bg-primary);
+  --color-skanda-secondary: var(--skanda-bg-secondary);
+  --color-skanda-card: var(--skanda-bg-card);
+  --color-skanda-elevated: var(--skanda-bg-elevated);
+  --color-skanda-sidebar: var(--skanda-bg-sidebar);
+  --color-skanda-border: var(--skanda-border);
+  --color-skanda-border-subtle: var(--skanda-border-subtle);
+  --color-skanda-border-strong: var(--skanda-border-strong);
+  --color-skanda-border-hover: var(--skanda-border-hover);
+  --color-skanda-text-primary: var(--skanda-text-primary);
+  --color-skanda-text-secondary: var(--skanda-text-secondary);
+  --color-skanda-text-muted: var(--skanda-text-muted);
+  --color-skanda-text-disabled: var(--skanda-text-disabled);
+
+  --color-skanda-brand: var(--skanda-brand-primary);
+  --color-skanda-brand-hover: var(--skanda-brand-primary-hover);
+  --color-skanda-brand-secondary: var(--skanda-brand-secondary);
+  --color-skanda-brand-accent: var(--skanda-brand-accent);
+  --color-skanda-brand-accent-hover: var(--skanda-brand-accent-hover);
+
+  --color-skanda-success: var(--skanda-success);
+  --color-skanda-warning: var(--skanda-warning);
+  --color-skanda-danger: var(--skanda-critical);
+  --color-skanda-critical: var(--skanda-critical);
+  --color-skanda-info: var(--skanda-info);
+
+  /* ---------------------------------------------------------------------
+     Two intermediate neutrals. Tailwind's default palette stops at
+     50/100..900/950, so `bg-slate-850`, `hover:bg-slate-750` and
+     `border-indigo-850` — used by the interface for dark-surface elevation
+     and hover states — matched nothing and silently produced no CSS: 44
+     occurrences across 20 components rendered unstyled. Declaring the two
+     steps makes that intent real instead of rewriting every call site.
+     Values sit exactly between the neighbouring default steps.
+     --------------------------------------------------------------------- */
+  --color-slate-750: #293548; /* between slate-700 #334155 and slate-800 #1E293B */
+  --color-slate-850: #16202F; /* between slate-800 #1E293B and slate-900 #0F172A */
+  --color-indigo-850: #352F94; /* between indigo-800 #3730A3 and indigo-900 #312E81 */
+
+  --radius-skanda-xs: var(--skanda-radius-xs);
+  --radius-skanda-sm: var(--skanda-radius-sm);
+  --radius-skanda-md: var(--skanda-radius-md);
+  --radius-skanda-lg: var(--skanda-radius-lg);
+  --radius-skanda-xl: var(--skanda-radius-xl);
+  --radius-skanda-pill: var(--skanda-radius-pill);
+
+  --shadow-skanda-subtle: var(--skanda-shadow-subtle);
+  --shadow-skanda-card: var(--skanda-shadow-card);
+  --shadow-skanda-elevated: var(--skanda-shadow-elevated);
+  --shadow-skanda-modal: var(--skanda-shadow-modal);
+}
+
+/* =========================================================================
+   0.1 SKANDA SEMANTIC ALIAS LAYER (@theme inline)
+   ---------------------------------------------------------------------------
+   One design system, two naming depths. These aliases expose tokens that are
+   already re-declared per theme in section 1 under short semantic names, so a
+   component can say `bg-surface text-ink border-stroke` instead of writing
+   literal palettes and pairing them by hand.
+
+   `inline` matters: it makes Tailwind emit the token reference directly into
+   each utility (`.bg-surface { background-color: var(--surface) }`) rather than
+   copying the value into :root. The utility therefore resolves against the
+   theme scope the element is actually inside — including a nested
+   `.dark-surface` island or a scoped `.theme-light` subtree — instead of
+   freezing whatever :root computed at parse time.
+   ========================================================================= */
+@theme inline {
+  /* Surfaces */
+  --color-app: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-secondary);
+  --color-elevated: var(--surface-elevated);
+  --color-card: var(--card-bg);
+
+  /* Text hierarchy */
+  --color-ink: var(--text-primary);
+  --color-ink-2: var(--text-secondary);
+  --color-ink-3: var(--text-tertiary);
+  --color-ink-disabled: var(--text-disabled);
+
+  /* Borders, dividers, focus */
+  --color-stroke: var(--border);
+  --color-stroke-subtle: var(--border-subtle);
+  --color-stroke-strong: var(--border-strong);
+  --color-ring: var(--focus-ring);
+
+  /* Brand and interaction */
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-secondary);
+  --color-accent-wash: var(--accent-wash);
+  --color-accent-border: var(--accent-border);
+  --color-action: var(--brand-action);
+  --color-action-hover: var(--brand-action-hover);
+  --color-action-active: var(--brand-action-active);
+  --color-on-action: var(--on-action);
+
+  /* Status families (wash / ink / border / dot) */
+  --color-status-ok-wash: var(--status-ok-wash);
+  --color-status-ok-ink: var(--status-ok-ink);
+  --color-status-ok-border: var(--status-ok-border);
+  --color-status-ok-dot: var(--status-ok-dot);
+  --color-status-bad-wash: var(--status-bad-wash);
+  --color-status-bad-ink: var(--status-bad-ink);
+  --color-status-bad-border: var(--status-bad-border);
+  --color-status-bad-dot: var(--status-bad-dot);
+  --color-status-warn-wash: var(--status-warn-wash);
+  --color-status-warn-ink: var(--status-warn-ink);
+  --color-status-warn-border: var(--status-warn-border);
+  --color-status-warn-dot: var(--status-warn-dot);
+  --color-status-info-wash: var(--status-info-wash);
+  --color-status-info-ink: var(--status-info-ink);
+  --color-status-info-border: var(--status-info-border);
+  --color-status-info-dot: var(--status-info-dot);
+  --color-status-neutral-wash: var(--status-neutral-wash);
+  --color-status-neutral-ink: var(--status-neutral-ink);
+  --color-status-neutral-border: var(--status-neutral-border);
+  --color-status-neutral-dot: var(--status-neutral-dot);
+
+  /* Semantic status (text/icon) and washes (badge/alert backgrounds) */
+  --color-ok: var(--success);
+  --color-warn: var(--warning);
+  --color-bad: var(--danger);
+  --color-critical: var(--critical);
+  --color-info: var(--info);
+  --color-ok-wash: var(--wash-ok);
+  --color-warn-wash: var(--wash-warn);
+  --color-bad-wash: var(--wash-bad);
+  --color-info-wash: var(--wash-info);
+
+  /* Navigation */
+  --color-sidebar: var(--skanda-bg-sidebar);
+  --color-sidebar-active: var(--accent-primary);
+
+  /* Chart series (theme aware; the two themes define different hues) */
+  --color-chart-1: var(--skanda-chart-overall);
+  --color-chart-2: var(--skanda-chart-iso27001);
+  --color-chart-3: var(--skanda-chart-iso42001);
+  --color-chart-4: var(--skanda-chart-mastrm);
+  --color-chart-5: var(--skanda-chart-soc2);
+  --color-chart-6: var(--skanda-chart-privacy);
+  --color-chart-grid: var(--skanda-chart-grid);
+  --color-chart-label: var(--text-tertiary);
+}
+
+/* =========================================================================
+   SIDEBAR CONTAINER SPECIFICATION (.sidebar)
+   Consistent width, zero-shift theme transitions, standardized flex items
+   ========================================================================= */
+.sidebar,
+.sidebar:not(.is-collapsed) {
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
+  flex: 0 0 240px !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: background-color, border-color;
+}
+
+.sidebar.is-collapsed {
+  width: 64px !important;
+  min-width: 64px !important;
+  max-width: 64px !important;
+  flex: 0 0 64px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Standardized flex alignment for all navigation items to prevent shifting */
+.sidebar-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  position: relative;
+  width: 100%;
+  height: 34px;
+  min-height: 34px;
+  max-height: 34px;
+  text-align: left;
+  overflow: hidden;
+  border-left: 3px solid transparent !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle Interaction Hover Glow Effect */
+.sidebar-nav-item:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 10px rgba(37, 99, 235, 0.09) !important;
+}
+
+:where(.dark, .dark *) .sidebar-nav-item:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 12px rgba(96, 165, 250, 0.14) !important;
+}
+
+/* Active State with Enhanced Subtle Glow Feedback on Interaction */
+.sidebar-nav-item.active:hover,
+.sidebar-nav-item.sidebar-nav-item-active:hover,
+.sidebar-nav-item[aria-current="page"]:hover,
+.sidebar-nav-item[data-active="true"]:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 0 14px rgba(37, 99, 235, 0.18) !important;
+}
+
+:where(.dark, .dark *) .sidebar-nav-item.active:hover,
+:where(.dark, .dark *) .sidebar-nav-item.sidebar-nav-item-active:hover,
+:where(.dark, .dark *) .sidebar-nav-item[aria-current="page"]:hover,
+:where(.dark, .dark *) .sidebar-nav-item[data-active="true"]:hover {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3), 0 0 16px rgba(96, 165, 250, 0.22) !important;
+}
+
+/* Active State Visual Indicator: Left-border and small colored accent pill */
+.sidebar-nav-item.active,
+.sidebar-nav-item.sidebar-nav-item-active,
+.sidebar-nav-item[aria-current="page"],
+.sidebar-nav-item[data-active="true"] {
+  border-left-color: var(--skanda-brand-accent, #2563EB) !important;
+  color: var(--skanda-brand-accent, #2563EB) !important;
+  background-color: rgba(37, 99, 235, 0.08) !important;
+  font-weight: 600 !important;
+}
+
+:where(.dark, .dark *) .sidebar-nav-item.active,
+:where(.dark, .dark *) .sidebar-nav-item.sidebar-nav-item-active,
+:where(.dark, .dark *) .sidebar-nav-item[aria-current="page"],
+:where(.dark, .dark *) .sidebar-nav-item[data-active="true"] {
+  border-left-color: #60A5FA !important;
+  color: #60A5FA !important;
+  background-color: rgba(37, 99, 235, 0.18) !important;
+}
+
+/* Precision Colored Pill Indicator on Active State */
+.sidebar-nav-item.active::before,
+.sidebar-nav-item.sidebar-nav-item-active::before,
+.sidebar-nav-item[aria-current="page"]::before,
+.sidebar-nav-item[data-active="true"]::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background-color: var(--skanda-brand-accent, #2563EB);
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.45);
+  pointer-events: none;
+  z-index: 2;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:where(.dark, .dark *) .sidebar-nav-item.active::before,
+:where(.dark, .dark *) .sidebar-nav-item.sidebar-nav-item-active::before,
+:where(.dark, .dark *) .sidebar-nav-item[aria-current="page"]::before,
+:where(.dark, .dark *) .sidebar-nav-item[data-active="true"]::before {
+  background-color: #60A5FA;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.55);
+}
+
+.sidebar:not(.is-collapsed) .sidebar-nav-item {
+  justify-content: space-between !important;
+  padding: 0 10px;
+}
+
+.sidebar.is-collapsed .sidebar-nav-item {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 auto;
+}
+
+.sidebar.is-collapsed .sidebar-nav-item.active::before,
+.sidebar.is-collapsed .sidebar-nav-item.sidebar-nav-item-active::before,
+.sidebar.is-collapsed .sidebar-nav-item[aria-current="page"]::before,
+.sidebar.is-collapsed .sidebar-nav-item[data-active="true"]::before {
+  left: 2px;
+  height: 24px;
+  width: 4px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Nav Item internal layout flex alignment */
+.sidebar-nav-item > div:first-of-type {
+  display: flex !important;
+  align-items: center !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.sidebar:not(.is-collapsed) .sidebar-nav-item > div:first-of-type {
+  flex: 1 1 auto;
+  gap: 10px;
+  justify-content: flex-start !important;
+}
+
+.sidebar.is-collapsed .sidebar-nav-item > div:first-of-type {
+  justify-content: center !important;
+  width: 100% !important;
+  flex: 1 1 100%;
+  gap: 0;
+}
+
+.sidebar-nav-item > div:last-of-type {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+/* Sub items standardized flex alignment */
+.sidebar-sub-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  position: relative;
+  width: 100%;
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  padding: 0 8px;
+  text-align: left;
+  overflow: hidden;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar-sub-item > div:first-of-type {
+  display: flex !important;
+  align-items: center !important;
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: 8px;
+  justify-content: flex-start !important;
+}
+
+/* Fixed geometry for icons preventing any subpixel displacement */
+.sidebar-icon-container {
+  width: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
+  height: 20px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.sidebar-icon {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  display: block;
+  flex-shrink: 0 !important;
+  transform: scale(1);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Smooth horizontal slide, scale & opacity transitions */
+.sidebar-nav-item .sidebar-icon,
+.sidebar-nav-item span.truncate,
+.sidebar-nav-item .truncate {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.sidebar-nav-item:hover .sidebar-icon {
+  transform: translateX(4px) scale(1.05);
+  opacity: 1 !important;
+}
+
+.sidebar-nav-item:hover span.truncate,
+.sidebar-nav-item:hover .truncate {
+  transform: translateX(4px);
+}
+
+/* Smooth scale transition for icon between sidebar expanded and collapsed states */
+.sidebar:not(.is-collapsed) .sidebar-nav-item .sidebar-icon {
+  transform: scale(1);
+}
+
+.sidebar.is-collapsed .sidebar-nav-item .sidebar-icon {
+  transform: scale(1.12);
+  transform-origin: center center;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar.is-collapsed .sidebar-nav-item:hover .sidebar-icon,
+.sidebar.is-collapsed .sidebar-nav-item.active .sidebar-icon,
+.sidebar.is-collapsed .sidebar-nav-item.sidebar-nav-item-active .sidebar-icon,
+.sidebar.is-collapsed .sidebar-nav-item[aria-current="page"] .sidebar-icon,
+.sidebar.is-collapsed .sidebar-nav-item[data-active="true"] .sidebar-icon {
+  opacity: 1 !important;
+  transform: scale(1.22);
+}
+
+.sidebar.is-collapsed .sidebar-nav-item span.truncate,
+.sidebar.is-collapsed .sidebar-nav-item .truncate {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sub-items smooth horizontal slide animation */
+.sidebar-sub-item .truncate,
+.sidebar-sub-item span.truncate {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.sidebar-sub-item:hover .truncate,
+.sidebar-sub-item:hover span.truncate {
+  transform: translateX(4px);
+}
+
+.sidebar-sub-item span[class*="rounded-full"] {
+  flex-shrink: 0 !important;
+}
+
+/* Sidebar Items Skeleton Loader Animation (Prevents Layout Shift) */
+.sidebar-nav-skeleton {
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  position: relative;
+  width: 100%;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  border-left: 3px solid transparent !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.sidebar.is-collapsed .sidebar-nav-skeleton {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.sidebar-skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(226, 232, 240, 0.85);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+:where(.dark, .dark *) .sidebar-skeleton-shimmer {
+  background-color: rgba(30, 41, 59, 0.85);
+}
+
+.sidebar-skeleton-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: sidebar-skeleton-shimmer-wave 1.6s infinite ease-in-out;
+  content: '';
+}
+
+:where(.dark, .dark *) .sidebar-skeleton-shimmer::after {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(99, 102, 241, 0.12) 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes sidebar-skeleton-shimmer-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@layer base {
+  html {
+    font-family: var(--font-family-sans);
+    font-size: 13.5px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    zoom: 1;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  @media (min-width: 1536px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      font-size: 14.5px;
+    }
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    font-size: 0.875rem;
+    line-height: 1.35rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  .page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  .main-app-content-container,
+  #main-app-content-container {
+    flex: 1 1 0%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 1023px) {
+    .main-app-content-container,
+    #main-app-content-container {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-display, .font-heading {
+    font-family: var(--font-family-sans);
+    letter-spacing: -0.015em;
+  }
+
+  p, span, div, label, li, a, button, input, select, textarea, table, th, td, text, tspan {
+    font-family: var(--font-family-sans);
+  }
+  
+  code, pre, .font-mono, kbd, samp {
+    font-family: var(--font-family-mono) !important;
+  }
+}
+
+button, input, select, textarea, table, th, td, text, tspan {
+  font-family: var(--font-family-sans);
+}
+
+.font-sans {
+  font-family: var(--font-family-sans) !important;
+}
+
+.font-mono, code, kbd, pre, samp, [class*="font-mono"] {
+  font-family: var(--font-family-mono) !important;
+}
+
+/* =========================================================================
+   1. SEMANTIC DESIGN TOKENS (LIGHT & MIDNIGHT THEMES)
+   ========================================================================= */
+
+/* Centralized Light Mode Semantic Design Tokens (DEFAULT & ROOT) - Premium Corporate Executive */
+:root,
+html.theme-light,
+body.theme-light,
+.theme-light,
+[data-theme="light"] {
+  color-scheme: light;
+  --skanda-bg-primary: #F8FAFC;
+  --skanda-bg-secondary: #F1F5F9;
+  --skanda-bg-card: #FFFFFF;
+  --skanda-bg-elevated: #FFFFFF;
+  --skanda-bg-sidebar: #FFFFFF;
+  --skanda-bg-sidebar-header: #FFFFFF;
+  --skanda-border: #E2E8F0;
+  --skanda-border-subtle: #F1F5F9;
+  --skanda-border-strong: #CBD5E1;
+  --skanda-border-hover: #CBD5E1;
+  --skanda-text-primary: #0F172A;
+  --skanda-text-heading: #0F172A;
+  --skanda-text-secondary: #475569;
+  --skanda-text-muted: #566176;
+  --skanda-text-disabled: #94A3B8;
+  --skanda-brand: #0F2747;
+  --skanda-brand-secondary: #2563EB;
+  --skanda-brand-violet: #6D28D9;
+  --skanda-accent-blue: #38BDF8;
+  --skanda-accent-violet: #8B5CF6;
+  --skanda-success: #047857;
+  --skanda-warning: #B45309;
+  --skanda-critical: #B91C1C;
+  --skanda-high-risk: #DC2626;
+  --skanda-info: #0369A1;
+  --skanda-chart-overall: #0F2747;
+  --skanda-chart-iso27001: #2563EB;
+  --skanda-chart-iso42001: #475569;
+  --skanda-chart-mastrm: #DC2626;
+  --skanda-chart-soc2: #059669;
+  --skanda-chart-privacy: #D97706;
+  --skanda-chart-benchmark: #0284C7;
+  --skanda-chart-grid: #E2E8F0;
+  --skanda-sparkline-emerald: var(--skanda-success);
+  --skanda-sparkline-rose: var(--skanda-critical);
+  --skanda-sparkline-indigo: #2563EB;
+  --skanda-sparkline-purple: #0F2747;
+  --skanda-sparkline-amber: var(--skanda-warning);
+  --skanda-sparkline-sky: var(--skanda-info);
+  --skanda-sparkline-slate: var(--skanda-text-disabled);
+  --skanda-sparkline-grid: var(--skanda-chart-grid);
+
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --surface-secondary: #F1F5F9;
+  --surface-muted: #F1F5F9;
+  --surface-subtle: #F8FAFC;
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --border-strong: #CBD5E1;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  /* slate-500 (#64748B) measured 4.26:1–4.59:1 on the light status washes and on
+     slate-100, i.e. below the 4.5:1 AA floor wherever tertiary text sits on a tint.
+     #566176 is the muted slate the interface already uses and reaches 5.58:1+. */
+  --text-tertiary: #566176;
+  --text-disabled: #94A3B8;
+  --text-inverse: #FFFFFF;
+  --icon-primary: #0F172A;
+  --icon-secondary: #475569;
+  --accent-primary: #2563EB;
+  --accent-secondary: #1D4ED8;
+  --accent-violet: #6D28D9;
+  --success: #047857;
+  --warning: #B45309;
+  --danger: #DC2626;
+  --critical: #B91C1C;
+  /* Success / warning / information are also used for normal-size body and
+     badge text, so the light values are the darkest step of each hue that
+     still reads as the same colour family (emerald-700 / amber-700 /
+     sky-700). The previous 600-level values failed WCAG 2.2 AA on white:
+     success 3.77:1, warning 3.19:1, information 4.10:1. */
+  --info: #0369A1;
+  --focus-ring: #2563EB;
+
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
+  --card-text-primary: #0F172A;
+  --card-text-secondary: #475569;
+  --card-text-tertiary: #566176;
+
+  /* Status washes for badges, alerts and inline notices (light: solid tints) */
+  --wash-ok: #ECFDF5;
+  --wash-warn: #FFFBEB;
+  --wash-bad: #FEF2F2;
+  --wash-info: #F0F9FF;
+
+  /* Primary action (brand) — one definition per theme. These values were
+     previously written inline in Button.tsx for light and dark separately. */
+  --brand-action: #0F2747;
+  --brand-action-hover: #173A63;
+  --brand-action-active: #0A1B32;
+  --on-action: #FFFFFF;
+
+  /* Accent family: informational / in-progress surfaces */
+  --accent-wash: #EFF6FF;
+  --accent-border: #BFDBFE;
+
+  /* Status families — wash, ink, border, dot. Values are the ones the shared
+     status components already used, hoisted into the token layer so status
+     meaning is defined once instead of per component. */
+  --status-ok-wash: #ECFDF5;      --status-ok-ink: #047857;      --status-ok-border: #A7F3D0;      --status-ok-dot: #059669;
+  --status-bad-wash: #FEF2F2;     --status-bad-ink: #B91C1C;     --status-bad-border: #FECACA;     --status-bad-dot: #DC2626;
+  --status-warn-wash: #FFFBEB;    --status-warn-ink: #B45309;    --status-warn-border: #FDE68A;    --status-warn-dot: #D97706;
+  --status-info-wash: #F0F9FF;    --status-info-ink: #0284C7;    --status-info-border: #BAE6FD;    --status-info-dot: #0284C7;
+  --status-neutral-wash: #F1F5F9; --status-neutral-ink: #475569; --status-neutral-border: #E2E8F0; --status-neutral-dot: #64748B;
+
+  /* Executive Corporate Canvas: Subtle Technical Grid with Atmospheric Ambient Gradients */
+  background-color: #F8FAFC !important;
+  background-image: 
+    radial-gradient(circle at 18% 12%, rgba(59, 130, 246, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 82% 16%, rgba(124, 58, 237, 0.06) 0%, transparent 42%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 100% 100%, 68px 68px, 68px 68px !important;
+  background-attachment: fixed !important;
+  color: #0F172A;
+}
+
+/* Master Dark Mode Semantic Design Tokens - Premium Enterprise GRC System */
+html.theme-midnight,
+body.theme-midnight,
+.theme-midnight,
+[data-theme="midnight"],
+.dark {
+  color-scheme: dark;
+  --input-border: #1E293B;
+  --input-border-hover: #334155;
+  --input-border-focus: #3B82F6;
+  --input-focus-ring: rgba(59, 130, 246, 0.20);
+  --input-bg: rgba(11, 16, 27, 0.85);
+  --input-text: #F8FAFC;
+  --input-placeholder: #64748B;
+  --input-label: #E2E8F0;
+  --skanda-bg-primary: #0B1220;
+  --skanda-bg-secondary: #0F172A;
+  --skanda-bg-card: #162033;
+  --skanda-bg-elevated: #1E293B;
+  --skanda-bg-sidebar: #0F172A;
+  --skanda-bg-sidebar-header: #0F172A;
+  --skanda-border: #273449;
+  --skanda-border-subtle: #1E293B;
+  --skanda-border-strong: #334155;
+  --skanda-border-hover: #334155;
+  --skanda-border-interactive: #3B82F6;
+  --skanda-text-primary: #F8FAFC;
+  --skanda-text-heading: #F8FAFC;
+  --skanda-text-secondary: #CBD5E1;
+  --skanda-text-muted: #94A3B8;
+  --skanda-text-disabled: #64748B;
+  --skanda-brand: #0F2747;
+  --skanda-brand-secondary: #60A5FA;
+  --skanda-brand-violet: #8B5CF6;
+  --skanda-accent-blue: #38BDF8;
+  --skanda-accent-cyan: #22D3EE;
+  --skanda-success: #34D399;
+  --skanda-warning: #F59E0B;
+  --skanda-critical: #FB7185;
+  --skanda-high-risk: #F87171;
+  --skanda-info: #38BDF8;
+  --skanda-chart-overall: #60A5FA;
+  --skanda-chart-iso27001: #38BDF8;
+  --skanda-chart-iso42001: #8B5CF6;
+  --skanda-chart-mastrm: #F87171;
+  --skanda-chart-soc2: #34D399;
+  --skanda-chart-privacy: #FBBF24;
+  --skanda-chart-benchmark: #22D3EE;
+  --skanda-chart-grid: #273449;
+  --skanda-sparkline-emerald: var(--skanda-success);
+  --skanda-sparkline-rose: var(--skanda-critical);
+  --skanda-sparkline-indigo: #60A5FA;
+  --skanda-sparkline-purple: var(--skanda-brand-violet);
+  --skanda-sparkline-amber: var(--skanda-warning);
+  --skanda-sparkline-sky: var(--skanda-info);
+  --skanda-sparkline-slate: var(--skanda-text-disabled);
+  --skanda-sparkline-grid: var(--skanda-chart-grid);
+
+  --background: #0B1220;
+  --surface: #162033;
+  --surface-secondary: #1A2638;
+  --surface-elevated: #1E293B;
+  --surface-muted: #162033;
+  --surface-subtle: #0F172A;
+  --border: #273449;
+  --border-subtle: #1E293B;
+  --border-strong: #334155;
+  --border-interactive: #3B82F6;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-tertiary: #94A3B8;
+  --text-disabled: #64748B;
+  --text-inverse: #0B1220;
+  --icon-primary: #F8FAFC;
+  --icon-secondary: #CBD5E1;
+  --accent-primary: #60A5FA;
+  --accent-secondary: #3B82F6;
+  --accent-violet: #8B5CF6;
+  --success: #34D399;
+  --warning: #F59E0B;
+  --danger: #F87171;
+  --critical: #FB7185;
+  --info: #38BDF8;
+  --focus-ring: #60A5FA;
+
+  /* Status washes (dark: low-alpha tints over the dark surface) */
+  --wash-ok: rgba(52, 211, 153, 0.14);
+  --wash-warn: rgba(245, 158, 11, 0.16);
+  --wash-bad: rgba(248, 113, 113, 0.16);
+  --wash-info: rgba(56, 189, 248, 0.16);
+
+  --brand-action: #2563EB;
+  --brand-action-hover: #1D4ED8;
+  --brand-action-active: #1E40AF;
+  --on-action: #FFFFFF;
+
+  --accent-wash: #172554;
+  --accent-border: #1E40AF;
+
+  --status-ok-wash: #052E2B;      --status-ok-ink: #6EE7B7;      --status-ok-border: #065F46;      --status-ok-dot: #34D399;
+  --status-bad-wash: #450A0A;     --status-bad-ink: #FCA5A5;     --status-bad-border: #991B1B;     --status-bad-dot: #F87171;
+  --status-warn-wash: #422006;    --status-warn-ink: #FCD34D;    --status-warn-border: #92400E;    --status-warn-dot: #FBBF24;
+  --status-info-wash: #082F49;    --status-info-ink: #7DD3FC;    --status-info-border: #0369A1;    --status-info-dot: #38BDF8;
+  --status-neutral-wash: #1E293B; --status-neutral-ink: #CBD5E1; --status-neutral-border: #334155; --status-neutral-dot: #94A3B8;
+
+  --card-bg: #162033;
+  --card-border: #273449;
+  --card-text-primary: #F8FAFC;
+  --card-text-secondary: #CBD5E1;
+  --card-text-tertiary: #94A3B8;
+
+  background-color: #0B1220 !important;
+  background-image: 
+    radial-gradient(circle at 18% 12%, rgba(59, 130, 246, 0.10) 0%, transparent 42%),
+    radial-gradient(circle at 82% 16%, rgba(124, 58, 237, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 50% 85%, rgba(34, 211, 238, 0.04) 0%, transparent 50%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 68px 68px, 68px 68px !important;
+  background-attachment: fixed !important;
+  color: #CBD5E1;
+}
+
+/* =========================================================================
+   1.1 STRICT SEMANTIC UTILITY CLASSES (DARK & LIGHT THEMES)
+   Enforces consistent cross-module design token usage
+   ========================================================================= */
+.skanda-tech-grid {
+  background-color: var(--skanda-bg-primary);
+  background-image: 
+    radial-gradient(circle at 18% 12%, rgba(59, 130, 246, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 82% 16%, rgba(124, 58, 237, 0.06) 0%, transparent 42%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 68px 68px, 68px 68px;
+}
+
+.theme-midnight .skanda-tech-grid,
+.dark .skanda-tech-grid {
+  background-color: #0B1220;
+  background-image: 
+    radial-gradient(circle at 18% 12%, rgba(59, 130, 246, 0.10) 0%, transparent 42%),
+    radial-gradient(circle at 82% 16%, rgba(124, 58, 237, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 50% 85%, rgba(34, 211, 238, 0.04) 0%, transparent 50%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 68px 68px, 68px 68px;
+}
+
+/* Primary Action CTA: Precision Royal Blue -> Refined Executive Accent */
+.btn-primary-gradient,
+.btn-gradient {
+  background: linear-gradient(90deg, var(--skanda-brand-accent), #4F46E5) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: var(--skanda-radius-md) !important;
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-4) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+  font-weight: 600 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.theme-midnight .btn-primary-gradient,
+.theme-midnight .btn-gradient,
+.dark .btn-primary-gradient,
+.dark .btn-gradient {
+  background: linear-gradient(90deg, #3B82F6, #6366F1) !important;
+}
+
+.btn-primary-gradient:hover,
+.btn-gradient:hover {
+  background: linear-gradient(90deg, var(--skanda-brand-accent-hover), #4338CA) !important;
+  transform: translateY(-0.5px);
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.35) !important;
+}
+
+.theme-midnight .btn-primary-gradient:hover,
+.theme-midnight .btn-gradient:hover,
+.dark .btn-primary-gradient:hover,
+.dark .btn-gradient:hover {
+  background: linear-gradient(90deg, #2563EB, #4F46E5) !important;
+}
+
+.btn-primary-gradient:active,
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+/* Secondary Enterprise Button */
+.btn-enterprise-secondary {
+  background-color: var(--skanda-bg-card) !important;
+  border: 1px solid var(--skanda-border-strong) !important;
+  color: var(--skanda-text-secondary) !important;
+  border-radius: var(--skanda-radius-md) !important;
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-4) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-enterprise-secondary:hover {
+  background-color: var(--skanda-bg-secondary) !important;
+  border-color: var(--skanda-border-hover) !important;
+  color: var(--skanda-text-primary) !important;
+}
+
+.theme-midnight .btn-enterprise-secondary,
+.dark .btn-enterprise-secondary {
+  background-color: var(--skanda-bg-card) !important;
+  border-color: var(--skanda-border-strong) !important;
+  color: var(--skanda-text-secondary) !important;
+}
+
+.theme-midnight .btn-enterprise-secondary:hover,
+.dark .btn-enterprise-secondary:hover {
+  background-color: var(--skanda-bg-elevated) !important;
+  border-color: var(--skanda-brand-accent) !important;
+  color: var(--skanda-text-primary) !important;
+}
+
+/* =========================================================================
+   SKANDA ENTERPRISE DATA TABLE SYSTEM (LIGHT & DARK MODES)
+   ========================================================================= */
+
+.skanda-table-container {
+  border: 1px solid var(--skanda-border);
+  border-radius: var(--skanda-radius-lg);
+  box-shadow: var(--skanda-shadow-card);
+  overflow: hidden;
+  background-color: var(--skanda-bg-card);
+}
+
+.theme-light table:not(.unstyled),
+.theme-light .skanda-table,
+[data-theme="light"] table:not(.unstyled) {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.theme-light table:not(.unstyled) thead,
+.theme-light .skanda-table thead,
+[data-theme="light"] table:not(.unstyled) thead {
+  background-color: var(--skanda-neutral-50) !important;
+  border-bottom: 1px solid var(--skanda-border) !important;
+}
+
+.theme-light table:not(.unstyled) th,
+.theme-light .skanda-table th,
+[data-theme="light"] table:not(.unstyled) th {
+  color: var(--skanda-brand-primary) !important;
+  font-size: var(--skanda-font-caption-size) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  padding: var(--skanda-space-2) var(--skanda-space-4) !important;
+  border-bottom: 1px solid var(--skanda-border) !important;
+}
+
+.theme-light table:not(.unstyled) tbody tr,
+.theme-light .skanda-table tbody tr,
+[data-theme="light"] table:not(.unstyled) tbody tr {
+  background-color: var(--skanda-bg-card) !important;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid var(--skanda-border-subtle) !important;
+}
+
+.theme-light table:not(.unstyled) tbody tr:nth-child(even),
+.theme-light .skanda-table tbody tr:nth-child(even),
+[data-theme="light"] table:not(.unstyled) tbody tr:nth-child(even) {
+  background-color: var(--skanda-neutral-50) !important;
+}
+
+.theme-light table:not(.unstyled) tbody tr:hover,
+.theme-light .skanda-table tbody tr:hover,
+[data-theme="light"] table:not(.unstyled) tbody tr:hover {
+  background-color: var(--skanda-bg-secondary) !important;
+}
+
+.theme-light table:not(.unstyled) td,
+.theme-light .skanda-table td,
+[data-theme="light"] table:not(.unstyled) td {
+  color: var(--skanda-text-primary) !important;
+  font-size: var(--skanda-font-small-size) !important;
+  padding: var(--skanda-space-3) var(--skanda-space-4) !important;
+  border-bottom: 1px solid var(--skanda-border-subtle) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dark Mode Data Tables */
+.theme-midnight table:not(.unstyled),
+.dark table:not(.unstyled),
+.theme-midnight .skanda-table,
+.dark .skanda-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.theme-midnight table:not(.unstyled) thead,
+.dark table:not(.unstyled) thead,
+.theme-midnight .skanda-table thead,
+.dark .skanda-table thead {
+  background-color: var(--skanda-bg-card) !important;
+  border-bottom: 1px solid var(--skanda-border) !important;
+}
+
+.theme-midnight table:not(.unstyled) th,
+.dark table:not(.unstyled) th,
+.theme-midnight .skanda-table th,
+.dark .skanda-table th {
+  color: var(--skanda-text-primary) !important;
+  font-size: var(--skanda-font-caption-size) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  padding: var(--skanda-space-2) var(--skanda-space-4) !important;
+  border-bottom: 1px solid var(--skanda-border) !important;
+}
+
+.theme-midnight table:not(.unstyled) tbody tr,
+.dark table:not(.unstyled) tbody tr,
+.theme-midnight .skanda-table tbody tr,
+.dark .skanda-table tbody tr {
+  background-color: var(--skanda-bg-primary) !important;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid var(--skanda-border) !important;
+}
+
+.theme-midnight table:not(.unstyled) tbody tr:nth-child(even),
+.dark table:not(.unstyled) tbody tr:nth-child(even),
+.theme-midnight .skanda-table tbody tr:nth-child(even),
+.dark .skanda-table tbody tr:nth-child(even) {
+  background-color: var(--skanda-bg-secondary) !important;
+}
+
+.theme-midnight table:not(.unstyled) tbody tr:hover,
+.dark table:not(.unstyled) tbody tr:hover,
+.theme-midnight .skanda-table tbody tr:hover,
+.dark .skanda-table tbody tr:hover {
+  background-color: var(--skanda-bg-elevated) !important;
+}
+
+.theme-midnight table:not(.unstyled) td,
+.dark table:not(.unstyled) td,
+.theme-midnight .skanda-table td,
+.dark .skanda-table td {
+  color: var(--skanda-text-primary) !important;
+  font-size: var(--skanda-font-small-size) !important;
+  padding: var(--skanda-space-3) var(--skanda-space-4) !important;
+  border-bottom: 1px solid var(--skanda-border) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.bg-skanda-primary {
+  background-color: var(--skanda-bg-primary) !important;
+}
+
+.bg-skanda-secondary {
+  background-color: var(--skanda-bg-secondary) !important;
+}
+
+.bg-skanda-card {
+  background-color: var(--skanda-bg-card) !important;
+}
+
+.bg-skanda-elevated {
+  background-color: var(--skanda-bg-elevated) !important;
+}
+
+.border-skanda {
+  border-color: var(--skanda-border) !important;
+}
+
+.border-skanda-subtle {
+  border-color: var(--skanda-border-subtle) !important;
+}
+
+.border-skanda-hover:hover {
+  border-color: var(--skanda-border-hover) !important;
+}
+
+.hover\:bg-skanda-elevated:hover {
+  background-color: var(--skanda-bg-elevated) !important;
+}
+
+.text-skanda-primary {
+  color: var(--skanda-text-primary) !important;
+}
+
+.text-skanda-secondary {
+  color: var(--skanda-text-secondary) !important;
+}
+
+.text-skanda-muted {
+  color: var(--skanda-text-muted) !important;
+}
+
+.text-skanda-disabled {
+  color: var(--skanda-text-disabled) !important;
+}
+
+/* =========================================================================
+   2. INTENTIONALLY DARK SURFACES (IN BOTH LIGHT & DARK MODES)
+   Cards like executive high-contrast dials retain
+   their dark navy background and MUST retain crisp white/light inverse text.
+   ========================================================================= */
+
+.dark-surface,
+[data-theme-surface="dark"] {
+  --background: #0b0f19 !important;
+  --surface: #0f172a !important;
+  --surface-elevated: #1e293b !important;
+  --border: #1e293b !important;
+  --text-primary: #ffffff !important;
+  --text-secondary: #cbd5e1 !important;
+  --text-tertiary: #94a3b8 !important;
+  --text-disabled: #64748b !important;
+  --text-inverse: #0f172a !important;
+  --card-bg: #0b0f19 !important;
+  --card-border: #1e293b !important;
+  --card-text-primary: #ffffff !important;
+  --card-text-secondary: #cbd5e1 !important;
+  --card-text-tertiary: #94a3b8 !important;
+  color: #ffffff !important;
+}
+
+/* =========================================================================
+   2.1 COMPOSITE HEALTH INDEX CARD
+   Seamless semantic card that adapts dynamically between themes
+   ========================================================================= */
+
+.composite-health-card {
+  background: linear-gradient(135deg, #0b0f19 0%, #0f172a 50%, #1e1b4b 100%);
+  border: 1px solid var(--skanda-border);
+  color: var(--skanda-text-primary);
+}
+
+.theme-light .composite-health-card,
+[data-theme="light"] .composite-health-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #eef2ff 100%) !important;
+  border: 1px solid var(--skanda-border) !important;
+  color: var(--skanda-text-primary) !important;
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.08), 0 8px 10px -6px rgba(99, 102, 241, 0.04) !important;
+}
+
+.theme-light .composite-health-card .text-white {
+  color: var(--skanda-text-primary) !important;
+}
+
+/* Background Canvas & Deep Midnight Hex Containers (Light Mode) */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0B0F19]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0D111D]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#090D16]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#070a12]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#070A12]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#070B17]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#070b17]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#080D1A]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#080d1a]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0A0E1A]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0D1222]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0F1424]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0D1424]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0D1426]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0d1426]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0D1527]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0d1527]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0B101E]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#121932]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#141B32]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#111A30]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#111a30]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#111A2C]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#17233A]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#17233a]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-[#0e2a47]"] {
+  background-color: var(--skanda-bg-card) !important;
+}
+
+.theme-light [class*="hover:bg-[#17233A]"]:hover,
+.theme-light [class*="hover:bg-[#17233a]"]:hover {
+  background-color: rgba(226, 232, 240, 0.70) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-[#1E293B]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-[#1e293b]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-[#263550]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-[#243047]"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-[#1B2639]"] {
+  border-color: var(--skanda-border) !important;
+}
+
+/* Cards, Panels, and Surfaces converted to Premium Clean White Enterprise Cards */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-900"],
+.theme-light .card:not(.dark-surface):not([data-theme-surface="dark"]),
+.theme-light .glass-card {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-950"],
+.theme-light .glass-subcard {
+  background-color: #F8FAFC !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+/* Secondary Panels, Muted Wells, & Toolbars */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-850"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-800"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-750"] {
+  background-color: #F1F5F9 !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Interactive Hover States */
+.theme-light [class*="hover:bg-slate-800"]:hover,
+.theme-light [class*="hover:bg-slate-850"]:hover,
+.theme-light [class*="hover:bg-slate-900"]:hover,
+.theme-light [class*="hover:bg-slate-700"]:hover {
+  background-color: #F8FAFC !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Crisp Clean Slate Borders */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-slate-800"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-slate-700"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="border-slate-600"] {
+  border-color: #E2E8F0 !important;
+}
+
+.theme-light [class*="divide-slate-800"] > :not([hidden]) ~ :not([hidden]),
+.theme-light [class*="divide-slate-700"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #E2E8F0 !important;
+}
+
+/* Executive Light Mode Clean Gradient Harmonization - Converts dark banner gradients to crisp clean white cards */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-slate-800"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-slate-850"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-slate-900"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-slate-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="to-slate-800"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="to-slate-900"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="to-slate-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-indigo-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-purple-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-amber-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="from-emerald-950"] {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Standardized Enterprise Cards in Executive Light Mode */
+.theme-light .card:not(.dark-surface):not([data-theme-surface="dark"]),
+.theme-light [data-card="true"]:not(.dark-surface):not([data-theme-surface="dark"]),
+.theme-light .skanda-card:not(.dark-surface):not([data-theme-surface="dark"]),
+.theme-light .glass-card:not(.dark-surface):not([data-theme-surface="dark"]) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03) !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+/* Subtle, Polished Card Hover State */
+.theme-light .card:not(.dark-surface):not([data-theme-surface="dark"]):hover,
+.theme-light [data-card="true"]:not(.dark-surface):not([data-theme-surface="dark"]):hover,
+.theme-light .skanda-card:not(.dark-surface):not([data-theme-surface="dark"]):hover {
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Preserve Dark Surface Background in Light Mode */
+.theme-light .dark-surface,
+.theme-light [data-theme-surface="dark"] {
+  background-color: var(--card-bg, #0b0f19) !important;
+  background-image: linear-gradient(to bottom right, var(--surface, #0b0f19), var(--surface-subtle, #0f172a), var(--surface-elevated, #1e1b4b)) !important;
+  border-color: var(--card-border, #1e293b) !important;
+  color: var(--card-text-primary, #ffffff) !important;
+}
+
+/* =========================================================================
+   UNIVERSAL HIGH-CONTRAST TYPOGRAPHY & VISIBILITY GUARANTEE
+   Ensures 100% visibility of all words, letters, labels, inputs, and cards.
+   ========================================================================= */
+
+/* Headings on light theme are always deep navy / crisp slate */
+.theme-light h1, .theme-light h2, .theme-light h3, .theme-light h4, .theme-light h5, .theme-light h6,
+:root:not(.theme-midnight) h1, :root:not(.theme-midnight) h2, :root:not(.theme-midnight) h3, :root:not(.theme-midnight) h4, :root:not(.theme-midnight) h5, :root:not(.theme-midnight) h6 {
+  color: #0F172A !important;
+}
+
+/* In light mode, convert light/white text on surfaces to deep readable colors */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) h1.text-white,
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) h2.text-white,
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) h3.text-white,
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) h4.text-white,
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) strong.text-white,
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) p.text-white,
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) span.text-white:not(button *):not([class*="bg-blue-6"]):not([class*="bg-indigo-6"]):not([class*="bg-emerald-6"]):not([class*="bg-rose-6"]):not([class*="bg-purple-6"]):not([class*="bg-red-6"]):not([class*="bg-sky-6"]):not([class*="bg-amber-6"]):not([class*="bg-teal-6"]):not([class*="bg-[#0F2747]"]):not([class*="bg-[#2563EB]"]):not([class*="btn-"]):not([class*="rounded-full"][class*="bg-"]),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) div.text-white:not(button *):not([class*="bg-blue-6"]):not([class*="bg-indigo-6"]):not([class*="bg-emerald-6"]):not([class*="bg-rose-6"]):not([class*="bg-purple-6"]):not([class*="bg-red-6"]):not([class*="bg-sky-6"]):not([class*="bg-amber-6"]):not([class*="bg-teal-6"]):not([class*="bg-[#0F2747]"]):not([class*="bg-[#2563EB]"]):not([class*="btn-"]),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-slate-100:not(button *):not([class*="bg-blue-6"]):not([class*="bg-indigo-6"]):not([class*="bg-emerald-6"]):not([class*="bg-rose-6"]):not([class*="bg-purple-6"]):not([class*="bg-red-6"]):not([class*="bg-sky-6"]):not([class*="bg-amber-6"]):not([class*="bg-teal-6"]):not([class*="bg-[#0F2747]"]):not([class*="bg-[#2563EB]"]):not([class*="btn-"]),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-slate-200:not(button *):not([class*="bg-blue-6"]):not([class*="bg-indigo-6"]):not([class*="bg-emerald-6"]):not([class*="bg-rose-6"]):not([class*="bg-purple-6"]):not([class*="bg-red-6"]):not([class*="bg-sky-6"]):not([class*="bg-amber-6"]):not([class*="bg-teal-6"]):not([class*="bg-[#0F2747]"]):not([class*="bg-[#2563EB]"]):not([class*="btn-"]),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-gray-100:not(button *),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-gray-200:not(button *),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-zinc-100:not(button *),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-zinc-200:not(button *) {
+  color: #0F172A !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-slate-300:not(button *):not([class*="bg-blue-6"]):not([class*="bg-indigo-6"]):not([class*="bg-emerald-6"]):not([class*="bg-rose-6"]):not([class*="bg-purple-6"]):not([class*="bg-red-6"]):not([class*="bg-sky-6"]):not([class*="bg-amber-6"]):not([class*="bg-teal-6"]):not([class*="bg-[#0F2747]"]):not([class*="bg-[#2563EB]"]):not([class*="btn-"]),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-gray-300:not(button *),
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"]) .text-zinc-300:not(button *) {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-900:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-slate-800:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #0F172A !important;
+}
+
+.theme-light .text-slate-700:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-600:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #475569 !important;
+}
+
+.theme-light .text-slate-500:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-gray-500:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  /* slate-500 measured 4.26:1 on the light status washes and 4.34:1 on slate-100 —
+     just under the 4.5:1 AA floor for the 9.5–11px labels that use it. */
+  color: #566176 !important;
+}
+
+/* Literal muted hex text in light mode: #64748B (4.26:1–4.59:1 on tints) and
+   #94A3B8 (2.6:1 on white — a dark-mode value used in a light scope). */
+.theme-light .text-\[\#64748B\]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-\[\#94A3B8\]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+html.theme-light .text-\[\#64748B\]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+html.theme-light .text-\[\#94A3B8\]:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #566176 !important;
+}
+
+/* Pills and chips that carry BOTH a repainted dark background class and white text.
+   The universal flip above deliberately skips `rounded-full` pills that have their
+   own background, which left e.g. "All Statuses" as white text on #F1F5F9 (1.1:1)
+   once the repaint rule lightened its bg-slate-800. When both classes are on the
+   same element the background is known to have been repainted, so the text flips. */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-700"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-750"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-800"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-850"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-900"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-950"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-gray-800"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-gray-900"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-zinc-800"][class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-zinc-900"][class*="text-white"],
+/* ...and any descendant that carries white text, which is how the inner counters of
+   those pills are written (e.g. `bg-white/20 text-white` inside the repainted pill). */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-700"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-750"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-800"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-850"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-900"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-slate-950"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-gray-800"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-gray-900"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-zinc-800"] [class*="text-white"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-zinc-900"] [class*="text-white"] {
+  color: #0F172A !important;
+}
+
+.theme-light .text-slate-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-gray-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-zinc-400:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #475569 !important;
+}
+
+/* Ensure ALL input elements have white backgrounds and dark text in light mode */
+.theme-light input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not(.dark-surface *),
+.theme-light select:not(.dark-surface *),
+.theme-light textarea:not(.dark-surface *) {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+.theme-light label:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+/* Explicitly preserve crisp white text inside colored buttons and badges */
+.btn-primary-gradient,
+.btn-gradient,
+button.btn-primary-gradient,
+button.btn-gradient,
+.btn-primary-gradient *,
+.btn-gradient *,
+/* Only gradients built from dark stops carry white text. The header workspace pill
+   is a *light* gradient (from-indigo-50 to-purple-50) with explicit dark text; the
+   previous unscoped rule forced white onto its label, measuring 1.05:1 against the
+   light gradient, i.e. invisible. Every light gradient stop used in the codebase is
+   excluded here (verified with scripts/auditEnterpriseUiUx.ts). */
+button[class*="bg-gradient-to-r"]:not([class*="from-slate-50"]):not([class*="from-slate-100"]):not([class*="from-gray-50"]):not([class*="from-indigo-50"]):not([class*="from-blue-50"]):not([class*="from-purple-50"]):not([class*="from-violet-50"]):not([class*="from-emerald-50"]):not([class*="from-teal-50"]):not([class*="from-cyan-50"]):not([class*="from-sky-50"]):not([class*="from-amber-50"]):not([class*="from-rose-50"]) *,
+a[class*="bg-gradient-to-r"]:not([class*="from-slate-50"]):not([class*="from-slate-100"]):not([class*="from-gray-50"]):not([class*="from-indigo-50"]):not([class*="from-blue-50"]):not([class*="from-purple-50"]):not([class*="from-violet-50"]):not([class*="from-emerald-50"]):not([class*="from-teal-50"]):not([class*="from-cyan-50"]):not([class*="from-sky-50"]):not([class*="from-amber-50"]):not([class*="from-rose-50"]) *,
+button[class*="bg-blue-6"] *,
+button[class*="bg-indigo-6"] *,
+button[class*="bg-emerald-6"] *,
+button[class*="bg-rose-6"] *,
+button[class*="bg-sky-6"] *,
+button[class*="bg-purple-6"] *,
+/* Solid coloured backgrounds only. The `:not([class*=".../"])` guard keeps a
+   translucent tint (bg-rose-600/20) from forcing white text onto its children,
+   which rendered as white-on-white once the tint was painted over a light card. */
+[class*="bg-blue-600"]:not([class*="bg-blue-600/"]) > *,
+[class*="bg-indigo-600"]:not([class*="bg-indigo-600/"]) > *,
+[class*="bg-emerald-600"]:not([class*="bg-emerald-600/"]) > *,
+[class*="bg-rose-600"]:not([class*="bg-rose-600/"]) > *,
+[class*="bg-sky-600"]:not([class*="bg-sky-600/"]) > *,
+[class*="bg-purple-600"]:not([class*="bg-purple-600/"]) > * {
+  color: #FFFFFF !important;
+}
+
+/* =========================================================================
+   EXPLICIT LIGHT SURFACES (IN BOTH LIGHT & DARK MODES)
+   Modals, dialogs, or white content panels that deliberately retain a 
+   clean white background MUST retain crisp dark text.
+   ========================================================================= */
+
+.light-surface,
+[data-theme-surface="light"] {
+  --background: #ffffff !important;
+  --surface: #ffffff !important;
+  --surface-elevated: #f8fafc !important;
+  --border: #e2e8f0 !important;
+  background-color: var(--surface) !important;
+  color: var(--card-text-primary) !important;
+}
+
+.light-surface .text-slate-900,
+[data-theme-surface="light"] .text-slate-900 {
+  color: #0f172a !important;
+}
+
+.light-surface .text-slate-800,
+[data-theme-surface="light"] .text-slate-800 {
+  color: #1e293b !important;
+}
+
+.light-surface .text-slate-700,
+[data-theme-surface="light"] .text-slate-700 {
+  color: #334155 !important;
+}
+
+.light-surface .text-slate-600,
+[data-theme-surface="light"] .text-slate-600 {
+  color: #475569 !important;
+}
+
+.light-surface .text-slate-500,
+[data-theme-surface="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+.light-surface .text-slate-400,
+[data-theme-surface="light"] .text-slate-400 {
+  color: #64748b !important;
+}
+
+.light-surface .text-slate-300,
+[data-theme-surface="light"] .text-slate-300 {
+  color: #94a3b8 !important;
+}
+
+/* =========================================================================
+   WELCOME GUIDE MODAL HIGH-CONTRAST TYPOGRAPHY GUARANTEE
+   Ensures 100% font visibility across all themes (Dark & Light modes)
+   ========================================================================= */
+
+#welcome-modal-container {
+  background-color: var(--skanda-bg-card) !important;
+  border-color: var(--skanda-border) !important;
+  color: var(--skanda-text-primary) !important;
+}
+
+#welcome-modal-container header,
+#welcome-modal-container .dark-header {
+  background-color: #0D1424 !important;
+  border-color: #1E293B !important;
+  color: #FFFFFF !important;
+}
+
+#welcome-modal-container header h2,
+#welcome-modal-container #welcome-modal-title {
+  color: #FFFFFF !important;
+}
+
+#welcome-modal-container header p,
+#welcome-modal-container #welcome-modal-desc {
+  color: #CBD5E1 !important;
+}
+
+#welcome-modal-container .welcome-guide-badge {
+  background-color: rgba(99, 102, 241, 0.25) !important;
+  color: #C7D2FE !important;
+  border-color: rgba(129, 140, 248, 0.5) !important;
+}
+
+#welcome-modal-container .welcome-guide-tenant {
+  color: #E2E8F0 !important;
+}
+
+#welcome-modal-container header button#welcome-modal-close-btn {
+  color: #CBD5E1 !important;
+}
+
+#welcome-modal-container header button#welcome-modal-close-btn:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Tab Bar */
+#welcome-modal-container header [role="tablist"] {
+  background-color: #090E1C !important;
+  border-color: #1E293B !important;
+}
+
+#welcome-modal-container header [role="tab"][aria-selected="true"] {
+  background-color: #4F46E5 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(129, 140, 248, 0.6) !important;
+  font-weight: 700 !important;
+}
+
+#welcome-modal-container header [role="tab"][aria-selected="false"] {
+  color: #E2E8F0 !important;
+  background-color: rgba(30, 41, 59, 0.85) !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+  font-weight: 600 !important;
+}
+
+#welcome-modal-container header [role="tab"][aria-selected="false"]:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(51, 65, 85, 0.95) !important;
+  border-color: rgba(99, 102, 241, 0.5) !important;
+}
+
+/* Content Area in Welcome Guide */
+#welcome-modal-container main {
+  background-color: var(--skanda-bg-elevated) !important;
+  color: var(--skanda-text-primary) !important;
+}
+
+#welcome-modal-container main h3,
+#welcome-modal-container main h4,
+#welcome-modal-container main .guide-title {
+  color: var(--skanda-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+#welcome-modal-container main p,
+#welcome-modal-container main .guide-description {
+  color: var(--skanda-text-secondary) !important;
+  line-height: 1.5;
+}
+
+#welcome-modal-container main .guide-clause-ref {
+  color: var(--skanda-text-muted) !important;
+  font-weight: 600 !important;
+}
+
+#welcome-modal-container main .guide-feature-item {
+  color: var(--skanda-text-primary) !important;
+  font-weight: 500 !important;
+}
+
+#welcome-modal-container main .guide-card {
+  background-color: var(--skanda-bg-card) !important;
+  border-color: var(--skanda-border) !important;
+  color: var(--skanda-text-primary) !important;
+}
+
+#welcome-modal-container main .guide-card:hover {
+  border-color: var(--skanda-border-hover) !important;
+}
+
+/* Section Intros (Direct access..., Follow this sequential path..., Power user productivity...) */
+#welcome-modal-container main .welcome-section-intro,
+#welcome-modal-container main .text-slate-700 {
+  color: var(--skanda-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Footer in Welcome Guide */
+#welcome-modal-container footer {
+  background-color: var(--skanda-bg-card) !important;
+  color: var(--skanda-text-primary) !important;
+  border-color: var(--skanda-border) !important;
+}
+
+#welcome-modal-container footer label,
+/* `:not(button *)` keeps this rule away from the primary CTA label, whose button
+   background is forced to indigo below. Without it, the generic rule painted
+   "Explore Dashboard" in dark ink on indigo — measured 2.84:1 in light mode. */
+#welcome-modal-container footer span:not(button *) {
+  color: var(--skanda-text-primary) !important;
+  font-weight: 500 !important;
+}
+
+#welcome-modal-container footer input[type="checkbox"] {
+  border-color: var(--skanda-border-hover) !important;
+}
+
+#welcome-modal-container footer button#welcome-btn-start-dashboard {
+  background-color: #4F46E5 !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+#welcome-modal-container footer button#welcome-btn-start-dashboard:hover {
+  background-color: #4338CA !important;
+}
+
+/* =========================================================================
+   UNIVERSAL HIGH-VISIBILITY TYPOGRAPHY & SURFACES FOR DARK / MIDNIGHT MODE
+   Solves low-contrast, invisible text, and blinding white panels on dark surfaces
+   ========================================================================= */
+
+/* Headings in dark mode are crisp white / silver */
+.theme-midnight h1:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight h2:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight h3:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight h4:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight h5:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight h6:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark h1:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark h2:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark h3:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark h4:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark h5:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark h6:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #F8FAFC !important;
+}
+
+/* Unprefixed dark text colors in dark mode mapped to legible white and silver */
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"]) .text-slate-900:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *):not([class*="bg-amber-5"] *):not([class*="bg-yellow-5"] *),
+.dark :not(.light-surface):not([data-theme-surface="light"]) .text-slate-900:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *):not([class*="bg-amber-5"] *):not([class*="bg-yellow-5"] *),
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"]) .text-slate-850:not(button *),
+.dark :not(.light-surface):not([data-theme-surface="light"]) .text-slate-850:not(button *),
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"]) .text-slate-800:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *):not([class*="bg-amber-5"] *):not([class*="bg-yellow-5"] *),
+.dark :not(.light-surface):not([data-theme-surface="light"]) .text-slate-800:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *):not([class*="bg-amber-5"] *):not([class*="bg-yellow-5"] *),
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"]) .text-black:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *),
+.dark :not(.light-surface):not([data-theme-surface="light"]) .text-black:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *) {
+  color: #F8FAFC !important;
+}
+
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"]) .text-slate-700:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *),
+.dark :not(.light-surface):not([data-theme-surface="light"]) .text-slate-700:not(button[class*="bg-amber"] *):not(button[class*="bg-yellow"] *):not([class*="bg-amber-4"] *):not([class*="bg-yellow-4"] *) {
+  color: #CBD5E1 !important;
+}
+
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"]) strong:not(.light-surface *):not([data-theme-surface="light"] *):not([class*="text-"]),
+.dark :not(.light-surface):not([data-theme-surface="light"]) strong:not(.light-surface *):not([data-theme-surface="light"] *):not([class*="text-"]) {
+  color: #F8FAFC !important;
+}
+
+/* Convert hardcoded light panels/wells to dark surfaces in dark mode */
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"])[class~="bg-white"],
+.dark :not(.light-surface):not([data-theme-surface="light"])[class~="bg-white"],
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"])[class*="bg-white/"]:not(button):not([class*="btn-"]):not([class*="badge"]),
+.dark :not(.light-surface):not([data-theme-surface="light"])[class*="bg-white/"]:not(button):not([class*="btn-"]):not([class*="badge"]) {
+  background-color: #162033 !important;
+  border-color: #273449 !important;
+}
+
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"])[class~="bg-slate-50"],
+.dark :not(.light-surface):not([data-theme-surface="light"])[class~="bg-slate-50"],
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"])[class~="bg-slate-100"],
+.dark :not(.light-surface):not([data-theme-surface="light"])[class~="bg-slate-100"] {
+  background-color: #0F172A !important;
+  border-color: #1E293B !important;
+}
+
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"])[class*="border-slate-200"],
+.dark :not(.light-surface):not([data-theme-surface="light"])[class*="border-slate-200"],
+.theme-midnight :not(.light-surface):not([data-theme-surface="light"])[class*="border-slate-300"],
+.dark :not(.light-surface):not([data-theme-surface="light"])[class*="border-slate-300"] {
+  border-color: #273449 !important;
+}
+
+.theme-midnight [class*="hover:bg-slate-100"]:hover,
+.dark [class*="hover:bg-slate-100"]:hover,
+.theme-midnight [class*="hover:bg-slate-50"]:hover,
+.dark [class*="hover:bg-slate-50"]:hover,
+.theme-midnight [class*="hover:bg-slate-200"]:hover,
+.dark [class*="hover:bg-slate-200"]:hover {
+  background-color: #1E293B !important;
+}
+
+/* Comprehensive Dark Mode Input Controls */
+.theme-midnight input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not(.light-surface *),
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not(.light-surface *),
+.theme-midnight select:not(.light-surface *),
+.dark select:not(.light-surface *),
+.theme-midnight textarea:not(.light-surface *),
+.dark textarea:not(.light-surface *) {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid #273449 !important;
+  color: #F8FAFC !important;
+}
+
+.theme-midnight input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):focus,
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):focus,
+.theme-midnight select:focus,
+.dark select:focus,
+.theme-midnight textarea:focus,
+.dark textarea:focus {
+  border-color: #3B82F6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25) !important;
+  outline: none !important;
+}
+
+.theme-midnight input::placeholder,
+.dark input::placeholder,
+.theme-midnight textarea::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+.theme-midnight label:not(.light-surface *):not([data-theme-surface="light"] *),
+.dark label:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #CBD5E1 !important;
+  font-weight: 600 !important;
+}
+
+:root:not(.theme-light) .text-slate-400:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-slate-400:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-slate-400:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-gray-400:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-gray-400:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-zinc-400:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-zinc-400:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #94a3b8 !important; /* Legible, balanced muted text (> 5.5:1 contrast) */
+}
+
+:root:not(.theme-light) .text-slate-500:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-slate-500:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-slate-500:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-gray-500:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-gray-500:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-zinc-500:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-zinc-500:not(.light-surface *):not([data-theme-surface="light"] *) {
+  /* Was #64748B, which measures only 3.42:1 on the dark card surface (#162033)
+     and fails WCAG 2.2 AA for body text. #94A3B8 reaches 6.3:1. */
+  color: #94a3b8 !important; /* Muted text (6.3:1 on the dark card surface) */
+}
+
+:root:not(.theme-light) .text-slate-600:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-slate-600:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-slate-600:not(.light-surface *):not([data-theme-surface="light"] *) {
+  /* Was #475569 — the *light* secondary value — which measures 2.15:1 on the dark
+     card surface and made secondary labels effectively unreadable in dark mode. */
+  color: #cbd5e1 !important; /* Secondary text (10.9:1 on the dark card surface) */
+}
+
+/* Raw light-mode hex text utilities. Components that wrote `text-[#475569]` etc.
+   without a `dark:` counterpart kept their light value in dark mode because the
+   palette healers above only matched named palette steps, leaving 2.1:1–3.4:1
+   text on every dark surface. Mapped to the same dark text scale. */
+:root:not(.theme-light) .text-\[\#475569\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#475569\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#475569\]:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-\[\#334155\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#334155\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#334155\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #cbd5e1 !important; /* secondary text */
+}
+
+:root:not(.theme-light) .text-\[\#64748B\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#64748B\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#64748B\]:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-\[\#94A3B8\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#94A3B8\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#94A3B8\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #94a3b8 !important; /* muted text */
+}
+
+/* Status and violet text hexes: the light-mode steps measure 3.0:1–4.2:1 on the dark
+   surfaces, so they are lifted to the dark-mode step of the same hue. */
+:root:not(.theme-light) .text-\[\#8B5CF6\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#8B5CF6\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#8B5CF6\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #a78bfa !important; /* violet-400, 5.38:1 on the dark card surface */
+}
+
+:root:not(.theme-light) .text-\[\#DC2626\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#DC2626\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#DC2626\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #f87171 !important; /* 5.29:1 on the dark card surface */
+}
+
+:root:not(.theme-light) .text-\[\#B91C1C\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#B91C1C\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#B91C1C\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #fca5a5 !important; /* 7.71:1 on the dark card surface */
+}
+
+:root:not(.theme-light) .text-\[\#22C55E\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#22C55E\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#22C55E\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #34d399 !important; /* 7.61:1 on the dark card surface */
+}
+
+/* Arbitrary Tailwind hex classes contrast boost for clear visibility (Inter & dark backgrounds) */
+:root:not(.theme-light) [class*="text-[#7F8BA3]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-\[\#7F8BA3\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight [class*="text-[#7F8BA3]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#7F8BA3\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) [class*="text-[#7F8BA3]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#7F8BA3\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #94a3b8 !important; /* Legible slate (> 5.5:1 contrast) */
+}
+
+:root:not(.theme-light) [class*="text-[#566176]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-\[\#566176\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight [class*="text-[#566176]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#566176\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) [class*="text-[#566176]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#566176\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #64748b !important;
+}
+
+:root:not(.theme-light) [class*="text-[#A7B0C0]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+:root:not(.theme-light) .text-\[\#A7B0C0\]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight [class*="text-[#A7B0C0]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-\[\#A7B0C0\]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) [class*="text-[#A7B0C0]"]:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-\[\#A7B0C0\]:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #cbd5e1 !important; /* Clear silver (> 8.5:1 contrast) */
+}
+
+/* Light mode: literal status/neutral text hexes that are too light for a white or
+   tinted card. Measured failures before this rule: #22C55E 2.28:1 (green-500),
+   #DC2626 4.41:1 on the rose wash. Mapped to the AA-passing step of the same hue. */
+.theme-light .text-\[\#22C55E\]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+html.theme-light .text-\[\#22C55E\]:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #166534 !important; /* 6.96:1 on white, 6.6:1 on the indigo-50 wash (green-800) */
+}
+
+.theme-light .text-\[\#DC2626\]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+html.theme-light .text-\[\#DC2626\]:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #b91c1c !important; /* 6.47:1 on white, 5.91:1 on the rose wash */
+}
+
+/* In light mode, ensure any unswitched hex classes are deep and legible */
+.theme-light [class*="text-[#7F8BA3]"]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-\[\#7F8BA3\]:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #334155 !important;
+}
+
+.theme-light [class*="text-[#A7B0C0]"]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-\[\#A7B0C0\]:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #1e293b !important;
+}
+
+.theme-light [class*="text-[#566176]"]:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-\[\#566176\]:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #475569 !important;
+}
+
+:root:not(.theme-light) .text-slate-300:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-slate-300:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-slate-300:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #f1f5f9 !important;
+}
+
+:root:not(.theme-light) .text-slate-200:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-slate-200:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-slate-200:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #f8fafc !important;
+}
+
+:root:not(.theme-light) .text-slate-100:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-slate-100:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-slate-100:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #f8fafc !important;
+}
+
+:root:not(.theme-light) .text-white:not(.light-surface *):not([data-theme-surface="light"] *),
+.theme-midnight .text-white:not(.light-surface *):not([data-theme-surface="light"] *),
+body:not(.theme-light) .text-white:not(.light-surface *):not([data-theme-surface="light"] *) {
+  color: #ffffff !important;
+}
+
+/* Luminous Semantic Jewel Tones in Dark Mode */
+:root:not(.theme-light) .text-indigo-400,
+.theme-midnight .text-indigo-400 {
+  color: #a5b4fc !important;
+}
+:root:not(.theme-light) .text-indigo-300,
+.theme-midnight .text-indigo-300 {
+  color: #c7d2fe !important;
+}
+:root:not(.theme-light) .text-emerald-400,
+.theme-midnight .text-emerald-400 {
+  color: #6ee7b7 !important;
+}
+:root:not(.theme-light) .text-emerald-300,
+.theme-midnight .text-emerald-300 {
+  color: #a7f3d0 !important;
+}
+:root:not(.theme-light) .text-amber-400,
+.theme-midnight .text-amber-400 {
+  color: #fcd34d !important;
+}
+:root:not(.theme-light) .text-amber-300,
+.theme-midnight .text-amber-300 {
+  color: #fde68a !important;
+}
+:root:not(.theme-light) .text-rose-400,
+.theme-midnight .text-rose-400 {
+  color: #fda4af !important;
+}
+:root:not(.theme-light) .text-rose-300,
+.theme-midnight .text-rose-300 {
+  color: #fecdd3 !important;
+}
+:root:not(.theme-light) .text-sky-400,
+.theme-midnight .text-sky-400 {
+  color: #7dd3fc !important;
+}
+:root:not(.theme-light) .text-sky-300,
+.theme-midnight .text-sky-300 {
+  color: #bae6fd !important;
+}
+:root:not(.theme-light) .text-purple-400,
+.theme-midnight .text-purple-400 {
+  color: #d8b4fe !important;
+}
+:root:not(.theme-light) .text-purple-300,
+.theme-midnight .text-purple-300 {
+  color: #e9d5ff !important;
+}
+:root:not(.theme-light) .text-teal-400,
+.theme-midnight .text-teal-400 {
+  color: #5eead4 !important;
+}
+:root:not(.theme-light) .text-teal-300,
+.theme-midnight .text-teal-300 {
+  color: #99f6e4 !important;
+}
+
+/* =========================================================================
+   3. INVERSE TEXT RULES FOR INTENTIONALLY DARK SURFACES (IN LIGHT MODE)
+   Ensures 100% WCAG AA contrast inside Composite Health Index dial
+   ========================================================================= */
+
+.theme-light .dark-surface .text-white,
+.theme-light .dark-surface .text-slate-100,
+.theme-light .dark-surface .text-slate-200,
+.theme-light [data-theme-surface="dark"] .text-white,
+.theme-light [data-theme-surface="dark"] .text-slate-100,
+.theme-light [data-theme-surface="dark"] .text-slate-200 {
+  color: #ffffff !important;
+}
+
+.theme-light .dark-surface .text-slate-300,
+.theme-light [data-theme-surface="dark"] .text-slate-300 {
+  color: #e2e8f0 !important;
+}
+
+.theme-light .dark-surface .text-slate-400,
+.theme-light [data-theme-surface="dark"] .text-slate-400 {
+  color: #e2e8f0 !important;
+}
+
+.theme-light .dark-surface .text-slate-500,
+.theme-light [data-theme-surface="dark"] .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+.theme-light .dark-surface .text-slate-600,
+.theme-light [data-theme-surface="dark"] .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+.theme-light .dark-surface .text-indigo-400,
+.theme-light .dark-surface .text-indigo-300,
+.theme-light [data-theme-surface="dark"] .text-indigo-400,
+.theme-light [data-theme-surface="dark"] .text-indigo-300 {
+  color: #a5b4fc !important;
+}
+
+.theme-light .dark-surface .text-sky-400,
+.theme-light .dark-surface .text-sky-300,
+.theme-light [data-theme-surface="dark"] .text-sky-400,
+.theme-light [data-theme-surface="dark"] .text-sky-300 {
+  color: #7dd3fc !important;
+}
+
+.theme-light .dark-surface .text-emerald-400,
+.theme-light .dark-surface .text-emerald-300,
+.theme-light [data-theme-surface="dark"] .text-emerald-400,
+.theme-light [data-theme-surface="dark"] .text-emerald-300 {
+  color: #6ee7b7 !important;
+}
+
+.theme-light .dark-surface .text-amber-400,
+.theme-light .dark-surface .text-amber-300,
+.theme-light [data-theme-surface="dark"] .text-amber-400,
+.theme-light [data-theme-surface="dark"] .text-amber-300 {
+  color: #fcd34d !important;
+}
+
+.theme-light .dark-surface .text-rose-400,
+.theme-light .dark-surface .text-rose-300,
+.theme-light [data-theme-surface="dark"] .text-rose-400,
+.theme-light [data-theme-surface="dark"] .text-rose-300 {
+  color: #fda4af !important;
+}
+
+/* =========================================================================
+   CRITICAL: HIGH-CONTRAST SEMANTIC COLORS (Prevents Invisible Text in Light Mode)
+   In dark mode, 300/400 tints are used which wash out on white backgrounds.
+   Here they are mapped to rich, high-contrast WCAG AAA jewel tones on light surfaces,
+   while strictly preserving bright pastel/inverse tones on dark-surface cards.
+   ========================================================================= */
+
+.theme-light .text-emerald-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-emerald-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-emerald-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #047857 !important; /* emerald-700 */
+}
+
+.theme-light .text-sky-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-sky-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-sky-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #0369a1 !important; /* sky-700 */
+}
+
+.theme-light .text-blue-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-blue-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-blue-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #1d4ed8 !important; /* blue-700 */
+}
+
+.theme-light .text-amber-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-amber-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-amber-200:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-yellow-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-yellow-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-yellow-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #b45309 !important; /* amber-700, deep bronze */
+}
+
+.theme-light .text-rose-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-rose-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-rose-200:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-red-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-red-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-red-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #be123c !important; /* rose-700 */
+}
+
+.theme-light .text-indigo-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-indigo-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-indigo-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #4338ca !important; /* indigo-700 */
+}
+
+.theme-light .text-purple-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-purple-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-purple-200:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-violet-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-violet-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-violet-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #6b21a8 !important; /* purple-800 */
+}
+
+.theme-light .text-teal-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-teal-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-teal-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #0f766e !important; /* teal-700 */
+}
+
+.theme-light .text-cyan-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-cyan-300:not(.dark-surface *):not([data-theme-surface="dark"] *),
+.theme-light .text-cyan-200:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #0e7490 !important; /* cyan-700 */
+}
+
+/* Ensure slate neutral text on light surfaces has high contrast and is never washed out */
+.theme-light .text-slate-600:not(.dark-surface *):not([data-theme-surface="dark"] *),
+body.theme-light .text-slate-600:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #475569 !important; /* crisp slate-600 (> 7:1 contrast) */
+}
+
+.theme-light .text-slate-500:not(.dark-surface *):not([data-theme-surface="dark"] *),
+body.theme-light .text-slate-500:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  /* This rule is the last word on slate-500 in light mode, so it is the one that
+     has to clear 4.5:1. #64748B measured 4.26:1 on the indigo-50 wash and 4.34:1 on
+     slate-100 for the 9.5–11px labels that use it. */
+  color: #566176 !important; /* 5.35:1 on indigo-50, 5.46:1 on slate-100 */
+}
+
+.theme-light .text-slate-400:not(.dark-surface *):not([data-theme-surface="dark"] *),
+body.theme-light .text-slate-400:not(.dark-surface *):not([data-theme-surface="dark"] *) {
+  color: #566176 !important; /* legible muted text on light backgrounds */
+}
+
+/* =========================================================================
+   LIGHT MODE STATUS PALETTE — WCAG 2.2 AA ADJUSTMENT
+   ---------------------------------------------------------------------------
+   Tailwind's 500/600 status steps are tuned for dark canvases. On a light one
+   they fail the 4.5:1 requirement both as text and as a background for white
+   text. Measured on the Command Center before this change:
+     emerald-600 as text on white      3.77:1   white on bg-emerald-600 3.77:1
+     amber-600   as text on white      3.19:1   white on bg-amber-600   3.19:1
+     sky-600     as text on white      4.10:1   sky-500 as text on white 2.90:1
+     rose-500    as a badge background 3.75:1   with white text
+   Each hue is therefore re-pointed at its 700 step *inside the light theme only*.
+   Tailwind v4 utilities read these variables (`bg-emerald-600 { background-color:
+   var(--color-emerald-600) }`), so one declaration per step corrects every call
+   site at once instead of editing hundreds of components. The dark theme keeps
+   the original 500/600 values and is untouched.
+   ========================================================================= */
+.theme-light,
+html.theme-light,
+body.theme-light,
+[data-theme="light"] {
+  --color-emerald-500: #047857; /* 5.48:1 on white */
+  --color-emerald-600: #047857;
+  --color-green-500: #15803d;   /* 5.02:1 */
+  --color-green-600: #15803d;
+  --color-teal-500: #0f766e;    /* 5.47:1 */
+  --color-teal-600: #0f766e;
+  --color-cyan-500: #0e7490;
+  --color-cyan-600: #0e7490;
+  --color-sky-500: #0369a1;     /* 5.93:1 */
+  --color-sky-600: #0369a1;
+  --color-amber-500: #b45309;   /* 5.02:1 */
+  --color-amber-600: #b45309;
+  --color-yellow-500: #a16207;
+  --color-yellow-600: #a16207;
+  --color-orange-500: #c2410c;
+  --color-orange-600: #c2410c;
+  --color-lime-500: #4d7c0f;
+  --color-lime-600: #4d7c0f;
+  --color-rose-500: #e11d48;    /* 4.70:1 — keeps the hue, passes for white text */
+  --color-rose-600: #be123c;
+  --color-red-500: #b91c1c;     /* 6.47:1 */
+  --color-red-600: #b91c1c;
+  --color-pink-500: #be185d;
+  --color-pink-600: #be185d;
+  --color-violet-500: #6d28d9;  /* 7.10:1 */
+  --color-violet-600: #6d28d9;
+  --color-purple-500: #7e22ce;
+  --color-purple-600: #7e22ce;
+  --color-fuchsia-500: #a21caf;
+  --color-fuchsia-600: #a21caf;
+  --color-indigo-500: #4338ca;  /* 7.50:1 */
+  --color-blue-500: #1d4ed8;    /* 7.40:1 */
+}
+
+/* Dark mode: the inverse pills (a light slate-200 chip on a dark page) must keep
+   dark ink. The blanket rule above maps .text-slate-900/.text-slate-800 to near-white
+   in dark mode, which painted the chip's label white on #E2E8F0 — measured 1.18:1.
+   Where the element's own class says the background is light, the text stays dark. */
+/* `html.` prefix + `:not(.light-surface *)`: the competing dark-mode rule carries
+   four class-level selectors, so this one needs equal specificity *and* later order. */
+html.theme-midnight [class*="bg-slate-200"][class*="text-slate-900"]:not(.light-surface *),
+html.theme-midnight [class*="bg-slate-200"][class*="text-slate-800"]:not(.light-surface *),
+html.theme-midnight [class*="bg-slate-100"][class*="text-slate-900"]:not(.light-surface *),
+html.theme-midnight [class*="bg-slate-100"][class*="text-slate-800"]:not(.light-surface *),
+html.theme-midnight [class*="bg-slate-50"][class*="text-slate-900"]:not(.light-surface *),
+html.theme-midnight [class*="bg-slate-50"][class*="text-slate-800"]:not(.light-surface *),
+html.dark [class*="bg-slate-200"][class*="text-slate-900"]:not(.light-surface *),
+html.dark [class*="bg-slate-200"][class*="text-slate-800"]:not(.light-surface *),
+html.dark [class*="bg-slate-100"][class*="text-slate-900"]:not(.light-surface *),
+html.dark [class*="bg-slate-100"][class*="text-slate-800"]:not(.light-surface *),
+html.dark [class*="bg-slate-50"][class*="text-slate-900"]:not(.light-surface *),
+html.dark [class*="bg-slate-50"][class*="text-slate-800"]:not(.light-surface *) {
+  color: #0f172a !important;
+}
+
+/* =========================================================================
+   DARK MODE STATUS TEXT
+   ---------------------------------------------------------------------------
+   The 500/600 palette steps are tuned for light canvases: as *text* on the dark
+   card surface (#162033 / #1E293B) they measure 2.5:1–4.5:1. Only the colour is
+   adjusted — backgrounds are left alone, because darkening a solid status
+   background would break the white text sitting on it.
+   ========================================================================= */
+:root:not(.theme-light) [class~="text-emerald-600"],
+.theme-midnight [class~="text-emerald-600"] { color: #34d399 !important; }
+:root:not(.theme-light) [class~="text-green-600"],
+.theme-midnight [class~="text-green-600"] { color: #4ade80 !important; }
+:root:not(.theme-light) [class~="text-teal-600"],
+.theme-midnight [class~="text-teal-600"] { color: #2dd4bf !important; }
+:root:not(.theme-light) [class~="text-cyan-600"],
+.theme-midnight [class~="text-cyan-600"] { color: #22d3ee !important; }
+:root:not(.theme-light) [class~="text-sky-600"],
+:root:not(.theme-light) [class~="text-sky-500"],
+.theme-midnight [class~="text-sky-600"],
+.theme-midnight [class~="text-sky-500"] { color: #38bdf8 !important; }
+:root:not(.theme-light) [class~="text-blue-600"],
+.theme-midnight [class~="text-blue-600"] { color: #60a5fa !important; }
+:root:not(.theme-light) [class~="text-amber-600"],
+.theme-midnight [class~="text-amber-600"] { color: #fbbf24 !important; }
+:root:not(.theme-light) [class~="text-yellow-600"],
+.theme-midnight [class~="text-yellow-600"] { color: #facc15 !important; }
+:root:not(.theme-light) [class~="text-orange-600"],
+.theme-midnight [class~="text-orange-600"] { color: #fb923c !important; }
+:root:not(.theme-light) [class~="text-rose-600"],
+:root:not(.theme-light) [class~="text-rose-500"],
+.theme-midnight [class~="text-rose-600"],
+.theme-midnight [class~="text-rose-500"] { color: #fb7185 !important; }
+:root:not(.theme-light) [class~="text-red-600"],
+.theme-midnight [class~="text-red-600"] { color: #f87171 !important; }
+:root:not(.theme-light) [class~="text-indigo-600"],
+.theme-midnight [class~="text-indigo-600"] { color: #818cf8 !important; }
+:root:not(.theme-light) [class~="text-violet-600"],
+:root:not(.theme-light) [class~="text-violet-500"],
+.theme-midnight [class~="text-violet-600"],
+.theme-midnight [class~="text-violet-500"] { color: #a78bfa !important; }
+:root:not(.theme-light) [class~="text-purple-600"],
+.theme-midnight [class~="text-purple-600"] { color: #c084fc !important; }
+:root:not(.theme-light) [class~="text-pink-600"],
+.theme-midnight [class~="text-pink-600"] { color: #f472b6 !important; }
+:root:not(.theme-light) [class~="text-fuchsia-600"],
+.theme-midnight [class~="text-fuchsia-600"] { color: #e879f9 !important; }
+
+/* =========================================================================
+   CRITICAL: PRESERVE WHITE TEXT ON SOLID ACTION BUTTONS & ACTIVE GRADIENTS
+   Solid saturated buttons must ALWAYS maintain bright white text and icons.
+   ========================================================================= */
+
+.theme-light [class~="bg-indigo-600"],
+.theme-light [class~="bg-indigo-700"],
+.theme-light [class~="bg-blue-600"],
+.theme-light [class~="bg-blue-700"],
+.theme-light [class~="bg-emerald-600"],
+.theme-light [class~="bg-emerald-700"],
+.theme-light [class~="bg-rose-600"],
+.theme-light [class~="bg-rose-700"],
+.theme-light [class~="bg-purple-600"],
+.theme-light [class~="bg-purple-700"],
+.theme-light [class~="bg-sky-600"],
+.theme-light [class~="bg-sky-700"],
+.theme-light [class~="bg-amber-600"],
+.theme-light [class~="bg-teal-600"],
+.theme-light [class~="bg-rose-500"],
+.theme-light [class~="bg-emerald-500"],
+.theme-light [class~="bg-blue-500"],
+.theme-light [class~="bg-indigo-500"],
+.theme-light [class*="bg-[#0F2747]"],
+.theme-light [class*="bg-[#173A63]"],
+.theme-light [class*="bg-[#2563EB]"],
+.theme-light [class*="bg-[#1D4ED8]"],
+.theme-light .btn-primary,
+.theme-light [class*="bg-gradient-to-r from-purple-700"],
+.theme-light [class*="bg-gradient-to-r from-indigo-600"],
+.theme-light [class*="bg-gradient-to-r from-blue-600"],
+.theme-light [class*="bg-gradient-to-r from-emerald-600"],
+.theme-light [class*="bg-gradient-to-r from-amber-600"],
+.theme-light [class*="bg-gradient-to-r from-purple-600 to-indigo-600"] {
+  color: #ffffff !important;
+}
+
+.theme-light [class~="bg-indigo-600"] *,
+.theme-light [class~="bg-indigo-700"] *,
+.theme-light [class~="bg-blue-600"] *,
+.theme-light [class~="bg-blue-700"] *,
+.theme-light [class~="bg-emerald-600"] *,
+.theme-light [class~="bg-emerald-700"] *,
+.theme-light [class~="bg-rose-600"] *,
+.theme-light [class~="bg-rose-700"] *,
+.theme-light [class~="bg-purple-600"] *,
+.theme-light [class~="bg-purple-700"] *,
+.theme-light [class~="bg-sky-600"] *,
+.theme-light [class~="bg-sky-700"] *,
+.theme-light [class~="bg-amber-600"] *,
+.theme-light [class~="bg-teal-600"] *,
+.theme-light [class~="bg-rose-500"] *,
+.theme-light [class~="bg-emerald-500"] *,
+.theme-light [class~="bg-blue-500"] *,
+.theme-light [class~="bg-indigo-500"] *,
+.theme-light [class*="bg-[#0F2747]"] *,
+.theme-light [class*="bg-[#173A63]"] *,
+.theme-light [class*="bg-[#2563EB]"] *,
+.theme-light [class*="bg-[#1D4ED8]"] *,
+.theme-light .btn-primary *,
+.theme-light [class*="bg-gradient-to-r from-purple-700"] *,
+.theme-light [class*="bg-gradient-to-r from-indigo-600"] *,
+.theme-light [class*="bg-gradient-to-r from-blue-600"] *,
+.theme-light [class*="bg-gradient-to-r from-emerald-600"] *,
+.theme-light [class*="bg-gradient-to-r from-amber-600"] *,
+.theme-light [class*="bg-gradient-to-r from-purple-600 to-indigo-600"] * {
+  color: #ffffff !important;
+}
+
+/* Form Controls & Inputs - Premium Enterprise System */
+.theme-light input,
+.theme-light input[type="text"],
+.theme-light input[type="search"],
+.theme-light input[type="password"],
+.theme-light input[type="email"],
+.theme-light input[type="number"],
+.theme-light input[type="date"],
+.theme-light select,
+.theme-light textarea {
+  background-color: var(--skanda-bg-card) !important;
+  color: var(--skanda-text-primary) !important;
+  border: 1px solid var(--skanda-border-strong) !important;
+  border-radius: var(--skanda-radius-md) !important;
+  font-size: var(--skanda-font-small-size) !important;
+  height: var(--skanda-height-input-md);
+  padding: 0 var(--skanda-space-3) !important;
+}
+
+.theme-light textarea {
+  height: auto !important;
+  padding: var(--skanda-space-2) var(--skanda-space-3) !important;
+}
+
+.theme-light input:focus,
+.theme-light select:focus,
+.theme-light textarea:focus {
+  border-color: var(--skanda-brand-accent) !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15) !important;
+  outline: none !important;
+}
+
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: var(--skanda-text-disabled) !important;
+}
+
+/* Button Standards in Enterprise Light Mode */
+.theme-light .btn-primary,
+.theme-light button.btn-primary {
+  background-color: var(--skanda-brand-primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--skanda-brand-primary) !important;
+  border-radius: var(--skanda-radius-md) !important;
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-4) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+  font-weight: 600 !important;
+}
+
+.theme-light .btn-primary:hover,
+.theme-light button.btn-primary:hover {
+  background-color: var(--skanda-brand-primary-hover) !important;
+  border-color: var(--skanda-brand-primary-hover) !important;
+}
+
+.theme-light .btn-secondary,
+.theme-light button.btn-secondary {
+  background-color: var(--skanda-bg-card) !important;
+  color: var(--skanda-text-primary) !important;
+  border: 1px solid var(--skanda-border-strong) !important;
+  border-radius: var(--skanda-radius-md) !important;
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-4) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+  font-weight: 500 !important;
+}
+
+.theme-light .btn-secondary:hover,
+.theme-light button.btn-secondary:hover {
+  background-color: var(--skanda-bg-secondary) !important;
+  border-color: var(--skanda-border-hover) !important;
+}
+
+.theme-light .btn-ghost,
+.theme-light button.btn-ghost {
+  background-color: transparent !important;
+  color: var(--skanda-text-secondary) !important;
+  border-color: transparent !important;
+  border-radius: var(--skanda-radius-md) !important;
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-3) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+}
+
+.theme-light .btn-ghost:hover,
+.theme-light button.btn-ghost:hover {
+  background-color: var(--skanda-bg-secondary) !important;
+  color: var(--skanda-text-primary) !important;
+}
+
+.theme-light .btn-danger,
+.theme-light button.btn-danger {
+  background-color: var(--skanda-critical) !important;
+  color: #FFFFFF !important;
+  border-color: var(--skanda-critical) !important;
+  border-radius: var(--skanda-radius-md) !important;
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-4) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+  font-weight: 600 !important;
+}
+
+.theme-light .btn-danger:hover,
+.theme-light button.btn-danger:hover {
+  background-color: #B91C1C !important;
+  border-color: #B91C1C !important;
+}
+
+/* Executive Jewel-Tone Color-Graded Badges & Status Chips in Light Mode */
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-indigo-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-indigo-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-indigo-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-indigo-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-indigo-500/20"] {
+  background-color: #eef2ff !important;
+  background-image: linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(224, 231, 255, 0.75) 100%) !important;
+  border-color: #c7d2fe !important;
+  color: #4338ca !important;
+  box-shadow: 0 1px 2px 0 rgba(99, 102, 241, 0.06) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-rose-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-rose-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-red-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-red-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-rose-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-rose-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-rose-500/20"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-red-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-red-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-red-500/20"] {
+  background-color: #fff1f2 !important;
+  background-image: linear-gradient(135deg, rgba(255, 241, 242, 0.95) 0%, rgba(254, 226, 226, 0.75) 100%) !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
+  box-shadow: 0 1px 2px 0 rgba(225, 29, 72, 0.06) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-emerald-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-emerald-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-emerald-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-emerald-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-emerald-500/20"] {
+  background-color: #ecfdf5 !important;
+  background-image: linear-gradient(135deg, rgba(236, 253, 245, 0.95) 0%, rgba(209, 250, 229, 0.75) 100%) !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
+  box-shadow: 0 1px 2px 0 rgba(16, 185, 129, 0.06) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-amber-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-amber-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-yellow-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-yellow-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-amber-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-amber-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-amber-500/20"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-yellow-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-yellow-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-yellow-500/20"] {
+  background-color: #fffbeb !important;
+  background-image: linear-gradient(135deg, rgba(255, 251, 235, 0.95) 0%, rgba(254, 243, 199, 0.75) 100%) !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+  box-shadow: 0 1px 2px 0 rgba(245, 158, 11, 0.06) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-purple-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-purple-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-violet-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-violet-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-purple-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-purple-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-purple-500/20"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-violet-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-violet-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-violet-500/20"] {
+  background-color: #faf5ff !important;
+  background-image: linear-gradient(135deg, rgba(250, 245, 255, 0.95) 0%, rgba(243, 232, 255, 0.75) 100%) !important;
+  border-color: #e9d5ff !important;
+  color: #6b21a8 !important;
+  box-shadow: 0 1px 2px 0 rgba(168, 85, 247, 0.06) !important;
+}
+
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-sky-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-sky-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-blue-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-blue-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-cyan-950"],
+.theme-light :not(.dark-surface *):not([data-theme-surface="dark"] *)[class*="bg-cyan-950"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-sky-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-sky-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-sky-500/20"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-blue-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-blue-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-blue-500/20"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-cyan-500/10"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-cyan-500/15"],
+.theme-light :not(.dark-surface):not([data-theme-surface="dark"])[class*="bg-cyan-500/20"] {
+  background-color: #f0f9ff !important;
+  background-image: linear-gradient(135deg, rgba(240, 249, 255, 0.95) 0%, rgba(224, 242, 254, 0.75) 100%) !important;
+  border-color: #bae6fd !important;
+  color: #0369a1 !important;
+  box-shadow: 0 1px 2px 0 rgba(14, 165, 233, 0.06) !important;
+}
+
+/* Tables in Executive Light Mode - Standardized Enterprise Grid */
+.theme-light th {
+  background-color: #F8FAFC !important;
+  background-image: none !important;
+  color: #475569 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  border-top: none !important;
+}
+
+.theme-light td {
+  color: #0F172A;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.theme-light td:not([class*="bg-"]) {
+  background-color: #FFFFFF;
+}
+
+.theme-light tr:hover td:not([class*="bg-"]),
+.theme-light tr[class*="hover:"]:hover td:not([class*="bg-"]),
+.theme-light tr[class*="hover:bg-slate-800"]:hover td:not([class*="bg-"]),
+.theme-light tr[class*="hover:bg-slate-850"]:hover td:not([class*="bg-"]) {
+  background-color: #F8FAFC;
+}
+
+/* Code, Pre, and Kbd in Light Mode */
+.theme-light code,
+.theme-light pre,
+.theme-light kbd {
+  background-color: var(--skanda-bg-secondary) !important;
+  color: var(--skanda-text-primary) !important;
+  border-color: var(--skanda-border) !important;
+}
+
+/* Light Mode Tooltip Overrides */
+.theme-light [role="tooltip"] > div {
+  background-color: var(--skanda-bg-card) !important;
+  border-color: var(--skanda-border) !important;
+  color: var(--skanda-text-primary) !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1) !important;
+}
+.theme-light [role="tooltip"] .text-white {
+  color: var(--skanda-text-primary) !important;
+}
+.theme-light [role="tooltip"] .text-slate-300 {
+  color: var(--skanda-text-muted) !important;
+}
+.theme-light [role="tooltip"] .text-slate-400 {
+  color: var(--skanda-text-disabled) !important;
+}
+
+/* Light Mode Scrollbars */
+.theme-light ::-webkit-scrollbar-track {
+  background: var(--skanda-bg-secondary);
+}
+.theme-light ::-webkit-scrollbar-thumb {
+  background: var(--skanda-border);
+}
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--skanda-border-hover);
+}
+
+/* Custom scrollbar for dense enterprise tables and code blocks */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+@media print {
+  body {
+    background: var(--skanda-bg-card) !important;
+    color: var(--skanda-text-primary) !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* =========================================================================
+   SKANDA GRC ENTERPRISE TOP HEADER - RESPONSIVE ARCHITECTURE
+   ========================================================================= */
+
+.app-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.header-brand {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+
+.header-search {
+  display: flex !important;
+  align-items: center !important;
+  flex: 0 1 300px !important;
+  min-width: 0 !important;
+}
+
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  min-width: 0 !important;
+}
+
+/* =========================================================================
+   SMOOTH THEME TOGGLE & CROSS-FADING TRANSITIONS
+   Provides seamless, elegant cross-fade when toggling light and dark modes,
+   ensuring all semantic tokens, background surfaces, borders, and text update
+   fluidly without visual tearing or jarring flashes.
+   ========================================================================= */
+
+/* Native View Transitions API cross-fade (Progressive enhancement for modern browsers) */
+::view-transition-group(root) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation-name: theme-view-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: theme-view-fade-in;
+}
+
+@keyframes theme-view-fade-out {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(0.5px);
+  }
+}
+
+@keyframes theme-view-fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Universal Smooth Cross-Fade during Theme Switch (Works across all browsers & iframes)
+   During active theme transition (400ms window), every semantic token, container,
+   card, input, text, and SVG icon gracefully interpolates between light and dark */
+.theme-cross-fade-active,
+.theme-cross-fade-active *,
+.theme-cross-fade-active *::before,
+.theme-cross-fade-active *::after,
+[data-theme-transitioning="true"],
+[data-theme-transitioning="true"] *,
+[data-theme-transitioning="true"] *::before,
+[data-theme-transitioning="true"] *::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, text-decoration-color, outline-color !important;
+  transition-duration: 350ms !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-delay: 0s !important;
+}
+
+/* Ambient Cross-Fade Atmospheric Veil
+   A subtle, transient backdrop glow during the switch softens high-contrast luminance shifts */
+body[data-theme-transitioning="true"]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.06), transparent 75%);
+  animation: theme-atmospheric-crossfade 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes theme-atmospheric-crossfade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Baseline Continuous Transitions for Structural Surfaces & Panels */
+html,
+body,
+#root,
+header,
+nav,
+aside,
+main,
+footer,
+section,
+.card,
+.panel,
+[class*="rounded-xl"],
+[class*="rounded-2xl"],
+[class*="rounded-lg"],
+[class*="bg-slate-"],
+[class*="border-slate-"] {
+  transition-property: background-color, border-color, color, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme Switcher Elements Refined Transitions */
+#theme-switcher-container,
+#theme-toggle-compact-btn,
+#theme-btn-midnight,
+#theme-btn-light {
+  transition-property: background-color, border-color, color, box-shadow, transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .theme-cross-fade-active,
+  .theme-cross-fade-active *,
+  .theme-cross-fade-active *::before,
+  .theme-cross-fade-active *::after,
+  [data-theme-transitioning="true"],
+  [data-theme-transitioning="true"] * {
+    transition: none !important;
+  }
+  body[data-theme-transitioning="true"]::after {
+    display: none !important;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+/* =========================================================================
+   ACCESSIBILITY & FONT READABILITY ENGINE
+   Proportional dynamic font scaling, stroke boost, high-contrast modes
+   ========================================================================= */
+
+/* Micro-typography stroke enhancement: prevents small fonts from thinning out */
+.text-\[10px\],
+.text-\[11px\],
+.text-xs,
+.text-sm {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Proportional Font Scaling across the whole application */
+html[data-font-size="comfortable"] {
+  font-size: 108% !important;
+}
+
+html[data-font-size="large"] {
+  font-size: 118% !important;
+}
+
+/* Font Weight Boost Mode: thickens fine letters so reading is effortless */
+html[data-font-weight="boosted"] body,
+html[data-font-weight="boosted"] p,
+html[data-font-weight="boosted"] span,
+html[data-font-weight="boosted"] div,
+html[data-font-weight="boosted"] td,
+html[data-font-weight="boosted"] th,
+html[data-font-weight="boosted"] button,
+html[data-font-weight="boosted"] input,
+html[data-font-weight="boosted"] textarea,
+html[data-font-weight="boosted"] label {
+  font-weight: 500 !important;
+}
+
+html[data-font-weight="boosted"] .font-medium {
+  font-weight: 600 !important;
+}
+
+html[data-font-weight="boosted"] .font-semibold,
+html[data-font-weight="boosted"] .font-bold,
+html[data-font-weight="boosted"] strong,
+html[data-font-weight="boosted"] h1,
+html[data-font-weight="boosted"] h2,
+html[data-font-weight="boosted"] h3,
+html[data-font-weight="boosted"] h4,
+html[data-font-weight="boosted"] h5,
+html[data-font-weight="boosted"] h6 {
+  font-weight: 750 !important;
+}
+
+/* Font Family Selection: Universal Inter Default & Enterprise Sans */
+html[data-font-family="inter"] body,
+html[data-font-family="inter"],
+html[data-font-family="inter"] button,
+html[data-font-family="inter"] input,
+html[data-font-family="inter"] select,
+html[data-font-family="inter"] textarea,
+html[data-font-family="inter"] table,
+html[data-font-family="inter"] th,
+html[data-font-family="inter"] td,
+html[data-font-family="inter"] p,
+html[data-font-family="inter"] span,
+html[data-font-family="inter"] div,
+html[data-font-family="inter"] a,
+html[data-font-family="inter"] label,
+html[data-font-family="inter"] text,
+html[data-font-family="inter"] tspan,
+html:not([data-font-family]) body,
+html:not([data-font-family]),
+html:not([data-font-family]) button,
+html:not([data-font-family]) input,
+html:not([data-font-family]) select,
+html:not([data-font-family]) textarea,
+html:not([data-font-family]) table,
+html:not([data-font-family]) th,
+html:not([data-font-family]) td,
+html:not([data-font-family]) p,
+html:not([data-font-family]) span,
+html:not([data-font-family]) div,
+html:not([data-font-family]) a,
+html:not([data-font-family]) label,
+html:not([data-font-family]) text,
+html:not([data-font-family]) tspan {
+  font-family: var(--font-family-sans) !important;
+}
+
+html[data-font-family="inter"] h1,
+html[data-font-family="inter"] h2,
+html[data-font-family="inter"] h3,
+html[data-font-family="inter"] h4,
+html[data-font-family="inter"] h5,
+html[data-font-family="inter"] h6,
+html[data-font-family="inter"] .font-display,
+html[data-font-family="inter"] .font-heading,
+html[data-font-family="inter"] .font-sans,
+html:not([data-font-family]) h1,
+html:not([data-font-family]) h2,
+html:not([data-font-family]) h3,
+html:not([data-font-family]) h4,
+html:not([data-font-family]) h5,
+html:not([data-font-family]) h6,
+html:not([data-font-family]) .font-display,
+html:not([data-font-family]) .font-heading,
+html:not([data-font-family]) .font-sans {
+  font-family: var(--font-family-sans) !important;
+}
+
+/* Optional Josefin Sans */
+html[data-font-family="josefin-sans"] body,
+html[data-font-family="josefin-sans"],
+html[data-font-family="josefin-sans"] button,
+html[data-font-family="josefin-sans"] input,
+html[data-font-family="josefin-sans"] select,
+html[data-font-family="josefin-sans"] textarea,
+html[data-font-family="josefin-sans"] table,
+html[data-font-family="josefin-sans"] th,
+html[data-font-family="josefin-sans"] td,
+html[data-font-family="josefin-sans"] p,
+html[data-font-family="josefin-sans"] span,
+html[data-font-family="josefin-sans"] div,
+html[data-font-family="josefin-sans"] a,
+html[data-font-family="josefin-sans"] label,
+html[data-font-family="josefin-sans"] text,
+html[data-font-family="josefin-sans"] tspan,
+html[data-font-family="josefin-sans"] h1,
+html[data-font-family="josefin-sans"] h2,
+html[data-font-family="josefin-sans"] h3,
+html[data-font-family="josefin-sans"] h4,
+html[data-font-family="josefin-sans"] h5,
+html[data-font-family="josefin-sans"] h6,
+html[data-font-family="josefin-sans"] .font-display,
+html[data-font-family="josefin-sans"] .font-heading,
+html[data-font-family="josefin-sans"] .font-sans {
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+/* Inter selector for when selected */
+html[data-font-family="inter"] body,
+html[data-font-family="inter"],
+html[data-font-family="inter"] button,
+html[data-font-family="inter"] input,
+html[data-font-family="inter"] select,
+html[data-font-family="inter"] textarea,
+html[data-font-family="inter"] table,
+html[data-font-family="inter"] th,
+html[data-font-family="inter"] td,
+html[data-font-family="inter"] p,
+html[data-font-family="inter"] span,
+html[data-font-family="inter"] div,
+html[data-font-family="inter"] a,
+html[data-font-family="inter"] label,
+html[data-font-family="inter"] text,
+html[data-font-family="inter"] tspan {
+  font-family: "Inter", var(--font-family-sans) !important;
+}
+
+html[data-font-family="inter"] h1,
+html[data-font-family="inter"] h2,
+html[data-font-family="inter"] h3,
+html[data-font-family="inter"] h4,
+html[data-font-family="inter"] h5,
+html[data-font-family="inter"] h6,
+html[data-font-family="inter"] .font-display,
+html[data-font-family="inter"] .font-heading,
+html[data-font-family="inter"] .font-sans {
+  font-family: "Inter", var(--font-family-sans) !important;
+}
+
+/* Explicit priority for code, pre, and technical monospace identifiers */
+code,
+pre,
+kbd,
+samp,
+.font-mono,
+[class*="font-mono"] {
+  font-family: var(--font-family-mono) !important;
+}
+
+/* Fallback for any legacy cached values: resolve to Josefin Sans */
+html[data-font-family="times-new-roman"] body,
+html[data-font-family="times-new-roman"],
+html[data-font-family="times-new-roman"] h1,
+html[data-font-family="times-new-roman"] h2,
+html[data-font-family="times-new-roman"] h3,
+html[data-font-family="times-new-roman"] h4,
+html[data-font-family="times-new-roman"] h5,
+html[data-font-family="times-new-roman"] h6,
+html[data-font-family="times-new-roman"] .font-display,
+html[data-font-family="times-new-roman"] .font-heading,
+html[data-font-family="times-new-roman"] .font-sans {
+  font-family: var(--font-family-sans) !important;
+}
+
+html[data-font-family="sora"] body,
+html[data-font-family="sora"] {
+  font-family: 'Sora', var(--font-family-sans) !important;
+}
+
+html[data-font-family="mono"] body,
+html[data-font-family="mono"] {
+  font-family: var(--font-family-mono) !important;
+}
+
+html[data-font-family="plus-jakarta"] body,
+html[data-font-family="plus-jakarta"] {
+  font-family: 'Plus Jakarta Sans', var(--font-family-sans) !important;
+}
+
+/* High Contrast Mode (WCAG AAA) in Dark Mode */
+html[data-contrast="high"]:not(.theme-light),
+html[data-contrast="ultra"]:not(.theme-light) {
+  --background: #000000 !important;
+  --surface: #0a0f1d !important;
+  --surface-elevated: #111827 !important;
+  --border: #475569 !important;
+  --border-subtle: #64748b !important;
+  background-color: var(--background) !important;
+}
+
+html[data-contrast="high"]:not(.theme-light) .text-slate-400,
+html[data-contrast="high"]:not(.theme-light) .text-slate-500,
+html[data-contrast="high"]:not(.theme-light) .text-slate-600,
+html[data-contrast="high"]:not(.theme-light) [class*="text-[#7F8BA3]"],
+html[data-contrast="high"]:not(.theme-light) [class*="text-[#A7B0C0]"],
+html[data-contrast="high"]:not(.theme-light) [class*="text-[#566176]"],
+html[data-contrast="ultra"]:not(.theme-light) .text-slate-400,
+html[data-contrast="ultra"]:not(.theme-light) .text-slate-500,
+html[data-contrast="ultra"]:not(.theme-light) .text-slate-600,
+html[data-contrast="ultra"]:not(.theme-light) .text-slate-300,
+html[data-contrast="ultra"]:not(.theme-light) .text-slate-200,
+html[data-contrast="ultra"]:not(.theme-light) [class*="text-[#7F8BA3]"],
+html[data-contrast="ultra"]:not(.theme-light) [class*="text-[#A7B0C0]"],
+html[data-contrast="ultra"]:not(.theme-light) [class*="text-[#566176]"] {
+  color: #ffffff !important;
+}
+
+html[data-contrast="high"]:not(.theme-light) [class*="border-slate-800"],
+html[data-contrast="high"]:not(.theme-light) [class*="border-slate-900"],
+html[data-contrast="ultra"]:not(.theme-light) [class*="border-slate-800"],
+html[data-contrast="ultra"]:not(.theme-light) [class*="border-slate-900"] {
+  border-color: #475569 !important;
+}
+
+/* High Contrast Mode (WCAG AAA) in Light Mode */
+html[data-contrast="high"].theme-light,
+html[data-contrast="ultra"].theme-light {
+  --background: #ffffff !important;
+  --surface: #ffffff !important;
+  --surface-elevated: #ffffff !important;
+  --border: #475569 !important;
+  --border-subtle: #64748b !important;
+  background-color: var(--background) !important;
+  background-image: none !important;
+}
+
+html[data-contrast="high"].theme-light .text-slate-400,
+html[data-contrast="high"].theme-light .text-slate-500,
+html[data-contrast="high"].theme-light .text-slate-600,
+html[data-contrast="high"].theme-light .text-slate-700,
+html[data-contrast="ultra"].theme-light .text-slate-400,
+html[data-contrast="ultra"].theme-light .text-slate-500,
+html[data-contrast="ultra"].theme-light .text-slate-600,
+html[data-contrast="ultra"].theme-light .text-slate-700,
+html[data-contrast="ultra"].theme-light .text-slate-300 {
+  color: #000000 !important;
+}
+
+html[data-contrast="high"].theme-light [class*="border-slate-"],
+html[data-contrast="ultra"].theme-light [class*="border-slate-"] {
+  border-color: #475569 !important;
+}
+
+/* Ultra Contrast Mode - Maximum crispness */
+html[data-contrast="ultra"] h1,
+html[data-contrast="ultra"] h2,
+html[data-contrast="ultra"] h3,
+html[data-contrast="ultra"] h4,
+html[data-contrast="ultra"] strong {
+  text-decoration-thickness: 2px;
+}
+
+/* =========================================================================
+   KPI CRITICAL ALERT THRESHOLD ANIMATIONS
+   Subtle executive pulsing glow border for metrics dropping below threshold
+   ========================================================================= */
+
+@keyframes kpi-critical-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.45), 0 0 12px -2px rgba(244, 63, 94, 0.28);
+    border-color: rgba(244, 63, 94, 0.65);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.75), 0 0 20px 2px rgba(244, 63, 94, 0.52);
+    border-color: rgba(244, 63, 94, 0.95);
+  }
+}
+
+.kpi-critical-glow {
+  animation: kpi-critical-pulse-glow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kpi-critical-glow {
+    animation: none;
+    box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.7), 0 0 14px 1px rgba(244, 63, 94, 0.4);
+    border-color: rgba(244, 63, 94, 0.9);
+  }
+}
+
+/* =========================================================================
+   SUBTLE CARD FADE-IN TRANSITION ON MODULE NAVIGATION
+   Enhances perceived smoothness of dashboard cards during module switches
+   ========================================================================= */
+
+@keyframes skandaCardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skanda-card-fade,
+.card-fade-in {
+  animation: skandaCardFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered card fade-in for grids of cards */
+.stagger-cards > * {
+  animation: skandaCardFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.stagger-cards > *:nth-child(1) { animation-delay: 0.02s; }
+.stagger-cards > *:nth-child(2) { animation-delay: 0.05s; }
+.stagger-cards > *:nth-child(3) { animation-delay: 0.08s; }
+.stagger-cards > *:nth-child(4) { animation-delay: 0.11s; }
+.stagger-cards > *:nth-child(5) { animation-delay: 0.14s; }
+.stagger-cards > *:nth-child(6) { animation-delay: 0.17s; }
+.stagger-cards > *:nth-child(7) { animation-delay: 0.20s; }
+.stagger-cards > *:nth-child(8) { animation-delay: 0.23s; }
+.stagger-cards > *:nth-child(9) { animation-delay: 0.26s; }
+.stagger-cards > *:nth-child(10) { animation-delay: 0.29s; }
+.stagger-cards > *:nth-child(11) { animation-delay: 0.32s; }
+.stagger-cards > *:nth-child(12) { animation-delay: 0.35s; }
+.stagger-cards > *:nth-child(13) { animation-delay: 0.38s; }
+.stagger-cards > *:nth-child(14) { animation-delay: 0.41s; }
+.stagger-cards > *:nth-child(15) { animation-delay: 0.44s; }
+.stagger-cards > *:nth-child(16) { animation-delay: 0.47s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .skanda-card-fade,
+  .card-fade-in,
+  .stagger-cards > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* =========================================================================
+   SKANDA COMPLIANCE MATURITY SCORECARD: KPI CARD FADE-IN ON MOUNT
+   Fades in each KPI card on mount with a smooth 400ms duration and the
+   Skanda design system's preferred cubic-bezier(0.16, 1, 0.3, 1) easing.
+   ========================================================================= */
+
+@keyframes skandaKpiCardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skanda-kpi-mount-fade {
+  animation: skandaKpiCardFadeIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.skanda-kpi-mount-fade-1 {
+  animation: skandaKpiCardFadeIn 400ms cubic-bezier(0.16, 1, 0.3, 1) 40ms both;
+}
+
+.skanda-kpi-mount-fade-2 {
+  animation: skandaKpiCardFadeIn 400ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.skanda-kpi-mount-fade-3 {
+  animation: skandaKpiCardFadeIn 400ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+
+.skanda-kpi-mount-fade-4 {
+  animation: skandaKpiCardFadeIn 400ms cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
+}
+
+.skanda-kpi-card-interactive {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.28s ease !important;
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+.skanda-kpi-card-interactive:hover {
+  transform: translateY(-3.5px) scale(1.02) !important;
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.15),
+              0 6px 16px -2px rgba(15, 23, 42, 0.08) !important;
+}
+
+.dark .skanda-kpi-card-interactive:hover,
+[data-theme="dark"] .skanda-kpi-card-interactive:hover {
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.85),
+              0 6px 20px -2px rgba(0, 0, 0, 0.6) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skanda-kpi-mount-fade,
+  .skanda-kpi-mount-fade-1,
+  .skanda-kpi-mount-fade-2,
+  .skanda-kpi-mount-fade-3,
+  .skanda-kpi-mount-fade-4 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* =========================================================================
+   ENTERPRISE DASHBOARD: DEPARTMENT CARDS SUBTLE LIFT & GLOW ANIMATION
+   Provides smooth tactile feedback, subtle vertical elevation, and refined
+   ambient glow illumination on hover for department cards.
+   ========================================================================= */
+
+.dept-card-interactive {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease,
+              background-color 0.22s ease !important;
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+.dept-card-interactive:hover {
+  transform: translateY(-2.5px) !important;
+  box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.22),
+              0 0 16px -2px rgba(56, 189, 248, 0.16),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(99, 102, 241, 0.55) !important;
+}
+
+/* Status-tuned glow variants for department cards */
+.dept-card-interactive.status-on-track:hover,
+.dept-card-interactive.status-compliant:hover {
+  box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.24),
+              0 0 16px -2px rgba(16, 185, 129, 0.18),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.55) !important;
+}
+
+.dept-card-interactive.status-attention:hover,
+.dept-card-interactive.status-in-progress:hover {
+  box-shadow: 0 8px 24px -4px rgba(245, 158, 11, 0.24),
+              0 0 16px -2px rgba(245, 158, 11, 0.18),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(245, 158, 11, 0.55) !important;
+}
+
+.dept-card-interactive.status-lagging:hover,
+.dept-card-interactive.status-non-compliant:hover {
+  box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.26),
+              0 0 16px -2px rgba(244, 63, 94, 0.20),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(244, 63, 94, 0.55) !important;
+}
+
+/* Light mode support for department cards */
+html.light .dept-card-interactive:hover,
+[data-theme="light"] .dept-card-interactive:hover,
+.light .dept-card-interactive:hover {
+  box-shadow: 0 8px 20px -3px rgba(99, 102, 241, 0.16),
+              0 2px 6px -1px rgba(0, 0, 0, 0.06),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(99, 102, 241, 0.45) !important;
+}
+
+html.light .dept-card-interactive.status-on-track:hover,
+[data-theme="light"] .dept-card-interactive.status-on-track:hover,
+.light .dept-card-interactive.status-on-track:hover {
+  box-shadow: 0 8px 20px -3px rgba(16, 185, 129, 0.18),
+              0 2px 6px -1px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(16, 185, 129, 0.45) !important;
+}
+
+html.light .dept-card-interactive.status-attention:hover,
+[data-theme="light"] .dept-card-interactive.status-attention:hover,
+.light .dept-card-interactive.status-attention:hover {
+  box-shadow: 0 8px 20px -3px rgba(245, 158, 11, 0.18),
+              0 2px 6px -1px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
+}
+
+html.light .dept-card-interactive.status-lagging:hover,
+[data-theme="light"] .dept-card-interactive.status-lagging:hover,
+.light .dept-card-interactive.status-lagging:hover {
+  box-shadow: 0 8px 20px -3px rgba(244, 63, 94, 0.18),
+              0 2px 6px -1px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(244, 63, 94, 0.45) !important;
+}
+
+/* Accessibility: Disables transform translation when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dept-card-interactive,
+  .dept-card-interactive:hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================================
+   SKANDA PREMIUM KPI CARD HOVER ELEVATION & SCALE TRANSITIONS
+   Provides smooth, GPU-accelerated tactile feedback, subtle vertical elevation,
+   scale-up (scale(1.02)), and elevated ambient shadow transitions on hover.
+   ========================================================================= */
+
+.skanda-kpi-card {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.28s ease !important;
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+.skanda-kpi-card:hover {
+  transform: translateY(-3.5px) scale(1.02) !important;
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.15),
+              0 6px 16px -2px rgba(15, 23, 42, 0.08) !important;
+}
+
+.dark .skanda-kpi-card:hover,
+[data-theme="dark"] .skanda-kpi-card:hover {
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.85),
+              0 6px 20px -2px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Status-accented hover glows for Skanda KPI cards */
+.skanda-kpi-card.kpi-emerald:hover {
+  border-color: rgba(16, 185, 129, 0.55) !important;
+}
+.dark .skanda-kpi-card.kpi-emerald:hover,
+[data-theme="dark"] .skanda-kpi-card.kpi-emerald:hover {
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.85),
+              0 0 22px 2px rgba(16, 185, 129, 0.25) !important;
+}
+
+.skanda-kpi-card.kpi-purple:hover {
+  border-color: rgba(139, 92, 246, 0.55) !important;
+}
+.dark .skanda-kpi-card.kpi-purple:hover,
+[data-theme="dark"] .skanda-kpi-card.kpi-purple:hover {
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.85),
+              0 0 22px 2px rgba(139, 92, 246, 0.25) !important;
+}
+
+.skanda-kpi-card.kpi-blue:hover {
+  border-color: rgba(37, 99, 235, 0.55) !important;
+}
+.dark .skanda-kpi-card.kpi-blue:hover,
+[data-theme="dark"] .skanda-kpi-card.kpi-blue:hover {
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.85),
+              0 0 22px 2px rgba(37, 99, 235, 0.25) !important;
+}
+
+.skanda-kpi-card.kpi-amber:hover {
+  border-color: rgba(245, 158, 11, 0.55) !important;
+}
+.dark .skanda-kpi-card.kpi-amber:hover,
+[data-theme="dark"] .skanda-kpi-card.kpi-amber:hover {
+  box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.85),
+              0 0 22px 2px rgba(245, 158, 11, 0.25) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skanda-kpi-card,
+  .skanda-kpi-card:hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================================
+   TACTILE FEEDBACK: SUBTLE hover:scale-[1.01] ANIMATION ON ALL CARDS USING 'rounded-xl'
+   Provides consistent tactile feedback across dashboard and module views
+   ========================================================================= */
+
+/* Explicit hover:scale-[1.01] utility class enforcement */
+.hover\:scale-\[1\.01\] {
+  transition-property: transform, box-shadow, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover\:scale-\[1\.01\]:hover,
+[class*="hover:scale-[1.01]"]:hover {
+  transform: scale(1.01) !important;
+}
+
+/* Base card transition configuration for elements using rounded-xl */
+.card.rounded-xl,
+.card[class*="rounded-xl"],
+[class*="card"][class*="rounded-xl"],
+.panel.rounded-xl,
+.panel[class*="rounded-xl"],
+.widget.rounded-xl,
+.widget[class*="rounded-xl"],
+div.rounded-xl[class*="border"]:not(button):not(input):not(select):not(textarea):not([role="dialog"]):not([role="tooltip"]):not([role="menu"]):not([role="tab"]):not([role="alert"]):not([class*="modal"]):not([class*="drawer"]):not([class*="fixed"]):not([class*="toast"]):not([class*="p-0"]):not([class*="p-0.5"]):not([class*="p-1 "]):not([class*="p-1.5"]):not([class*="w-"]):not([class*="h-"]):not([class*="shrink-0"]):not([class*="inline"]):not([class*="flex-shrink-0"]),
+div.rounded-xl[class*="shadow"]:not(button):not(input):not(select):not(textarea):not([role="dialog"]):not([role="tooltip"]):not([role="menu"]):not([role="tab"]):not([role="alert"]):not([class*="modal"]):not([class*="drawer"]):not([class*="fixed"]):not([class*="toast"]):not([class*="p-0"]):not([class*="p-0.5"]):not([class*="p-1 "]):not([class*="p-1.5"]):not([class*="w-"]):not([class*="h-"]):not([class*="shrink-0"]):not([class*="inline"]):not([class*="flex-shrink-0"]) {
+  transition-property: transform, box-shadow, border-color, background-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+/* Subtle hover scale animation for cards using rounded-xl */
+.card.rounded-xl:hover,
+.card[class*="rounded-xl"]:hover,
+[class*="card"][class*="rounded-xl"]:hover,
+.panel.rounded-xl:hover,
+.panel[class*="rounded-xl"]:hover,
+.widget.rounded-xl:hover,
+.widget[class*="rounded-xl"]:hover,
+div.rounded-xl[class*="border"]:not(button):not(input):not(select):not(textarea):not([role="dialog"]):not([role="tooltip"]):not([role="menu"]):not([role="tab"]):not([role="alert"]):not([class*="modal"]):not([class*="drawer"]):not([class*="fixed"]):not([class*="toast"]):not([class*="p-0"]):not([class*="p-0.5"]):not([class*="p-1 "]):not([class*="p-1.5"]):not([class*="w-"]):not([class*="h-"]):not([class*="shrink-0"]):not([class*="inline"]):not([class*="flex-shrink-0"]):hover,
+div.rounded-xl[class*="shadow"]:not(button):not(input):not(select):not(textarea):not([role="dialog"]):not([role="tooltip"]):not([role="menu"]):not([role="tab"]):not([role="alert"]):not([class*="modal"]):not([class*="drawer"]):not([class*="fixed"]):not([class*="toast"]):not([class*="p-0"]):not([class*="p-0.5"]):not([class*="p-1 "]):not([class*="p-1.5"]):not([class*="w-"]):not([class*="h-"]):not([class*="shrink-0"]):not([class*="inline"]):not([class*="flex-shrink-0"]):hover {
+  transform: scale(1.01);
+}
+
+/* Accessibility: Disable transform scaling under prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .card.rounded-xl:hover,
+  .card[class*="rounded-xl"]:hover,
+  [class*="card"][class*="rounded-xl"]:hover,
+  .panel.rounded-xl:hover,
+  .panel[class*="rounded-xl"]:hover,
+  .widget.rounded-xl:hover,
+  .widget[class*="rounded-xl"]:hover,
+  div.rounded-xl[class*="border"]:hover,
+  div.rounded-xl[class*="shadow"]:hover,
+  .hover\:scale-\[1\.01\]:hover,
+  [class*="hover:scale-[1.01]"]:hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================================
+   RECHARTS SPARKLINE TRANSITIONS & FOCUS STATE OPTIMIZATION
+   ========================================================================= */
+.recharts-area-curve,
+.recharts-line-curve {
+  transition: stroke-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.3s ease, filter 0.3s ease, opacity 0.3s ease !important;
+}
+
+.recharts-area-area {
+  transition: opacity 0.3s ease, fill 0.3s ease !important;
+}
+
+.recharts-sparkline-dot,
+circle[key="last-point-dot"] {
+  transition: r 0.3s cubic-bezier(0.16, 1, 0.3, 1), stroke-width 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* =========================================================================
+   GLOBAL ALIGNMENT & CONSISTENCY DESIGN SYSTEM (20-CHECKPOINT ENGINE)
+   Enforces uniform typography, spacing, cards, tables, inputs, and modals
+   ========================================================================= */
+
+/* 1. Global Spacing & Sizing Tokens (Mapped to Master DESIGN_TOKENS) */
+:root {
+  --skanda-space-xs: var(--skanda-space-1);   /* 4px */
+  --skanda-space-sm: var(--skanda-space-2);   /* 8px */
+  --skanda-space-md: var(--skanda-space-3);   /* 12px */
+  --skanda-space-lg: var(--skanda-space-4);   /* 16px */
+  --skanda-space-xl: var(--skanda-space-6);   /* 24px */
+  --skanda-space-2xl: var(--skanda-space-8);  /* 32px */
+  --skanda-radius-2xl: var(--skanda-radius-xl); /* 16px */
+  --skanda-control-h-sm: var(--skanda-height-button-sm); /* 32px */
+  --skanda-control-h-md: var(--skanda-height-button-md); /* 36px */
+  --skanda-control-h-lg: var(--skanda-height-button-lg); /* 40px */
+}
+
+/* 1.1 Typography Utility Classes Aligned with Design System */
+.skanda-display {
+  font-size: var(--skanda-font-display-size) !important;
+  line-height: var(--skanda-font-display-lh) !important;
+  font-weight: var(--skanda-font-display-weight) !important;
+  letter-spacing: var(--skanda-font-display-tracking) !important;
+}
+
+.skanda-page-title {
+  font-size: var(--skanda-font-page-title-size) !important;
+  line-height: var(--skanda-font-page-title-lh) !important;
+  font-weight: var(--skanda-font-page-title-weight) !important;
+  letter-spacing: var(--skanda-font-page-title-tracking) !important;
+}
+
+.skanda-section-title {
+  font-size: var(--skanda-font-section-title-size) !important;
+  line-height: var(--skanda-font-section-title-lh) !important;
+  font-weight: var(--skanda-font-section-title-weight) !important;
+  letter-spacing: var(--skanda-font-section-title-tracking) !important;
+}
+
+.skanda-card-title {
+  font-size: var(--skanda-font-card-title-size) !important;
+  line-height: var(--skanda-font-card-title-lh) !important;
+  font-weight: var(--skanda-font-card-title-weight) !important;
+  letter-spacing: var(--skanda-font-card-title-tracking) !important;
+}
+
+.skanda-body {
+  font-size: var(--skanda-font-body-size) !important;
+  line-height: var(--skanda-font-body-lh) !important;
+  font-weight: var(--skanda-font-body-weight) !important;
+}
+
+.skanda-body-medium {
+  font-size: var(--skanda-font-body-size) !important;
+  line-height: var(--skanda-font-body-lh) !important;
+  font-weight: var(--skanda-font-body-medium-weight) !important;
+}
+
+.skanda-small {
+  font-size: var(--skanda-font-small-size) !important;
+  line-height: var(--skanda-font-small-lh) !important;
+  font-weight: var(--skanda-font-small-weight) !important;
+}
+
+.skanda-small-medium {
+  font-size: var(--skanda-font-small-size) !important;
+  line-height: var(--skanda-font-small-lh) !important;
+  font-weight: var(--skanda-font-small-medium-weight) !important;
+}
+
+.skanda-caption {
+  font-size: var(--skanda-font-caption-size) !important;
+  line-height: var(--skanda-font-caption-lh) !important;
+  font-weight: var(--skanda-font-caption-weight) !important;
+  letter-spacing: var(--skanda-font-caption-tracking) !important;
+}
+
+.skanda-mono {
+  font-family: var(--font-family-mono) !important;
+  font-size: var(--skanda-font-small-size) !important;
+  line-height: var(--skanda-font-small-lh) !important;
+}
+
+/* 1.2 Dimension & Radius Utility Classes */
+.rounded-skanda-xs { border-radius: var(--skanda-radius-xs) !important; }
+.rounded-skanda-sm { border-radius: var(--skanda-radius-sm) !important; }
+.rounded-skanda-md { border-radius: var(--skanda-radius-md) !important; }
+.rounded-skanda-lg { border-radius: var(--skanda-radius-lg) !important; }
+.rounded-skanda-xl { border-radius: var(--skanda-radius-xl) !important; }
+.rounded-skanda-pill { border-radius: var(--skanda-radius-pill) !important; }
+
+.shadow-skanda-subtle { box-shadow: var(--skanda-shadow-subtle) !important; }
+.shadow-skanda-card { box-shadow: var(--skanda-shadow-card) !important; }
+.shadow-skanda-elevated { box-shadow: var(--skanda-shadow-elevated) !important; }
+.shadow-skanda-modal { box-shadow: var(--skanda-shadow-modal) !important; }
+
+.h-skanda-header { height: var(--skanda-height-header) !important; }
+.h-skanda-btn-sm { height: var(--skanda-height-button-sm) !important; }
+.h-skanda-btn-md { height: var(--skanda-height-button-md) !important; }
+.h-skanda-btn-lg { height: var(--skanda-height-button-lg) !important; }
+.h-skanda-input-sm { height: var(--skanda-height-input-sm) !important; }
+.h-skanda-input-md { height: var(--skanda-height-input-md) !important; }
+.min-h-skanda-kpi { min-height: var(--skanda-height-kpi-min) !important; }
+.min-h-skanda-action { min-height: var(--skanda-height-action-min) !important; }
+
+/* 2. Global Table Alignment & Styling */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.skanda-table,
+div:not([class*="custom-table"]) > table:not([class*="raw-table"]) {
+  width: 100%;
+  text-align: left;
+  font-size: var(--skanda-font-small-size);
+}
+
+.skanda-table th,
+table:not([class*="raw-table"]) thead th {
+  font-size: var(--skanda-font-caption-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--skanda-space-2) var(--skanda-space-4);
+  height: var(--skanda-height-table-header);
+  border-bottom: 1px solid var(--skanda-border);
+  background-color: var(--skanda-bg-elevated);
+  color: var(--skanda-text-muted);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.skanda-table td,
+table:not([class*="raw-table"]) tbody td {
+  padding: var(--skanda-space-3) var(--skanda-space-4);
+  border-bottom: 1px solid var(--skanda-border-subtle);
+  color: var(--skanda-text-secondary);
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+table:not([class*="raw-table"]) tbody tr:hover td {
+  background-color: var(--skanda-bg-elevated);
+}
+
+/* 3. Global Form Inputs & Select Alignment */
+.skanda-input,
+input[type="text"]:not([class*="raw-input"]),
+input[type="search"]:not([class*="raw-input"]),
+input[type="email"]:not([class*="raw-input"]),
+input[type="password"]:not([class*="raw-input"]),
+input[type="number"]:not([class*="raw-input"]),
+select:not([class*="raw-select"]) {
+  border-radius: var(--skanda-radius-md);
+  border: 1px solid var(--skanda-border);
+  background-color: var(--skanda-bg-card);
+  color: var(--skanda-text-primary);
+  font-size: var(--skanda-font-small-size);
+  line-height: var(--skanda-font-card-title-lh);
+  height: var(--skanda-height-input-md);
+  padding: 0 var(--skanda-space-3);
+  transition: all 0.15s ease-in-out;
+}
+
+.skanda-input:focus,
+input[type="text"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--skanda-brand-accent);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+select option {
+  background-color: var(--skanda-bg-card, #111A30);
+  color: var(--skanda-text-primary, #FFFFFF);
+}
+
+.theme-light select option {
+  background-color: #FFFFFF;
+  color: #0F172A;
+}
+
+/* 4. Global Button Alignment & Consistent Sizing */
+.skanda-btn,
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skanda-space-2);
+  height: var(--skanda-height-button-md);
+  padding: 0 var(--skanda-space-4);
+  font-size: var(--skanda-font-small-size);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: var(--skanda-radius-md);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.skanda-btn-sm {
+  height: var(--skanda-height-button-sm) !important;
+  padding: 0 var(--skanda-space-3) !important;
+  font-size: var(--skanda-font-caption-size) !important;
+  border-radius: var(--skanda-radius-sm) !important;
+}
+
+.skanda-btn-lg {
+  height: var(--skanda-height-button-lg) !important;
+  padding: 0 var(--skanda-space-5) !important;
+  font-size: var(--skanda-font-card-title-size) !important;
+  border-radius: var(--skanda-radius-md) !important;
+}
+
+/* 5. Global Badge & Pill Alignment */
+.skanda-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skanda-space-1);
+  padding: 2px var(--skanda-space-2);
+  font-size: var(--skanda-font-caption-size);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--skanda-radius-pill);
+  white-space: nowrap;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* 6. Global Card Header & Action Optical Alignment */
+.skanda-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--skanda-space-3);
+  padding-bottom: var(--skanda-space-3);
+  border-bottom: 1px solid var(--skanda-border-subtle);
+  margin-bottom: var(--skanda-space-4);
+}
+
+/* 7. Global Modal Alignment & Viewport Centering */
+.skanda-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--skanda-z-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--skanda-space-4);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.skanda-modal-container {
+  position: relative;
+  width: 100%;
+  max-height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--skanda-radius-xl);
+  border: 1px solid var(--skanda-border);
+  background-color: var(--skanda-bg-card);
+  color: var(--skanda-text-primary);
+  box-shadow: var(--skanda-shadow-modal);
+  overflow: hidden;
+  z-index: var(--skanda-z-modal);
+}
+
+/* 8. Global Tab Bar Alignment */
+.skanda-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--skanda-space-1);
+  padding: var(--skanda-space-1);
+  border-radius: var(--skanda-radius-lg);
+  background-color: var(--skanda-bg-elevated);
+  border: 1px solid var(--skanda-border);
+}
+
+.skanda-tab-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skanda-space-1);
+  padding: var(--skanda-space-1) var(--skanda-space-3);
+  font-size: var(--skanda-font-small-size);
+  font-weight: 600;
+  border-radius: var(--skanda-radius-md);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* 9. Telemetry Data-Flow Line & Compliance Core Pulse Animations */
+@keyframes dataFlowPulse {
+  0% {
+    stroke-dashoffset: 48;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dataFlowPulseReverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 48;
+  }
+}
+
+@keyframes corePulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.85);
+    opacity: 0;
+  }
+}
+
+.animate-data-flow {
+  animation: dataFlowPulse 1.8s linear infinite;
+}
+
+.animate-data-flow-fast {
+  animation: dataFlowPulse 1.0s linear infinite;
+}
+
+.animate-data-flow-slow {
+  animation: dataFlowPulse 2.8s linear infinite;
+}
+
+.animate-core-pulse-ring {
+  animation: corePulseRing 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* 10. PREFERS-REDUCED-MOTION (Accessibility Compliance) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-spin,
+  .animate-pulse,
+  .animate-ping,
+  .animate-bounce,
+  .animate-data-flow,
+  .animate-core-pulse-ring {
+    animation: none !important;
+  }
+}
+
+/* 11. GLOBAL OVERFLOW & TEXT DISCIPLINE */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Enterprise Data Table Styles */
+.skanda-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--skanda-radius-xl);
+}
+
+.skanda-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--skanda-font-body-size);
+}
+
+/* 12. SKANDA AMBIENT DEPTH & BACKGROUND EFFECTS */
+.skanda-ambient-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+}
+
+.dark .skanda-ambient-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.skanda-executive-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+}
+
+.dark .skanda-executive-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.07) 0%, transparent 70%);
+}
+
+/* Depth Level Classes */
+.depth-level-0 {
+  background-color: var(--skanda-bg-primary);
+}
+
+.depth-level-1 {
+  background-color: var(--skanda-bg-card);
+  border: 1px solid var(--skanda-border);
+  box-shadow: var(--skanda-shadow-card);
+}
+
+.depth-level-2 {
+  background-color: var(--skanda-bg-elevated);
+  border: 1px solid var(--skanda-border-strong);
+  box-shadow: var(--skanda-shadow-elevated);
+}
+
+.depth-level-3 {
+  background-color: var(--skanda-bg-card);
+  border: 1px solid var(--skanda-border);
+  box-shadow: var(--skanda-shadow-modal);
+}
+
+/* =========================================================================
+   SKANDA COMPLIANCE RADAR RESPONSIVE TOOLBAR ARCHITECTURE
+   Container-query driven progressive disclosure and rigid flex layout
+   ========================================================================= */
+
+.compliance-radar-container {
+  container-type: inline-size;
+  container-name: compliance-toolbar;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.compliance-radar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.radar-brand-zone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.feed-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.system-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.navigation-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.compliance-radar-alert-stream {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Container Queries for progressive collapsing without layout shift */
+@container compliance-toolbar (max-width: 1250px) {
+  .radar-feed-pill-tertiary {
+    display: none !important;
+  }
+}
+
+@container compliance-toolbar (max-width: 1050px) {
+  .radar-feed-pill-secondary {
+    display: none !important;
+  }
+  .search-grounded-badge-full {
+    display: none !important;
+  }
+  .search-grounded-badge-compact {
+    display: inline-flex !important;
+  }
+  .radar-nav-play-pause {
+    display: none !important;
+  }
+}
+
+@container compliance-toolbar (max-width: 820px) {
+  .feed-controls-expanded {
+    display: none !important;
+  }
+  .feed-controls-collapsed {
+    display: inline-flex !important;
+  }
+  .radar-live-stream-label {
+    display: none !important;
+  }
+}
+
+@container compliance-toolbar (max-width: 580px) {
+  .radar-brand-full {
+    display: none !important;
+  }
+  .radar-brand-compact {
+    display: inline-flex !important;
+  }
+  .radar-index-counter {
+    display: none !important;
+  }
+}
+
+
+

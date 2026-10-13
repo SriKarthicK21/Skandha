@@ -1,0 +1,26 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# --- Local runtime state (never publish) -------------------------------------
+# JSON repositories, evidence vault and uploaded/generated questionnaire
+# artifacts are per-machine data written by the running app.
+data/*.json
+data/*.json.tmp.*
+data/evidence_vault/
+data/questionnaire_artifacts/
+!data/.gitkeep
+
+# --- Local scratch work (never publish) --------------------------------------
+# Debug scripts, headless-browser user-data dirs, dumps and ad-hoc logs.
+scratch/
+
+# --- Tool / editor workspace state -------------------------------------------
+.freebuff/
+*.tsbuildinfo
+.vite/
